@@ -189,3 +189,16 @@ ul.dropdown-menu>li>a>i.fa {
     width: 1.3em;
 }
 
+.dropdown-toggle {
+	display:none; /* TODO SHOW ON MOBILE */
+}
+
+.dropdown-menu {
+	display:block;
+	position:relative;
+	border: 0;
+	box-shadow: none;
+}
+.dropdown-menu li {
+	float:left;
+}
