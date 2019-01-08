@@ -68,6 +68,12 @@ article .share .twitter:hover {
 #contact-list li:hover .fa-rss {
 	color: #e74c3c;
 }
+#contact-list li:hover .fa-github, article .share .github:hover {
+	color: #F19938;
+}
+#contact-list li:hover .fa-xing, article .share .xing:hover {
+	color: #327677;
+}
 article .share .facebook:hover {
 	color: #43609C;
 	border-color: #43609C;
