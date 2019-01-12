@@ -8,8 +8,6 @@
 	{% endif %}
 	<meta name="author" content="{{ site.author.name }}">
 
-	<META NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW">
-
 	<!-- Enable responsive viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,7 +18,7 @@
 
 	<!-- Le styles -->
 	<link href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/all.min.css" rel="stylesheet">
 	<link href="{{ site.BASE_PATH }}/assets/resources/syntax/syntax.css" rel="stylesheet">
 	<link href="{{ site.BASE_PATH }}/assets/css/style.css" rel="stylesheet">
 
@@ -47,12 +45,12 @@
 			</button>
 			{% if site.author.github %}
 			<a type="button" class="navbar-toggle nav-link" href="http://github.com/{{ site.author.github }}">
-				<i class="fa fa-github"></i>
+				<i class="fab fa-github"></i>
 			</a>
 			{% endif %}
 			{% if site.author.twitter %}
 			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/{{ site.author.twitter }}">
-				<i class="fa fa-twitter"></i>
+				<i class="fab fa-twitter"></i>
 			</a>
 			{% endif %}
 			{% if site.author.email %}
@@ -61,17 +59,17 @@
 			</a>
 			{% endif %}
 			<a class="navbar-brand" href="{{ site.BASE_PATH }}/">
-				<img src="//www.gravatar.com/avatar/{{site.author.email_md5}}?s=35" class="img-circle" />
-				{{ site.title }}
+				<img src="/assets/images/sergej-goerzen.jpg" class="img-circle img-circle-xs" />
+
 			</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="{{ site.BASE_PATH }}/">Home</a></li>
-				<li><a href="{{ site.BASE_PATH}}/{{ site.categories_path }}">Categories</a></li>
-				<li><a href="{{ site.BASE_PATH}}/{{ site.tags_path }}">Tags</a></li>
+				<li class="active"><a href="/">Über mich</a></li>
+				<li><a href="{{ site.BASE_PATH}}/{{ site.projects_path }}">Projekte</a></li>
+				<li><a href="{{ site.BASE_PATH}}/{{ site.portfolio_path }}">Portfolio</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</nav>
@@ -82,9 +80,9 @@
 			<i class="fa fa-bars"></i>
 		</button>
 		<ul class="dropdown-menu" role="menu">
-			<li><a href="{{ site.BASE_PATH}}/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="{{ site.BASE_PATH}}/"><i class="fa fa-user"></i>Über mich</a></li>
+			<li><a href="{{ site.BASE_PATH}}/{{ site.projects_path }}"><i class="fa fa-code"></i>Projekte</a></li>
 			<li><a href="{{ site.BASE_PATH}}/{{ site.portfolio_path }}"><i class="fa fa-folder"></i>Portfolio</a></li>
-			<li><a href="{{ site.BASE_PATH}}/{{ site.about_path }}"><i class="fa fa-user"></i>Über mich</a></li>
 			<!--<li class="divider"></li>
 			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>-->
 		</ul>

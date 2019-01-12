@@ -10,6 +10,7 @@ body{
 	padding-top: 10%;
 	background-color: #2c3e50;
 	color: #fff;
+	height:100vh;
 }
 
 .sidebar-header {
@@ -43,7 +44,7 @@ a.nav-link:hover { color: #777; }
 	margin-bottom: 10px;
 }
 
-#contact-list li .fa,
+#contact-list li .fa,.fab,
 article .share .btn {
 	-o-transition:color .2s ease-out, background 1s ease-in;
   -ms-transition:color .2s ease-out, background 1s ease-in;
@@ -207,4 +208,32 @@ ul.dropdown-menu>li>a>i.fa {
 }
 .dropdown-menu li {
 	float:left;
+}
+
+#contact-list .btn-default,#contact-list .btn-default:hover {
+	background: transparent;
+	border:none;
+	color:white;
+}
+
+
+.btn-xl {
+	font-size:18px;
+}
+
+.img-circle-xs {
+	width:32px;
+	height:32px;
+}
+.img-circle-md {
+	width:128px;
+	height:128px;
+}
+
+.navbar-brand {
+	padding: 9px 15px;
+}
+
+.img-rounded {
+	border-radius:50%;
 }
