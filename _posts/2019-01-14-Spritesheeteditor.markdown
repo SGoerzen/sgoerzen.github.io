@@ -9,4 +9,5 @@ author: sgoerzen
 categories: sgoerzen
 subclass: 'post tag-fiction'
 navigation: true
+direct_link: apps/spriteeditor
 ---
