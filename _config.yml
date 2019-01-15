@@ -31,7 +31,6 @@ rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
 portfolio_path: portfolio.html
-projects_path: projects.html
 about_path: about.html
 impressum_path: impressum.html
 

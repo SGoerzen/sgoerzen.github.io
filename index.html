@@ -3,16 +3,19 @@ layout: page
 tagline:
 ---
 
-{% assign post = paginator.posts[0] %}
+{% for post in paginator.posts %}
+  {% if post.tags contains 'About me' %}
+    <article class="home">
 
-<article class="home">
+      <div>
+        {{ post.content }}
+      </div>
 
-  <div>
-    {{ post.content }}
-  </div>
+      <h2 style="font-size:12px;">
+        <a href="{{ site.BASE_PATH }}{{ post.url }}">Zum Artikel</a>
+      </h2>
 
-  <h2 style="font-size:12px;">
-    <a href="{{ site.BASE_PATH }}{{ post.url }}">Zum Artikel</a>
-  </h2>
+    </article>
 
-</article>
+  {% endif %}
+{% endfor %}

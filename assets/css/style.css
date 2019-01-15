@@ -243,3 +243,28 @@ ul.dropdown-menu>li>a>i.fa {
 .img-rounded {
 	border-radius:50%;
 }
+.portfolio-item {
+	position:relative;
+	border: 1px solid #2c3e50;
+}
+.portfolio-head {
+	height:100px;
+	background-size:cover;
+	background-position: center center;
+}
+.portfolio-item-wrapper a,
+.portfolio-item-wrapper a:hover,
+.portfolio-item-wrapper a:active {
+	text-decoration:none;
+	color:#2c3e50;
+}
+.portfolio-body {
+	padding: 5px;
+}
+.portfolio-title {
+	font-size:1.2em;
+}
+.portfolio-item-wrapper a:hover .portfolio-body {
+	background-color:#428bca;
+	color: white;
+}
