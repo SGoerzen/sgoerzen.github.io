@@ -154,11 +154,6 @@ article.home h4 a:hover {
 footer {
 	padding-top: 15px;
 	font-family: 'Ubuntu';
-	width:100%;
-	background:white;
-	border-top:1px solid #eee;
-	position:fixed;
-	bottom:0;
 }
 footer a {color: #2c3e50;}
 
@@ -271,3 +266,14 @@ ul.dropdown-menu>li>a>i.fa {
 .portfolio-item-wrapper {
 	margin-top:5px;
 }
+
+/*
+@media (min-width: 768px) {
+	footer {
+		width:100%;
+		background:white;
+		border-top:1px solid #eee;
+		position:fixed;
+		bottom:0;
+	}
+}*/
