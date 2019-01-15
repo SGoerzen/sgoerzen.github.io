@@ -268,3 +268,6 @@ ul.dropdown-menu>li>a>i.fa {
 	background-color:#428bca;
 	color: white;
 }
+.portfolio-item-wrapper {
+	margin-top:5px;
+}
