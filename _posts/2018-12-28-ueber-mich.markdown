@@ -12,7 +12,7 @@ comments: true
 ---
 
 ## Persönlich
-Mein Name ist Sergej Görzen und ich wurde am 10.09.1992 in Podolsk (in Russland) geboren. Ich habe einen kleinen Bruder und bin seit März 2019 verheiratet.
+Mein Name ist Sergej Görzen und ich wurde am 10.09.1992 in Podolsk (in Russland) geboren. Ich habe einen jüngeren Bruder und bin seit März 2019 verheiratet.
 
 Meine Eltern sind im Dezember 1994 nach Deutschland eingereist.
 
