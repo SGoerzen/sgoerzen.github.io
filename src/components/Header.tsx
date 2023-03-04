@@ -1,4 +1,5 @@
 import {Box, Typography} from "@mui/material";
+import {borderRadius} from "../_helpers/mixins";
 
 export const Header = () => {
     return <header style={{
@@ -27,9 +28,7 @@ export const Header = () => {
             }}>
                 <img style={{
                     width: 240,
-                    borderRadius: "50%",
-                    WebkitBorderRadius: "50%",
-                    MozBorderRadius: "50%",
+                    ...borderRadius("50%")
                 }} src="./sergej-goerzen.1024x1024.jpg"/>
                 <Box className="profile-name">
                     <Typography variant="h2" sx={{
