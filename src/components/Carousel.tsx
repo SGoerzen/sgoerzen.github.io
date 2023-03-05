@@ -2,21 +2,29 @@ import React, {ReactNode} from "react";
 import {Box, BoxProps, Container} from "@mui/material";
 import {transition} from "../_helpers/mixins";
 
-
 interface ICarouselItemProps extends BoxProps {
     children: ReactNode,
     width: number
 }
 
 const CarouselItem = ({children, width, ...props}: ICarouselItemProps) => {
-    return <Box className="carousel-item"
+    return <Box component="article" className="carousel-item"
         {...props}
                 sx={{
                     height: "730px",
                     width: width + "px",
                     float: "left",
                     display: "inline-block",
-                    ...props.sx
+                    p: 4,
+                    ...props.sx,
+                    "& section": {
+                        "&:not(:first-child)": {
+                            pt: 2
+                        },
+                        "&:not(:last-child)": {
+                            pb: 2
+                        },
+                    }
     }}>{children}</Box>
 };
 
@@ -27,7 +35,6 @@ interface ICarouselProps {
 
 export const Carousel = ({selectedIndex, items}: ICarouselProps) => {
     const wrapperRef = React.createRef();
-
     const itemWidth = 1082;
 
     return <Container className="carousel" sx={{position: "relative"}}>
@@ -36,7 +43,7 @@ export const Carousel = ({selectedIndex, items}: ICarouselProps) => {
                 position: "relative",
                 width: (itemWidth * items.length) + "px",
                 left: (-itemWidth * selectedIndex) + "px",
-                ...transition("left .25s ease-in-out")
+                ...transition("left .5s ease-in-out")
             }}>
                 {items.map((child, index) => (
                     <CarouselItem width={itemWidth} key={index}>

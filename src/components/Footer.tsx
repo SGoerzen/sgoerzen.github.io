@@ -28,10 +28,11 @@ export const Footer = () => {
         { title: "ORCid", link: "https://orcid.org/0000-0003-3853-2435", icon: <SvgIcon inheritViewBox fontSize="large" component={OrcIdIcon} />},
     ];
 
-    return <footer style={{
+    return <Box component="footer" sx={{
         background: "#EBEBEB",
         padding: "40px 0",
-        color: "#3333"
+        color: "#3333",
+        textAlign: "center"
     }}>
         <Box className="social-icons" sx={{
             paddingBottom: "20px",
@@ -72,5 +73,5 @@ export const Footer = () => {
                 Copyright &copy; 2023 By Sergej Görzen. All rights reserved.
             </Typography>
         </Box>
-    </footer>
+    </Box>
 };

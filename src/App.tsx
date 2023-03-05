@@ -36,14 +36,13 @@ function App() {
         <ThemeProvider theme={appTheme}>
             <Box className="App">
                 <Header/>
-                <main>
+                <Box component="main">
                     <NavBar navItems={navItems} initialPage={selectedPageIndex} onChangedPage={handleOnChangedPage}/>
                     <Box id="container">
                         <Carousel selectedIndex={selectedPageIndex} items={navItems.map(n => n.content)}/>
                     </Box>
                     <Footer/>
-                </main>
-
+                </Box>
             </Box>
         </ThemeProvider>
     )

@@ -2,7 +2,7 @@ import {Box, Typography} from "@mui/material";
 import {borderRadius} from "../_helpers/mixins";
 
 export const Header = () => {
-    return <header style={{
+    return <Box component="header" sx={{
         background: "#303030",
         padding: "0 0 70px 0",
         width: "100%"
@@ -48,5 +48,5 @@ export const Header = () => {
                 </Box>
             </Box>
         </Box>
-    </header>
+    </Box>
 };

@@ -17,6 +17,7 @@ export const appTheme = createTheme({
         ].join(','),
     },
 
+
     palette: {
         primary: {
             main: "#0093D0",
