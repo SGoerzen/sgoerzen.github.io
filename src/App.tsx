@@ -1,10 +1,10 @@
 import './App.scss'
-import {Box, Button} from "@mui/material";
+import {Box} from "@mui/material";
 import {ThemeProvider} from "@mui/material/styles";
 import {Header} from "./components/Header";
 import {Footer} from "./components/Footer";
 import {INavItem, NavBar} from "./components/NavBar";
-import { Carousel, CarouselItem } from './components/Carousel';
+import {Carousel} from './components/Carousel';
 import React from "react";
 
 import {appTheme} from "./theme";
@@ -20,29 +20,26 @@ function App() {
     const [selectedPageIndex, setSelectedPageIndex] = React.useState<number>(0);
 
     const navItems: INavItem[] = [
-        { title: "Profile", content: <Profile /> },
-        { title: "Education", content: <Education /> },
-        { title: "Experience", content: <Experience /> },
-        { title: "Portfolio", content: <Portfolio /> },
-        { title: "Publications", content: <Publications /> },
-        { title: "Contact", content: <Contact />}
+        {title: "Profile", content: <Profile/>},
+        {title: "Education", content: <Education/>},
+        {title: "Experience", content: <Experience/>},
+        {title: "Portfolio", content: <Portfolio/>},
+        {title: "Publications", content: <Publications/>},
+        {title: "Contact", content: <Contact/>}
     ];
+
+    const handleOnChangedPage = (oldIndex: number, newIndex: number) => {
+        setSelectedPageIndex(newIndex);
+    };
 
     return (
         <ThemeProvider theme={appTheme}>
             <Box className="App">
                 <Header/>
                 <main>
-                    <NavBar navItems={navItems} />
+                    <NavBar navItems={navItems} initialPage={selectedPageIndex} onChangedPage={handleOnChangedPage}/>
                     <Box id="container">
-                        <Button onClick={() => setSelectedPageIndex(selectedPageIndex + 1)}>+</Button>
-                        <Carousel selectedIndex={selectedPageIndex}>
-                            { navItems.map(({ content}, index) => (
-                                <CarouselItem key={index}>
-                                    {content}
-                                </CarouselItem>
-                            ))}
-                        </Carousel>
+                        <Carousel selectedIndex={selectedPageIndex} items={navItems.map(n => n.content)}/>
                     </Box>
                     <Footer/>
                 </main>

@@ -1,18 +1,26 @@
 import "./NavBar.scss";
-import React, {ReactNode} from "react";
-import {AppBar, Box, Container, Toolbar} from "@mui/material";
+import React, {ReactNode, useEffect} from "react";
+import {
+    AppBar,
+    Box,
+    Container,
+    FormControl,
+    IconButton,
+    InputLabel,
+    Select,
+    SelectChangeEvent,
+    Toolbar
+} from "@mui/material";
 
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+
+import ArrowLeft from "@mui/icons-material/ChevronLeft";
+import ArrowRight from "@mui/icons-material/ChevronRight";
 
 import LogoIcon from "@mui/icons-material/Psychology";
+import {transition} from "../_helpers/mixins";
 
 export interface INavItem {
     title: string,
@@ -20,124 +28,137 @@ export interface INavItem {
 }
 
 export interface INavBarProps {
-    navItems: INavItem[]
+    navItems: INavItem[],
+    initialPage?: number,
+    onChangedPage?: (oldIndex: number, newIndex: number) => void
 }
 
-export const NavBar = ({navItems}: INavBarProps) => {
+interface IWhiteLineState {
+    left: number,
+    width: number
+}
 
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
+export const NavBar = ({navItems, onChangedPage, initialPage}: INavBarProps) => {
+    const navItemsRef = React.createRef();
+    const [activePage, setActivePage] = React.useState<number>(initialPage ?? 0);
+    const [prevPage, setPrevPage] = React.useState<number>(initialPage ?? 0);
+    const [whiteLineState, setWhiteLineState] = React.useState<IWhiteLineState>({left: 0, width: 0});
+    const updatePage = (index: number) => {
+        setPrevPage(activePage);
+        setActivePage(index);
     };
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
+    const handleChangeNav = (e: SelectChangeEvent<number>) => {
+        updatePage(e.target.value as number);
+    };
+    const handleClickLeft = () => {
+        updatePage(Math.max(0, activePage - 1));
+    };
+    const handleClickRight = () => {
+        updatePage(Math.min(navItems.length - 1, activePage + 1));
+    };
+    const updateWhiteLine = () => {
+        const el = navItemsRef.current as HTMLElement;
+        if (!el)
+            return;
+
+        const activePageButton = el.children[activePage] as HTMLElement;
+        setWhiteLineState({ left: activePageButton.offsetLeft, width: activePageButton.offsetWidth });
     };
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+    useEffect(() => {
+        updateWhiteLine();
+        onChangedPage && onChangedPage(prevPage, activePage);
+    }, [prevPage, activePage]);
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
+    const Logo = ({responsive}: { responsive: boolean }) => {
+        return <>
+            <LogoIcon sx={{display: responsive ? {xs: 'flex', md: 'none'} : {xs: 'none', md: 'flex'}, mr: 1}}/>
+            <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/"
+                sx={{
+                    mr: 2,
+                    display: responsive ? {xs: 'flex', md: 'none'} : {xs: 'none', md: 'flex'},
+                    fontFamily: 'monospace',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: 'inherit',
+                    textDecoration: 'none',
+                }}
+            >
+                SG
+            </Typography>
+        </>
     };
 
     return <AppBar position="static">
         <Container maxWidth="xl">
             <Toolbar disableGutters>
-                <LogoIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="a"
-                    href="/"
-                    sx={{
-                        mr: 2,
-                        display: { xs: 'none', md: 'flex' },
-                        fontFamily: 'monospace',
-                        fontWeight: 700,
-                        letterSpacing: '.3rem',
-                        color: 'inherit',
-                        textDecoration: 'none',
-                    }}
-                >
-                    SG
-                </Typography>
-
-                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                    <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        onClick={handleOpenNavMenu}
-                        color="inherit"
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Menu
-                        id="menu-appbar"
-                        anchorEl={anchorElNav}
-                        anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'left',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'left',
-                        }}
-                        open={Boolean(anchorElNav)}
-                        onClose={handleCloseNavMenu}
-                        sx={{
-                            display: { xs: 'block', md: 'none' },
-                        }}
-                    >
-                        {navItems.map(({title}, index) => (
-                            <MenuItem key={index} onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">{title}</Typography>
-                            </MenuItem>
-                        ))}
-                    </Menu>
+                <Logo responsive={false}/>
+                <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}, maxWidth: "150px"}}>
+                    <FormControl fullWidth size="small">
+                        <InputLabel id="responsible-navbar-selection">Navigation</InputLabel>
+                        <Select
+                            labelId="responsible-navbar-selection-label"
+                            id="responsible-navbar-selection-select"
+                            value={activePage}
+                            label="Navigation"
+                            onChange={handleChangeNav}
+                        >
+                            {navItems.map(({title}, index) => (
+                                <MenuItem key={index} value={index}>{title}</MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
                 </Box>
-                <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-                <Typography
-                    variant="h5"
-                    noWrap
-                    component="a"
-                    href=""
-                    sx={{
-                        mr: 2,
-                        display: { xs: 'flex', md: 'none' },
-                        flexGrow: 1,
-                        fontFamily: 'monospace',
-                        fontWeight: 700,
-                        letterSpacing: '.3rem',
-                        color: 'inherit',
-                        textDecoration: 'none',
-                    }}
-                >
-                    LOGO
-                </Typography>
-                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                <Box sx={{flex: 1}}/>
+                <Logo responsive={true}/>
+                <Box  ref={navItemsRef} sx={{flexGrow: 1, position: "relative", display: {xs: 'none', md: 'flex'},
+                    "&:before": {
+                        content: "''",
+                        height: "2px",
+                        width: whiteLineState.width + "px",
+                        background: "white",
+                        position: "absolute",
+                        bottom: 0,
+                        left: whiteLineState.left + "px",
+                        ...transition("all .25s linear")
+                    }}}>
                     {navItems.map(({title}, index) => (
                         <Button
+                            size="large"
                             key={index}
-                            onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: 'white', display: 'block' }}
+                            onClick={_ => updatePage(index)}
+                            sx={{
+                                color: 'white',
+                                display: 'block',
+                                fontWeight: "bold",
+                                fontSize: "1.2rem",
+                                textTransform: "none",
+                                "&:hover": {
+                                    color: "#303030"
+                                },
+                                float: "left"
+                            }}
                         >
                             {title}
                         </Button>
                     ))}
+
                 </Box>
 
-                <Box sx={{ flexGrow: 0 }}>
-                    <Tooltip title="Open settings">
-                        <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                        </IconButton>
-                    </Tooltip>
+                <Box sx={{flexGrow: 0, "& button:hover": {color: "white"}}}>
+                    <IconButton onClick={handleClickLeft} size="small"
+                                sx={{mr: -1.5, visibility: activePage < 1 ? "hidden" : "visible"}} disableFocusRipple>
+                        <ArrowLeft fontSize="large"/>
+                    </IconButton>
+                    <IconButton onClick={handleClickRight} size="small"
+                                sx={{ml: -1.5, visibility: activePage >= navItems.length - 1 ? "hidden" : "visible"}}
+                                disableFocusRipple>
+                        <ArrowRight fontSize="large"/>
+                    </IconButton>
                 </Box>
             </Toolbar>
         </Container>

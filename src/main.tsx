@@ -10,8 +10,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <StyledEngineProvider injectFirst>
       <CssBaseline />
-      <React.StrictMode>
-          <App />
-      </React.StrictMode>
+      <App />
   </StyledEngineProvider>
 )
