@@ -1,0 +1,26 @@
+---
+import {PROJECTS} from '../lib/constants'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import TopLayout from '../layouts/TopLayout.astro'
+import BottomLayout from '../layouts/BottomLayout.astro'
+import {Home} from "lucide-react";
+
+---
+
+<BaseLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
+  <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
+    <TopLayout>
+      <div>
+        <a href="/"><Home /></a>
+      </div>
+      <h2
+        class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+      >
+        {PROJECTS.TITLE}
+      </h2>
+    </TopLayout>
+    <BottomLayout>
+      Diese Seite ist in Bearbeitung.
+    </BottomLayout>
+  </main>
+</BaseLayout>

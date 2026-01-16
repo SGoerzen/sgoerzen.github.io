@@ -3,6 +3,7 @@ import { WORK } from '../lib/constants'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import TopLayout from '../layouts/TopLayout.astro'
 import BottomLayout from '../layouts/BottomLayout.astro'
+import {Home} from "lucide-react";
 
 import { EXPERIENCE } from '../lib/constants'
 ---
@@ -10,6 +11,9 @@ import { EXPERIENCE } from '../lib/constants'
 <BaseLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
   <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
     <TopLayout>
+      <div>
+        <a href="/"><Home /></a>
+      </div>
       <h2
         class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
       >
@@ -26,6 +30,7 @@ import { EXPERIENCE } from '../lib/constants'
               </div>
               <a
                 href={entry.link ?? ''}
+                target="_blank"
                 class={`font-semibold ${entry?.link ? 'text-primary' : 'text-foreground'}`}
               >
                 {entry.company}
