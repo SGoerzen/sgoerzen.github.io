@@ -7,19 +7,20 @@ export const loaderAnimation = [
 ]
 
 export const LINKS = {
-  gitlab: 'https://gitlab.com/kylifornication',
-  linkedin: 'https://www.linkedin.com/in/kylejamescwu/',
-  mail: 'mailto:kyleroyjames@gmail.com',
-  instagram: 'https://www.instagram.com/caj_ink/',
-  medium: 'https://ladvace.medium.com/',
-  discord: 'https://discordapp.com/users/163300027618295808',
+  github: 'https://github.com/SGoerzen',
+  gitlab: 'https://gitlab.com/sgoerzen',
+  linkedin: 'https://www.linkedin.com/in/sergej-goerzen/',
+  mail: 'mailto:sergej@goerzen.consulting',
+  //instagram: 'https://www.instagram.com/caj_ink/',
+  //medium: 'https://ladvace.medium.com/',
+  //discord: 'https://discordapp.com/users/163300027618295808',
 }
 
 // Global
 export const SITE: Site = {
   TITLE: 'Astro Sphere',
   DESCRIPTION:
-    'Welcome to Kyle James\'s (KJs) career walking deck/site.',
+    'Willkommen auf meiner Webseite.',
   AUTHOR: 'Kyle James (KJ)',
 }
 
@@ -32,25 +33,43 @@ export const WORK: Page = {
 // Study Page
 export const STUDIES = [
   {
-    title: 'IT Management: Cyber Security',
-    institution: 'Central Washington University',
-    link: 'https://www.cwu.edu',
-    date: '2013 - 2016',
+    title: 'Dr. rer. nat. Informatik (Promotion)',
+    institution: 'RWTH Aachen University',
+    link: 'https://learntech.rwth-aachen.de',
+    date: '2021 – vsl. Apr. 2026',
+    details: [
+      'Fokus: Learning Technologies, XR (AR/VR) und Learning Analytics',
+      'Produktnahe Forschungssoftware, Frameworkdesign & Evaluation',
+    ],
   },
   {
-    title: 'Political Science',
-    institution: 'Central Washington University',
-    link: 'https://www.cwu.edu',
-    date: '2011 - 2013',
+    title: 'M. Sc. Informatik',
+    institution: 'RWTH Aachen University',
+    link: 'https://www.rwth-aachen.de',
+    date: '2017 – 2021 (Note: 2,0)',
+    details: [
+      'Schwerpunkte: XR/EdTech, Computergrafik, Software Engineering',
+    ],
   },
   {
-    title: 'Web Development and Design',
-    institution: 'Central Washington University',
-    link: 'https://www.cwu.edu',
-    date: '2013 - 2016',
+    title: 'B. Sc. Informatik',
+    institution: 'TH Köln (Campus Gummersbach)',
+    link: 'https://www.th-koeln.de',
+    date: '2012 – 2017 (Note: 2,1)',
+    details: [
+      'Schwerpunkte: Software Engineering, Webentwicklung, Algorithmen',
+    ],
+  },
+  {
+    title: 'Staatl. gepr. Informationstechnischer Assistent (ITA) · Fachhochschulreife',
+    institution: 'Berufskolleg Oberberg (Dieringhausen)',
+    link: '',
+    date: '2009 – 2012 (Note: 2,0)',
+    details: [
+      'Informatik-nahe Ausbildung mit Schwerpunkt Programmierung',
+    ],
   },
 ]
-
 export const EXPERIENCE = [
   {
     company: 'The Walt Disney Company',

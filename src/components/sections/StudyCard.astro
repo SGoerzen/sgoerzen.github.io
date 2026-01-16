@@ -1,17 +1,35 @@
 ---
 import Card from '../Card.astro'
-import { Badge } from '../ui/badge'
+import { Button } from '../ui/button'
 import { STUDIES } from '../../lib/constants'
 ---
 
-<Card colSpan="md:col-span-2 lg:col-span-1" rowSpan="md:row-span-2 lg:row-span-2" title="Study">
-  <div class="mt-2 flex w-full flex-wrap items-center justify-center gap-2">
-      {
-        STUDIES.map((study) => (
-          <a href={study.link} target="__blank">
-            <Badge variant="outline">{study.title}</Badge>
-          </a>
-        ))
-      }
+<Card colSpan="md:col-span-2 lg:col-span-3"
+      rowSpan="md:row-span-2 lg:row-span-2"
+      title="Studium / Ausbildung">
+  <div class="mt-2 space-y-4">
+    {
+      STUDIES.slice(0, 4).map((s) => (
+          <div>
+            <h3 class="text-lg font-semibold">{s.title}</h3>
+
+            {s?.link ? (
+                <a class="text-sm text-primary" href={s.link} target="_blank" rel="noreferrer">
+                  {s.institution}
+                </a>
+            ) : (
+                <p class="text-sm text-primary">{s.institution}</p>
+            )}
+
+            <p class="text-sm text-gray-600">{s.date}</p>
+
+            {s?.details?.length ? (
+                <ul class="mt-2 list-disc list-inside space-y-1 text-xs text-gray-600">
+                  {s.details.map((d) => <li>{d}</li>)}
+                </ul>
+            ) : null}
+          </div>
+      ))
+    }
   </div>
 </Card>

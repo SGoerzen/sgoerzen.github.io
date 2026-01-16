@@ -2,37 +2,53 @@
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
 import { LINKS } from '../../lib/constants'
-import { Linkedin, Github, Mail } from 'lucide-react'
+import { Linkedin, Github, Gitlab, Mail } from 'lucide-react'
 ---
 
 <Card colSpan="md:col-span-2 lg:col-span-4" rowSpan="md:row-span-1 lg:row-span-1">
   <div class="flex h-full w-full">
     <div class="flex flex-col justify-between gap-4">
       <div class="flex h-full flex-col">
-        <h6 class="m-0 text-sm font-light text-gray-500">Welcome</h6>
+        <h6 class="m-0 text-sm font-light text-gray-500">Willkommen</h6>
         <p class="m-0 text-lg font-light">
-          Hey! I'm <b class="font-bold">Kyle James (KJ)</b>, a dad, husband, athlete, and professionally I work as a product and engineering leader. 
-          I've spent time working in a variety of organizations, from startups to large enterprises, and I've worn a lot of hats. I'm most comfortable
-          as a product and engineering leader, but I've also worn the hat of a developer, a consultant, and project manager. I pride myself 
-          on doing the right thing and treating people with respect, and doing all of the little things well to make a difference. 
+          Ich bin <strong>Sergej</strong> – freiberuflicher IT-Berater und Softwaresystem-Engineer mit Schwerpunkt auf
+          <strong>XR (AR/VR/MR)</strong> und <strong>Learning Analytics</strong>.
+          Ich unterstütze Unternehmen dabei, Softwareprodukte zuverlässig umzusetzen und weiterzuentwickeln –
+          von der technischen Konzeption bis zur produktiven Integration in bestehende Systeme (Web/Mobile/Services).
+          In einzelnen Mandaten übernehme ich zudem <strong>CTO-nahe Verantwortung</strong>, z.&nbsp;B. bei Technikstrategie,
+          Architekturentscheidungen, Qualitätsstandards und Developer-Enablement.
+        </p>
+        <p class="m-0 text-lg font-light mt-3">
+          Parallel bin ich aktuell noch wissenschaftlicher Mitarbeiter und Doktorand im Bereich Learning Technologies an der RWTH Aachen.
+          Dadurch verbinde ich produktnahe Umsetzung mit methodischer Tiefe – insbesondere dort, wo XR-Anwendungen,
+          Datenpipelines und auswertbare Nutzungsdaten zusammenkommen.
         </p>
         <br>
-        <h6 class="m-0 text-sm font-light text-gray-500">Why Me?</h6>
+        <h6 class="m-0 text-sm font-light text-gray-500">Warum ich?</h6>
         <p>
-          I've built a reputation for being a quick learner, a team player, problem solver, good communicator, and a hard worker. 
-          As a leader, I keep myself sharp by staying up to date on the latest in technology and best practices, and I'm always looking 
-          for new challenges and opportunities to grow. I practice building products and I'm constantly learning new frameworks and tech.
-          I thrive in fast-paced environments and appreciate roles that give me agency to make a difference and make decisions. 
+          Ich arbeite mich schnell ein, kommuniziere klar und liefere verlässlich. Ich denke in Ergebnissen und setze pragmatisch um:
+          sauberer Code, sinnvolle Schnittstellen, klare Prioritäten und stabile Integrationen. Dabei halte ich Prozesse schlank,
+          arbeite auf Augenhöhe mit Stakeholdern und Teams und fokussiere mich darauf, dass am Ende ein belastbares Produkt entsteht –
+          nicht nur ein Prototyp.
         </p>
         <br>
-        <p>
-          Here is the link to my <a href="https://kylifornication.gitlab.io/thedrizzle/blog/2025/09/01/my-operating-system/" target="_blank" class="text-blue-500">personal operating system</a>.
+        <p class="m-0 text-lg font-light">
+          Hier findest du meine <a href="/projects" target="_blank" class="text-blue-500">Projektübersicht</a> mit ausgewählten Referenzen, Tech-Stack und Arbeitsweise.
+        </p>
+        <p class="m-0 text-lg font-light">
+          Hier findest du meine <a href="/publications" target="_blank" class="text-blue-500">Publikationen</a> im Rahmen meiner wissenschaftlichen Tätigkeit.
         </p>
       </div>
       <div class="flex gap-4">
+        <a href={LINKS.github} aria-label="github profile" target="_blank">
+          <Button aria-label="github profile">
+            <Github />
+            <span class="sr-only">GitHub Profile</span>
+          </Button>
+        </a>
         <a href={LINKS.gitlab} aria-label="gitlab profile" target="_blank">
           <Button aria-label="gitlab profile">
-            <Github />
+            <Gitlab />
             <span class="sr-only">GitLab Profile</span>
           </Button>
         </a>
