@@ -8,7 +8,7 @@ export default defineConfig({
   // Otherwise, use `/<repository-name>/`
   // This can be overridden by the BASE_URL environment variable during build
   base: process.env.BASE_URL || '/',
-  site: process.env.PUBLIC_SITE_URL || 'http://localhost:4321',
+  site: process.env.PUBLIC_SITE_URL,
   integrations: [
     react(),
     tailwind({
