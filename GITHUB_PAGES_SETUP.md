@@ -1,4 +1,4 @@
-# GitHub Pages Deployment Setup
+_# GitHub Pages Deployment Setup_
 
 This repository is configured to automatically deploy to GitHub Pages when you push to the `main` branch.
 
