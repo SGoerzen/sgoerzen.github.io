@@ -64,7 +64,7 @@ export const STUDIES = [
     title: 'M. Sc. Informatik',
     institution: 'RWTH Aachen University',
     link: 'https://www.rwth-aachen.de',
-    date: '2017 – 2021 (Note: 2,0)',
+    date: '2017 – 2021',
     details: [
       'Schwerpunkte: XR/EdTech, Computergrafik, Software Engineering',
     ],
@@ -73,7 +73,7 @@ export const STUDIES = [
     title: 'B. Sc. Informatik',
     institution: 'TH Köln (Campus Gummersbach)',
     link: 'https://www.th-koeln.de',
-    date: '2012 – 2017 (Note: 2,1)',
+    date: '2012 – 2017',
     details: [
       'Schwerpunkte: Software Engineering, Webentwicklung, Algorithmen',
     ],
@@ -82,7 +82,7 @@ export const STUDIES = [
     title: 'Staatl. gepr. Informationstechnischer Assistent (ITA) · Fachhochschulreife',
     institution: 'Berufskolleg Oberberg (Dieringhausen)',
     link: '',
-    date: '2009 – 2012 (Note: 2,0)',
+    date: '2009 – 2012',
     details: [
       'Informatik-nahe Ausbildung mit Schwerpunkt Programmierung',
     ],

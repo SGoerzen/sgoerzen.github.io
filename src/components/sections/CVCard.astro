@@ -1,7 +1,8 @@
 ---
-import { File } from 'lucide-react'
+import {File, Github, Gitlab, Linkedin, Mail} from 'lucide-react'
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
+import {LINKS} from "../../lib/constants";
 ---
 
 <Card colSpan="md:col-span-2 lg:col-span-1" rowSpan="md:row-span-2 lg:row-span-2" title="CV">
@@ -18,14 +19,34 @@ import { Button } from '../ui/button'
         </p>
         <div class="card-actions mt-2 flex w-full items-center justify-center">
           <a
-              href="mailto:sergej@goerzen.consulting?subject=CV-Anfrage&body=Hallo%20Sergej%2C%0D%0A%0D%0Aich%20m%C3%B6chte%20deinen%20CV%20f%C3%BCr%20eine%20Projektanfrage%20anfragen.%0D%0A%0D%0AName%3A%20%0D%0AFirma%2FOrganisation%3A%20%0D%0ARolle%2FProjekt%3A%20%0D%0AStart%2FZeitraum%3A%20%0D%0AAuslastung%20(Tage%2FWoche)%3A%20%0D%0ARemote%2FOnsite%3A%20%0D%0AStundensatzrahmen%3A%20%0D%0A%0D%0AVielen%20Dank%20und%20viele%20Gr%C3%BC%C3%9Fe%0D%0A"
-          >
+                  href="mailto:sergej@goerzen.consulting?subject=CV-Anfrage&body=Hallo%20Sergej%2C%0A%0Aich%20m%C3%B6chte%20deinen%20CV%20f%C3%BCr%20eine%20Projektanfrage%20anfragen.%0A%0AName%3A%20%0AFirma%2FOrganisation%3A%20%0AProjekt%2FRolle%20(kurz)%3A%20%0AStart%20%2F%20Zeitraum%20%2F%20Laufzeit%3A%20%0AAuslastung%20(Tage%2FWoche)%20%2B%20Remote%2FOnsite%3A%20%0ABudget%2FStundensatzrahmen%20(optional)%3A%20%0A%0AVielen%20Dank%20und%20viele%20Gr%C3%BC%C3%9Fe%0A"          >
             <Button>
-              CV anfragen
-              <File />
+                <File />
+                <span class="ml-2">CV anfragen</span>
+
             </Button>
           </a>
         </div>
+          <div class="card-actions mt-2 flex w-full items-center justify-center">
+              <a href={LINKS.github} aria-label="github profile" target="_blank">
+                  <Button aria-label="github profile">
+                      <Github/>
+                      <span class="sr-only">GitHub Profile</span>
+                  </Button>
+              </a>
+              <a href={LINKS.gitlab} aria-label="gitlab profile" target="_blank" class="ml-2">
+                  <Button aria-label="gitlab profile">
+                      <Gitlab/>
+                      <span class="sr-only">GitLab Profile</span>
+                  </Button>
+              </a>
+              <a href={LINKS.linkedin} aria-label="linkedin profile" target="_blank" class="ml-2">
+                  <Button aria-label="linkedin profile">
+                      <Linkedin/>
+                      <span class="sr-only">Linkedin Profile</span>
+                  </Button>
+              </a>
+          </div>
       </div>
     </div>
   </div>

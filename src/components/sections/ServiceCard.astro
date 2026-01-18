@@ -1,0 +1,70 @@
+---
+import Card from '../Card.astro'
+import { Button } from '../ui/button'
+import { Send, Mail, Calendar } from 'lucide-react'
+import ContactDialog from "../ContactDialog.astro";
+---
+
+<Card colSpan="md:col-span-2 lg:col-span-4" rowSpan="md:row-span-1 lg:row-span-1">
+  <div class="flex h-full w-full">
+    <div class="flex flex-col justify-between gap-4">
+      <div class="flex h-full flex-col">
+        <h6 class="m-0 text-sm font-light text-gray-500">Ablauf der Zusammenarbeit</h6>
+          <ol class="space-y-3 text-sm text-gray-700">
+              <li>
+                  <strong>1) Kostenfreies Erstgespräch (30 Minuten)</strong><br />
+                  Kurze, strukturierte Klärung von Use Case, Zielen und Rahmenbedingungen – inkl. Einschätzung, ob mein Profil fachlich
+                  und zeitlich passt. Alternativ gerne direkt per Kontaktformular oder E-Mail.
+              </li>
+
+              <li>
+                  <strong>2) Bestandsaufnahme &amp; erste Aufwandsschätzung (kostenpflichtig, empfohlen)</strong><br />
+                  Analyse des Ist-Stands (Architektur/Codebase/Schnittstellen/Deployment) und Identifikation von Risiken und Optionen.
+                  Ergebnis: eine belastbare Einschätzung inkl. Prioritäten. Bei hoher Dringlichkeit kann dieser Schritt verkürzt oder
+                  übersprungen werden.
+              </li>
+
+              <li>
+                  <strong>3) Angebot &amp; Vorgehensplan</strong><br />
+                  Transparentes Angebot (Festpreis oder Time-&amp;-Material) mit Scope, Annahmen, Deliverables und grobem Zeitplan.
+              </li>
+
+              <li>
+                  <strong>4) Kick-off &amp; Umsetzung</strong><br />
+                  Starttermin, Kommunikationswege und Tooling werden abgestimmt. Danach Umsetzung hands-on mit regelmäßigen Updates bis zur
+                  Übergabe (inkl. Dokumentation/Enablement).
+              </li>
+          </ol>
+
+          <div class="flex flex-col gap-2 pt-2 sm:flex-row">
+              <a
+                      href="https://zeeg.me/sergejgoerzen/30min"
+                      target="_blank"
+              >
+                  <Button>
+                      <Calendar/>
+                      <span class="ml-2">30 Minuten Termin buchen</span>
+                  </Button>
+
+              </a>
+
+              <ContactDialog
+                      title="Kontakt"
+                      description="Schreib mir kurz, worum es geht — ich melde mich zeitnah zurück."
+              />
+
+
+              <a
+                      href="mailto:sergej@goerzen.consulting?subject=Anfrage%20IT-Beratung%20%2F%20Softwareentwicklung&body=Hi%20Sergej%2C%0A%0Aich%20m%C3%B6chte%20gerne%20mit%20dir%20%C3%BCber%20folgendes%20Thema%20sprechen%3A%0A%0A-%20Kurzbeschreibung%3A%20%0A-%20Ziel%2FErwartung%3A%20%0A-%20Tech-Stack%20(optional)%3A%20%0A-%20Zeitrahmen%3A%20%0A-%20Budgetrahmen%20(optional)%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe%0A"
+              >
+                  <Button>
+                      <Mail/>
+                      <span class="ml-2">Email senden</span>
+                  </Button>
+
+              </a>
+          </div>
+      </div>
+    </div>
+  </div>
+</Card>
