@@ -1,5 +1,5 @@
 ---
-import {File, Github, Gitlab, Linkedin, Mail} from 'lucide-react'
+import {File, Github, Gitlab, Linkedin, InstagramIcon, Mail} from 'lucide-react'
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
 import {LINKS} from "../../lib/constants";
@@ -44,6 +44,12 @@ import {LINKS} from "../../lib/constants";
                   <Button aria-label="linkedin profile">
                       <Linkedin/>
                       <span class="sr-only">Linkedin Profile</span>
+                  </Button>
+              </a>
+              <a href={LINKS.instagram} aria-label="instagram profile" target="_blank" class="ml-2">
+                  <Button aria-label="linkedin profile">
+                      <InstagramIcon />
+                      <span class="sr-only">Instagram Profile</span>
                   </Button>
               </a>
           </div>
