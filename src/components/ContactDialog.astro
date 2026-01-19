@@ -1,68 +1,236 @@
 ---
 import {Send} from "lucide-react";
-import { Button } from './ui/button';
+import {Button} from './ui/button';
 type Props = {
-  title?: string;
-  description?: string;
+    title?: string;
+    description?: string;
 };
 
 const {
-  title = "Kontakt",
-  description = "Schreib mir kurz, worum es geht — ich melde mich zeitnah zurück.",
+    title = "Kontakt",
+    description = "Schreib mir kurz, worum es geht — ich melde mich zeitnah zurück.",
 } = Astro.props as Props;
-
 ---
 
-<!--<Button
-  type="button"
+<Button
+        id="contact-open-btn"
+        type="button"
 >
     <Send/>
     <span class="ml-2">Kontaktformular</span>
-</Button>-->
+</Button>
 
 <dialog
-  id="contact-form"
-  class="w-full max-w-2xl rounded-xl border border-black/10 bg-white p-0 text-black shadow-xl dark:border-white/20 dark:bg-zinc-950 dark:text-white"
+        id="contact-form"
+        class="w-full max-w-2xl rounded-xl border border-black/10 bg-white p-0 text-black shadow-xl dark:border-white/20 dark:bg-zinc-950 dark:text-white"
 >
-  <div class="flex items-start justify-between gap-4 border-b border-black/10 p-4 dark:border-white/20">
-    <div>
-      <h2 class="text-lg font-semibold">{title}</h2>
-      <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">{description}</p>
+    <div class="flex items-start justify-between gap-4 border-b border-black/10 p-4 dark:border-white/20">
+        <div>
+            <h2 class="text-lg font-semibold">{title}</h2>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">{description}</p>
+        </div>
+
+        <button
+                id="contact-close-btn"
+                class="rounded-md border border-black/10 px-3 py-1 text-sm hover:bg-black/5 dark:border-white/20"
+                data-close-dialog="contact-form"
+                aria-label="Dialog schließen"
+        >
+            ✕
+        </button>
     </div>
 
-    <button
-      type="button"
-      class="rounded-md border border-black/10 px-3 py-1 text-sm hover:bg-black/5 dark:border-white/20"
-      data-close-dialog="contact-form"
-      aria-label="Dialog schließen"
-    >
-      ✕
-    </button>
-  </div>
+    <div class="p-4">
+        <form
+                action="https://fabform.io/f/HJyKwfJ"
+                method="POST"
+                class="space-y-4"
+        >
+            <!-- Contact -->
+            <div class="grid gap-4 md:grid-cols-2">
+                <div>
+                    <label for="name" class="block text-sm font-medium">Name *</label>
+                    <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                            autocomplete="name"
+                    />
+                </div>
 
-  <div class="p-4">
-      <form action="https://fabform.io/f/HJyKwfJ" method="POST">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+                <div>
+                    <label for="email" class="block text-sm font-medium">E-Mail *</label>
+                    <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                            autocomplete="email"
+                    />
+                </div>
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+                <div>
+                    <label for="company" class="block text-sm font-medium">Firma / Organisation</label>
+                    <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                            autocomplete="organization"
+                    />
+                </div>
 
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
+                <div>
+                    <label for="role" class="block text-sm font-medium">Ihre Rolle</label>
+                    <input
+                            type="text"
+                            id="role"
+                            name="role"
+                            placeholder="z. B. CTO, Product Owner, Projektleitung"
+                            class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                    />
+                </div>
+            </div>
 
-          <button type="submit">Send</button>
-      </form>
-  </div>
+            <!-- Project -->
+            <div>
+                <label for="project" class="block text-sm font-medium">Projekt / Anliegen *</label>
+                <input
+                        type="text"
+                        id="project"
+                        name="project"
+                        required
+                        placeholder="1–2 Sätze: Was soll erreicht werden?"
+                        class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                />
+            </div>
+
+            <div>
+                <label for="message" class="block text-sm font-medium">Details *</label>
+                <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows="6"
+                        placeholder="Kontext, aktueller Stand, Tech-Stack, Herausforderungen, gewünschtes Ergebnis…"
+                        class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                ></textarea>
+            </div>
+
+            <!-- Timing / Setup -->
+            <div class="grid gap-4 md:grid-cols-3">
+                <div>
+                    <label for="start" class="block text-sm font-medium">Start</label>
+                    <input
+                            type="text"
+                            id="start"
+                            name="start"
+                            placeholder="z. B. sofort / ab Feb"
+                            class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                    />
+                </div>
+
+                <div>
+                    <label for="duration" class="block text-sm font-medium">Zeitraum</label>
+                    <input
+                            type="text"
+                            id="duration"
+                            name="duration"
+                            placeholder="z. B. 4–8 Wochen"
+                            class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                    />
+                </div>
+
+                <div>
+                    <label for="workload" class="block text-sm font-medium">Auslastung</label>
+                    <input
+                            type="text"
+                            id="workload"
+                            name="workload"
+                            placeholder="z. B. 2–3 Tage/Woche"
+                            class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                    />
+                </div>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2">
+                <div>
+                    <label for="mode" class="block text-sm font-medium">Remote / Onsite</label>
+                    <select
+                            id="mode"
+                            name="mode"
+                            class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                    >
+                        <option value="">Bitte wählen…</option>
+                        <option value="remote">Remote</option>
+                        <option value="hybrid">Hybrid</option>
+                        <option value="onsite">Onsite</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="budget" class="block text-sm font-medium">Budget / Stundensatzrahmen (optional)</label>
+                    <input
+                            type="text"
+                            id="budget"
+                            name="budget"
+                            placeholder="z. B. bis 120€/h oder Budgetrahmen"
+                            class="mt-1 w-full rounded-md border border-black/10 px-3 py-2 text-sm dark:border-white/20"
+                    />
+                </div>
+            </div>
+
+            <!-- GDPR / consent -->
+            <div class="flex items-start gap-2">
+                <input id="consent" name="consent" type="checkbox" required class="mt-1"/>
+                <label for="consent" class="text-sm text-gray-700 dark:text-gray-300">
+                    Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. *
+                </label>
+            </div>
+
+            <div class="hidden" aria-hidden="true">
+                <label for="hp_website">Website</label>
+                <input
+                        id="hp_website"
+                        name="hp_website"
+                        type="text"
+                        tabindex="-1"
+                        autocomplete="off"
+                        inputmode="url"
+                />
+            </div>
+
+            <Button
+                    disabled={true}
+                    id="submit-button"
+                    type="submit"
+                    class="inline-flex items-center justify-center rounded-md border border-black/10 px-4 py-2 text-sm font-medium hover:bg-black/5 dark:border-white/20"
+            >
+                Anfrage senden
+            </Button>
+
+            <p class="text-xs text-gray-500">
+                * Pflichtfelder. Ich melde mich in der Regel innerhalb von 1–2 Werktagen.
+            </p>
+        </form>
+    </div>
 </dialog>
 
 <script is:inline>
     (() => {
-        const openBtn = document.querySelector(`[data-open-dialog="contact-form"]`);
-        const closeBtn = document.querySelector(`[data-close-dialog="contact-form"]`);
+        const form = document.querySelector("form");
+        if (!form) return;
+
+        const consent = document.getElementById(`consent`);
+        const closeBtn = document.getElementById(`contact-close-btn`);
+        const openBtn = document.getElementById(`contact-open-btn`);
+        const submitBtn = document.getElementById(`submit-button`);
         const dialog = document.getElementById("contact-form");
 
-        if (!openBtn || !dialog) return;
+        if (!closeBtn || !dialog) return;
 
         const isDialogSupported = typeof dialog.showModal === "function";
 
@@ -79,6 +247,17 @@ const {
 
         openBtn.addEventListener("click", open);
         closeBtn?.addEventListener("click", close);
+
+        consent.addEventListener('change', (e) => {
+            submitBtn.disabled = !consent.checked;
+        })
+
+        form.addEventListener("submit", (e) => {
+            const hp = form.querySelector('input[name="hp_website"]');
+            if (hp && hp.value.trim().length > 0) {
+                e.preventDefault(); // Bot stoppen
+            }
+        });
 
         dialog.addEventListener("cancel", (e) => {
             e.preventDefault();
@@ -100,8 +279,8 @@ const {
 
 
 <style>
-  /* nicer backdrop */
-  dialog::backdrop {
-    background: rgba(0, 0, 0, 0.4);
-  }
+    /* nicer backdrop */
+    dialog::backdrop {
+        background: rgba(0, 0, 0, 0.4);
+    }
 </style>
