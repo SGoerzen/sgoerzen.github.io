@@ -11,7 +11,7 @@ export const LINKS = {
   gitlab: 'https://gitlab.com/sgoerzen',
   linkedin: 'https://www.linkedin.com/in/sergej-goerzen/',
   mail: 'mailto:sergej@goerzen.consulting',
-  //instagram: 'https://www.instagram.com/caj_ink/',
+  instagram: 'https://www.instagram.com/sgoerzen92/',
   //medium: 'https://ladvace.medium.com/',
   //discord: 'https://discordapp.com/users/163300027618295808',
 }
