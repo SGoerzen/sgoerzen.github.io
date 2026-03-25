@@ -3,15 +3,11 @@ import { IMPRESSUM } from '../lib/constants'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import TopLayout from '../layouts/TopLayout.astro'
 import BottomLayout from '../layouts/BottomLayout.astro'
-import { Home } from 'lucide-react'
 ---
 
 <BaseLayout title={IMPRESSUM.TITLE} description={IMPRESSUM.DESCRIPTION}>
     <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
         <TopLayout>
-            <div>
-                <a href="/" aria-label="Home"><Home /></a>
-            </div>
             <h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
                 {IMPRESSUM.TITLE}
             </h2>

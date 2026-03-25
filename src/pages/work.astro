@@ -1,26 +1,21 @@
 ---
-import { WORK, EXPERIENCE } from '../lib/constants'
+import { WORK, EXPERIENCE, STUDIES } from '../lib/constants'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import TopLayout from '../layouts/TopLayout.astro'
 import BottomLayout from '../layouts/BottomLayout.astro'
-import { Home } from 'lucide-react'
 ---
 
 <BaseLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
   <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
     <TopLayout>
-      <div>
-        <a href="/" aria-label="Startseite">
-          <Home />
-        </a>
-      </div>
       <h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
         {WORK.TITLE}
       </h2>
     </TopLayout>
 
     <BottomLayout>
-      <ul>
+      <h3 class="text-xl font-semibold">Berufserfahrung</h3>
+      <ul class="mt-4">
         {
           EXPERIENCE.map((entry) => (
             <li class="animate mt-4 border-b border-black/10 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25">
@@ -44,6 +39,34 @@ import { Home } from 'lucide-react'
           ))
         }
       </ul>
+
+      <section class="mt-10">
+        <h3 class="text-xl font-semibold">Ausbildung & akademischer Hintergrund</h3>
+        <ul class="mt-4">
+          {
+            STUDIES.map((s) => (
+              <li class="animate mt-4 border-b border-black/10 py-6 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25">
+                <div class="mb-2 text-sm uppercase">{s.date}</div>
+                {s.link ? (
+                  <a href={s.link} target="_blank" rel="noreferrer" class="font-semibold text-primary">
+                    {s.institution}
+                  </a>
+                ) : (
+                  <div class="font-semibold">{s.institution}</div>
+                )}
+                <div class="text-sm font-semibold">{s.title}</div>
+                {s.details?.length ? (
+                  <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+                    {s.details.map((d) => (
+                      <li>{d}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
     </BottomLayout>
   </main>
 </BaseLayout>

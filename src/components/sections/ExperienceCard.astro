@@ -1,20 +1,33 @@
 ---
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
-import { CASE_STUDIES } from '../../lib/constants'
+import { CV_PROJECTS } from '../../lib/constants'
+
+const getYears = (period: string) => {
+  const match = period.match(/(\d{4})\s*-\s*(\d{4}|xxxx)/i)
+  if (!match) return { start: 0, end: 0 }
+  const start = Number(match[1])
+  const end = match[2].toLowerCase() === 'xxxx' ? 9999 : Number(match[2])
+  return { start, end }
+}
+
+const sortedProjects = [...CV_PROJECTS].sort((a, b) => {
+  const aYears = getYears(a.period)
+  const bYears = getYears(b.period)
+  if (aYears.end !== bYears.end) return bYears.end - aYears.end
+  return bYears.start - aYears.start
+})
 ---
 
-<Card colSpan="md:col-span-2 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Projektbeispiele" body="Ausgewählte Beispiele aus Architektur-, Modernisierungs- und Delivery-Mandaten.">
+<Card colSpan="md:col-span-2 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Projektbeispiele" body="Auszug aus konkreten Projekten und Mandaten.">
   <section id="cases" class="mt-4 space-y-5">
     {
-      CASE_STUDIES.map((entry) => (
+      sortedProjects.slice(0, 4).map((entry) => (
         <article class="rounded-xl border p-4">
-          <p class="m-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">{entry.client}</p>
+          <p class="m-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Zeitraum: {entry.period}</p>
           <h3 class="mt-1 text-lg font-semibold">{entry.title}</h3>
-          <p class="mt-2 text-sm"><span class="font-semibold">Ausgangslage:</span> {entry.challenge}</p>
-          <p class="mt-2 text-sm"><span class="font-semibold">Vorgehen:</span> {entry.approach}</p>
-          <p class="mt-2 text-sm"><span class="font-semibold">Ergebnis:</span> {entry.result}</p>
-          <p class="mt-2 text-xs text-muted-foreground">Fokus: {entry.focus}</p>
+          <p class="mt-2 text-xs text-muted-foreground">{entry.stack.join(' · ')}</p>
+          <p class="mt-2 text-sm">{entry.description}</p>
         </article>
       ))
     }

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="OmiLAXR ecosystem">
+  <defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#10203d" /><stop offset="100%" stop-color="#274f9f" /></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#g5)" />
+  <rect x="80" y="90" width="1040" height="450" rx="20" fill="#ffffff" opacity="0.08" />
+  <text x="120" y="240" fill="#ffffff" font-family="Arial, sans-serif" font-size="64" font-weight="700">OmiLAXR Ecosystem</text>
+  <text x="120" y="310" fill="#d9e4ff" font-family="Arial, sans-serif" font-size="30">Modular Learning Analytics for XR</text>
+</svg>

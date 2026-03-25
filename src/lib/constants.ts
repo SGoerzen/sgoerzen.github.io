@@ -77,50 +77,320 @@ export const SERVICES = [
   },
 ]
 
-export const CASE_STUDIES = [
+export const LEGACY_PROJECTS = [
   {
-    title: 'Modernisierung eines gewachsenen Backend-Systems (.NET)',
-    client: 'Mittelständisches Produktunternehmen',
-    challenge:
-      'Uneinheitliche Architektur, steigende Delivery-Zyklen und hohe Regressionsrisiken bei Änderungen.',
-    approach:
-      'Architektur-Review, schrittweise Entkopplung kritischer Module, Einführung klarer Schnittstellen und testbarer Domänengrenzen.',
-    result:
-      'Schnellere Releases, weniger Seiteneffekte bei Features und deutlich besser planbare Weiterentwicklung.',
-    focus: 'Architektur, Refactoring, Delivery',
+    year: '2016',
+    title: 'Road.de Autosuchmaschine',
+    context: 'Work',
+    source: 'Jekyll-Archiv',
+    period: '2012 - 2013',
+    stack: ['WPF', 'PHP', 'C#', '.NET', 'Konsolenanwendung', 'Mobile.de API', 'HTML', 'CSS'],
+    homepage: 'https://web.archive.org/web/20131229060051/http://www.road.de/',
+    image: '/project-images/road-de.png',
+    description:
+      'Frühes Projekt aus dem Archiv. Die Detailbeschreibung liegt im Altbestand nur in Metadatenform vor.',
   },
   {
-    title: 'Technische Stabilisierung eines Integrationsprojekts',
-    client: 'B2B-Produktteam mit mehreren Drittsystemen',
-    challenge:
-      'Instabile Datenflüsse zwischen APIs, hoher manueller Aufwand im Betrieb und unklare Verantwortlichkeiten.',
-    approach:
-      'Analyse der Integrationskette, robuste Fehlerpfade, Monitoring-Grundlagen und klare technische Verantwortungsgrenzen.',
-    result:
-      'Deutlich stabilerer Betrieb, verkürzte Reaktionszeiten bei Vorfällen und bessere Transparenz für das Team.',
-    focus: 'Integrationen, Betriebsstabilitaet, Ownership',
+    year: '2017',
+    title: 'Control Expert',
+    context: 'Study',
+    source: 'Jekyll-Archiv',
+    period: '2017 - xxxx',
+    stack: ['C#', '.NET', 'Web'],
+    image: '/project-images/legacy-projects.svg',
+    description:
+      'Archivprojekt mit Studienkontext. Technische Details werden nachträglich manuell ergänzt.',
   },
   {
-    title: 'XR-Modul als differenzierendes Produktfeature',
-    client: 'Produktteam mit bestehender Web-/Mobile-Anwendung',
-    challenge:
-      'XR-Funktionalität sollte integriert werden, ohne das Kernprodukt technologisch zu zerlegen.',
-    approach:
-      'Unity/XR-Modul gezielt an bestehende Produkt- und Backend-Schnittstellen angebunden, mit Fokus auf Betrieb und Wartbarkeit.',
-    result:
-      'Innovatives Feature mit realem Produktnutzen, ohne separate Schattenplattform aufzubauen.',
-    focus: 'XR als differenzierender Baustein',
+    year: '2017',
+    title: 'E.ON',
+    context: 'Study',
+    source: 'Jekyll-Archiv',
+    period: '2017 - xxxx',
+    stack: ['Web', 'Integrationen', 'Datenverarbeitung'],
+    image: '/project-images/legacy-projects.svg',
+    description:
+      'Archivprojekt im Umfeld größerer Organisationskontexte; im Altbestand sind nur Basisdaten vorhanden.',
+  },
+  {
+    year: '2017',
+    title: 'Diverse Homepages',
+    context: 'Work',
+    source: 'Jekyll-Archiv',
+    period: '2017 - xxxx',
+    stack: ['HTML', 'CSS', 'JavaScript', 'CMS'],
+    image: '/project-images/legacy-projects.svg',
+    description:
+      'Sammlung mehrerer Webprojekte aus dem Kundenumfeld. Konkrete Einzelbeschreibungen werden händisch gepflegt.',
+  },
+  {
+    year: '2017',
+    title: 'Bachelorarbeit',
+    context: 'Study',
+    source: 'Jekyll-Archiv',
+    period: '2017 - xxxx',
+    stack: ['Forschung', 'Software Engineering', 'Dokumentation'],
+    image: '/project-images/BA.png',
+    description:
+      'Akademisches Projekt mit Praxisbezug; technische Details werden aus den Unterlagen ergänzt.',
+  },
+  {
+    year: '2018',
+    title: 'LowPoly Hunter',
+    context: 'Study, Master Studies, Game Development, Level Generation, Physics Programming',
+    source: 'Jekyll-Archiv',
+    period: '2018 - xxxx',
+    stack: ['C++', 'OpenGL', 'GLSL', 'Game Development', 'Physics Programming', 'Level Generation'],
+    image: '/project-images/low-poly-game.jpg',
+    description:
+      'Projekt im Bereich interaktive 3D-/Game-Entwicklung als Teil des früheren Portfolios.',
+  },
+  {
+    year: '2019',
+    title: 'Printlayout Editor',
+    context: 'Work',
+    source: 'Jekyll-Archiv',
+    period: '2019 - xxxx',
+    stack: ['JavaScript', 'Canvas', 'UI Engineering'],
+    image: '/project-images/legacy-projects.svg',
+    description:
+      'Editor-Projekt mit Fokus auf Layout-Workflows; im Altarchiv sind bisher nur Metadaten vorhanden.',
+  },
+  {
+    year: '2019',
+    title: 'Spritesheet Editor',
+    context: 'Freetime',
+    source: 'Jekyll-Archiv',
+    period: '2019 - xxxx',
+    stack: ['JavaScript', 'Canvas', 'Tooling'],
+    image: '/project-images/legacy-projects.svg',
+    description:
+      'Tooling-Projekt aus dem Freizeit-/Experimentierkontext mit Fokus auf Asset-Workflows.',
+  },
+  {
+    year: '2019',
+    title: 'Mosaik mit KonvaJS',
+    context: 'Work',
+    source: 'Jekyll-Archiv',
+    period: '2019 - xxxx',
+    stack: ['JavaScript', 'KonvaJS', 'Canvas'],
+    image: '/project-images/legacy-projects.svg',
+    description:
+      'Canvas-basiertes Projekt mit KonvaJS aus dem historischen Portfolio-Bestand.',
+  },
+]
+
+export const OMILAXR_REPOS = [
+  {
+    name: 'xAPI4Unity',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/xapi-4-unity',
+    period: '2023 - xxxx',
+    stack: ['Unity', 'C#', 'xAPI'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Unity-Paket zur Umwandlung von xAPI-Definitionen in C#-Klassen innerhalb von Unity-Projekten.',
+  },
+  {
+    name: 'LiMoxAPI',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/limoxapi',
+    period: '2017 - xxxx',
+    stack: ['TypeScript', 'Web', 'xAPI'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Live Monitoring Tool for xAPI; dient zur Auswertung und Überwachung von xAPI-bezogenen Datenflüssen.',
+  },
+  {
+    name: 'ReCoPa',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/reco-pa',
+    period: '2017 - xxxx',
+    stack: ['XR', 'Learning Analytics', 'Recommendation'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Repository für einen recommendation-/context-orientierten Baustein innerhalb des OmiLAXR-Ökosystems.',
+  },
+  {
+    name: 'OmiLAXR Website',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/omilaxr-website',
+    period: '2017 - xxxx',
+    stack: ['Web', 'Documentation'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Website- und Dokumentations-Repository für das OmiLAXR-Framework und seine Module.',
+  },
+  {
+    name: 'XR OER Inventory',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/xr-oer-inventory',
+    period: '2017 - xxxx',
+    stack: ['XR', 'Inventory', 'Web'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Inventar-/Katalog-Repository für XR-bezogene OER-Ressourcen im Ecosystem-Kontext.',
+  },
+  {
+    name: 'Adapter Systems',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/adapter-systems',
+    period: '2017 - xxxx',
+    stack: ['Integration', 'Adapters', 'XR'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Adapter-Systeme für die Anbindung und Übersetzung zwischen unterschiedlichen Systembestandteilen.',
+  },
+  {
+    name: 'Assistance System',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/assistance-system',
+    period: '2017 - xxxx',
+    stack: ['XR', 'Guidance', 'Application Logic'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Assistenzsystem-Baustein im OmiLAXR-Umfeld; dient als anwendungsnahes Modul innerhalb des Ecosystems.',
+  },
+  {
+    name: 'OmiLAXR Godot Framework and Modules',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/omilaxr-godot-framework-and-modules',
+    period: '2017 - xxxx',
+    stack: ['Godot', 'XR', 'Modules'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Framework- und Modulansatz für Godot-basierte Umsetzungen im OmiLAXR-Kontext.',
+  },
+  {
+    name: 'OmiLAXRv2 Framework and Modules',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/omilaxrv2-framework-and-modules',
+    period: '2017 - xxxx',
+    stack: ['XR', 'Framework', 'Modules'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Weiterentwicklung des Framework-Konzepts (Version 2) mit modularer Struktur.',
+  },
+  {
+    name: 'OmiVAXR Modules and Visualization Modules',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/omivaxr-modules-and-visualization-modules',
+    period: '2017 - xxxx',
+    stack: ['Visualization', 'XR', 'Modules'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Repository für Visualisierungs- und Modulbausteine im XR-/Analytics-Umfeld.',
+  },
+  {
+    name: 'Research',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/research',
+    period: '2017 - xxxx',
+    stack: ['Research', 'XR', 'Learning Analytics'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Sammelrepository für forschungsnahe Komponenten und Experimente des Ecosystems.',
+  },
+  {
+    name: 'SceneManager',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/scenemanager',
+    period: '2017 - xxxx',
+    stack: ['Unity', 'Scene Management', 'XR'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Baustein für Szenen- und Ablaufsteuerung in XR-/Unity-nahen Projekten.',
+  },
+  {
+    name: 'Starter Dashboard',
+    url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/starter-dashboard',
+    period: '2017 - xxxx',
+    stack: ['Dashboard', 'Web', 'Analytics'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Start-/Übersichts-Dashboard für den Einstieg in das OmiLAXR-Ökosystem.',
+  },
+]
+
+export const CV_PROJECTS = [
+  {
+    title: 'Indoor-AR-Anwendungen mit Systemanbindung',
+    period: '2022 - xxxx',
+    stack: ['Unity', 'C#', 'AR', 'iOS/Android', 'Backend APIs'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Umsetzung von Indoor-AR-Funktionen mit technischer Anbindung an bestehende App- und Backend-Strukturen.',
+    details:
+      'Fokus auf produktionsnahe Integration, stabile Schnittstellen und handhabbare Weiterentwicklung im Bestand.',
+  },
+  {
+    title: 'CTO-nahe Modernisierungsmandate im Mittelstand',
+    period: '2024 - xxxx',
+    stack: ['C#', '.NET', 'Architektur', 'Refactoring', 'Delivery Management'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Mehrere externe CTO-/Senior-Engineer-Mandate mit Fokus auf Stabilisierung, Architekturentscheidungen und technische Lieferfähigkeit.',
+    details:
+      'Enthielt Bestandsanalyse, Priorisierung von technischen Schulden, Entscheidungsvorlagen für Stakeholder und hands-on Umsetzung kritischer Maßnahmen.',
+  },
+  {
+    title: 'API- und Integrationsplattform in .NET/AWS',
+    period: '2017 - 2021',
+    stack: ['.NET Core', 'C#', 'AWS', 'REST APIs', 'SQL'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Aufbau und Weiterentwicklung von API- und Integrationskomponenten in kunden- und produktnahen Projekten.',
+    details:
+      'Schwerpunkt auf belastbarem API-Design, Datenflüssen zwischen Drittsystemen und technischer Qualität im laufenden Delivery-Betrieb.',
+  },
+  {
+    title: 'Desktop-Tooling mit Electron',
+    period: '2018 - 2020',
+    stack: ['Electron', 'TypeScript', 'Node.js', 'UI Engineering'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Mitentwicklung eines Desktop-nahen Tools zur Unterstützung operativer Produkt- und Prozessanforderungen.',
+    details:
+      'Fokus auf robuste Bedienlogik, Integrationsfähigkeit und Wartbarkeit in einem wachsenden Funktionsumfang.',
+  },
+  {
+    title: 'RePiX VR - Interaktive Lernumgebung',
+    period: '2021 - xxxx',
+    stack: ['Unity', 'C#', 'VR', 'Learning Analytics', 'xAPI'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Projekt im RWTH-Umfeld zur interaktiven Vermittlung der Rendering-Pipeline in VR mit Analytics-Bezug.',
+    details:
+      'Diente als praxisnahes XR-/Learning-Projekt mit Fokus auf didaktische Wirksamkeit, technische Instrumentierung und Forschungstransfer.',
+  },
+  {
+    title: 'LiMoxAPI Monitoring Tool',
+    period: '2023 - xxxx',
+    stack: ['xAPI', 'Web', 'Analytics', 'Developer Tooling'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Live-Monitoring-Ansatz zur Unterstützung von XR-Entwicklern bei Analyse und Fehlerbehebung von xAPI-Statements.',
+    details:
+      'Positioniert als Tooling-Baustein im OmiLAXR-Ökosystem zur Transparenz und Qualitätssicherung von Analytics-Datenflüssen.',
+  },
+  {
+    title: 'Web- und CMS-Projekte (TYPO3 / Unternehmensseiten)',
+    period: '2014 - 2017',
+    stack: ['TYPO3', 'PHP', 'MySQL', 'Frontend', 'SEO'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Frühere professionelle Webprojekte inklusive TYPO3-Extensions, Integrationen und responsiver Umsetzung.',
+    details:
+      'Legte den Grundstein für produktionsnahe Arbeit mit Kundenanforderungen, Qualitätssicherung und wartbaren Strukturen.',
+  },
+  {
+    title: 'Frühe C#-Webanwendung mit Marktplatz-APIs',
+    period: '2012 - 2014',
+    stack: ['C#', 'PHP', 'MySQL', 'API Integration'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Entwicklung einer Webanwendung mit Datenmodellierung und Integration externer Marktplatz-Schnittstellen.',
+    details:
+      'Frühes Produktentwicklungsprojekt mit Fokus auf Backend-Logik, Datenkonsistenz und API-Anbindung.',
   },
 ]
 
 export const STUDIES = [
   {
-    title: 'Dr. rer. nat. Informatik (Promotion)',
+    title: 'Dr.-Ing. Informatik (Promotion)',
     institution: 'RWTH Aachen University',
     link: 'https://learntech.rwth-aachen.de',
-    date: '2021 - vsl. Apr. 2026',
+    date: '2021 - vsl. Juni 2026',
     details: [
-      'Fokus: Learning Technologies, XR (AR/VR) und Learning Analytics',
+      'Fokus: Framework-Entwicklung, komplexe Softwaresysteme, Performance und Big-Data-Verarbeitung sowie Learning Technologies, XR (AR/VR) und Learning Analytics.',
       'Produktnahe Forschungssoftware, Frameworkdesign und Evaluation',
     ],
   },
@@ -130,7 +400,7 @@ export const STUDIES = [
     link: 'https://www.rwth-aachen.de',
     date: '2017 - 2021',
     details: [
-      'Schwerpunkte: XR/EdTech, Computergrafik, Software Engineering',
+      'Schwerpunkte: XR/EdTech, VR, Game Development, Computergrafik, Software Engineering',
     ],
   },
   {
@@ -140,6 +410,15 @@ export const STUDIES = [
     date: '2012 - 2017',
     details: [
       'Schwerpunkte: Software Engineering, Webentwicklung, Algorithmen',
+    ],
+  },
+  {
+    title: 'Staatl. gepr. Informationstechnischer Assistent (ITA) mit Fachhochschulreife',
+    institution: 'Berufskolleg Oberberg (Dieringhausen)',
+    link: '',
+    date: '2009 - 2012',
+    details: [
+      'Informatiknahe Ausbildung mit Schwerpunkt auf Programmierung und technischen Grundlagen.',
     ],
   },
 ]
