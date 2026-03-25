@@ -1,55 +1,56 @@
 ---
 import Card from '../Card.astro'
-import {Linkedin, Github, Gitlab, Mail} from 'lucide-react'
+import { Button } from '../ui/button'
+import { Calendar, Mail } from 'lucide-react'
+import { LINKS } from '../../lib/constants'
 ---
 
 <Card colSpan="md:col-span-2 lg:col-span-4" rowSpan="md:row-span-1 lg:row-span-1">
-    <div class="flex h-full w-full">
-        <div class="flex flex-col justify-between gap-4">
-            <div class="flex h-full flex-col">
-                <h6 class="m-0 text-sm font-light text-gray-500 dark:text-white">Willkommen</h6>
-                <p class="m-0 text-lg font-light">
-                    Ich bin <strong>Sergej</strong> – freiberuflicher IT-Berater und Softwaresystem-Engineer.
-                    Ich unterstütze Unternehmen bei der <strong>Digitalisierung von Strukturen und Produkten</strong> – von performanter, sauberer Softwarearchitektur bis zu <strong>interaktiven Formaten</strong> wie <strong>Unity-basierten XR-Anwendungen</strong>, <strong>3D-Produktpreviews</strong> und <strong>webbasierten Konfiguratoren oder Editoren</strong>.
-
-                    Mein Schwerpunkt liegt auf <strong>robusten, wartbaren Systemen, Clean Code</strong> und <strong>Performance</strong>. Darüber hinaus begleite ich Code- und Systemmigrationen zwischen Technologie-Stacks und Programmiersprachen und arbeite mich schnell in neue Domänen und bestehende Codebasen ein.
-                </p>
-                <p class="m-0 text-lg font-light">
-                    Hier findest du meine <a href="/projects" target="_blank" class="text-blue-500">Projektübersicht</a>
-                    mit ausgewählten Referenzen, Tech-Stack und Arbeitsweise.
-                </p>
-                <p class="m-0 text-lg font-light">
-                    Hier findest du meine <a href="https://scholar.google.com/citations?user=lBOpQpgAAAAJ&hl=de" target="_blank"
-                                             class="text-blue-500">Publikationen</a> im Rahmen meiner wissenschaftlichen
-                    Tätigkeit.
-                </p>
-                <p class="m-0 text-lg font-light">
-                    Hier findest du mein eigenes Open Source Framework <a href="https://omilaxr.dev/" target="_blank"
-                                                                          class="text-blue-500">OmiLAXR</a>.
-                </p>
-                <br>
-                <h6 class="m-0 text-sm font-light text-gray-500 dark:text-white">Warum ich?</h6>
-                <p>
-                    Als erfahrener Software Engineer und IT-Berater arbeite ich <strong>pragmatisch, strukturiert und hands-on</strong>. Mein Anspruch ist nicht nur funktionierende Software, sondern Lösungen, die <strong>langfristig wartbar, performant</strong> und <strong>verständlich</strong> bleiben.
-
-                    Ich unterstütze Unternehmen dabei, technische Optionen realistisch zu bewerten, <strong>Architektur- und Migrationsentscheidungen</strong> sauber vorzubereiten und Risiken früh sichtbar zu machen – besonders dann, wenn bestehende Systeme weiterentwickelt oder neue Technologien integriert werden sollen. Dabei übernehme ich bei Bedarf eine <strong>technische Lead-Rolle</strong>, um Entscheidungen zu bündeln und Umsetzung gezielt voranzutreiben.
-
-                    Ein besonderer Fokus liegt auf der <strong>inkrementellen Erweiterung bestehender Anwendungen</strong>. Interaktive oder XR-basierte Funktionen – etwa <strong>AR-Module, 3D-Visualisierungen oder Produktkonfiguratoren</strong> – integriere ich gezielt in vorhandene <strong>Web- oder native iOS/Android-Apps</strong>, beispielsweise durch den Einsatz von <strong>Unity as a Library</strong>, statt monolithische Neuentwicklungen zu erzwingen.
-
-                    Dabei übernehme ich Verantwortung für <strong>klare Schnittstellen, saubere Code- und Performance-Standards</strong> sowie eine strukturierte Umsetzung bis zur Übergabe. Wenn zusätzliche Kompetenzen erforderlich sind, unterstütze ich bei der Einbindung passender Spezialisten – ohne <strong>Overhead</strong>, aber mit klarer technischer Führung.
-                </p>
-            </div>
-            <div class="flex gap-4">
-
-
-            </div>
-        </div>
-        <img
-                width="200"
-                height="200"
-                src="me.png"
-                class="pointer-events-none absolute bottom-[-20px] right-[-110px] z-[-1] max-h-[200px] w-auto select-none opacity-50 md:relative md:bottom-auto md:right-auto md:z-auto md:opacity-100"
-                alt="memoji of andres plaza"
-        />
+  <section id="start" class="flex h-full w-full flex-col gap-6">
+    <div class="space-y-3">
+      <p class="m-0 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+        Senior Software Engineer für komplexe Systeme
+      </p>
+      <h1 class="m-0 max-w-4xl text-3xl font-bold leading-tight md:text-4xl">
+        Ich bringe Struktur in gewachsene Softwarelandschaften und liefere technische Verantwortung bis in die Umsetzung.
+      </h1>
+      <p class="m-0 max-w-4xl text-base text-muted-foreground md:text-lg">
+        Fokus auf C#/.NET, Architektur, Refactoring und Integrationen. Ich arbeite mich schnell in bestehende Codebasen ein,
+        priorisiere technisch sauber und setze hands-on um. XR/Unity nutze ich gezielt dort, wo es einen klaren Produktvorteil schafft.
+      </p>
     </div>
+
+    <div class="flex flex-wrap gap-3">
+      <a href={LINKS.calendly} target="_blank" rel="noreferrer">
+        <Button>
+          <Calendar />
+          <span class="ml-2">Erstgespräch buchen</span>
+        </Button>
+      </a>
+      <a href="mailto:sergej@goerzen.consulting?subject=Projektanfrage%20komplexe%20Softwareumsetzung">
+        <Button variant="outline">
+          <Mail />
+          <span class="ml-2">Projektanfrage senden</span>
+        </Button>
+      </a>
+      <a href="/projects">
+        <Button variant="ghost">Projektbeispiele ansehen</Button>
+      </a>
+    </div>
+
+    <div class="grid gap-3 text-sm md:grid-cols-3">
+      <div class="rounded-lg border p-3">
+        <p class="m-0 font-semibold">Was ich mache</p>
+        <p class="m-0 text-muted-foreground">Systemanalyse, Architekturarbeit, Modernisierung und Delivery in komplexen Bestandsprojekten.</p>
+      </div>
+      <div class="rounded-lg border p-3">
+        <p class="m-0 font-semibold">Für wen</p>
+        <p class="m-0 text-muted-foreground">Mittelstand, Produktteams und Tech-Organisationen mit kritischen .NET-/Backend- und Integrationsvorhaben.</p>
+      </div>
+      <div class="rounded-lg border p-3">
+        <p class="m-0 font-semibold">Warum ich</p>
+        <p class="m-0 text-muted-foreground">Kombination aus Architekturverständnis, Hands-on Umsetzung und CTO-naher Entscheidungsstärke.</p>
+      </div>
+    </div>
+  </section>
 </Card>

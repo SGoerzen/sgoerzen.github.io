@@ -1,28 +1,25 @@
 ---
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
-import { EXPERIENCE } from '../../lib/constants'
+import { CASE_STUDIES } from '../../lib/constants'
 ---
 
-<Card colSpan="md:col-span-2 lg:col-span-3"
-      rowSpan="md:row-span-2 lg:row-span-2"
-      title="Berufserfahrung">
-  <div class="mt-2 space-y-4">
+<Card colSpan="md:col-span-2 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Projektbeispiele" body="Ausgewählte Beispiele aus Architektur-, Modernisierungs- und Delivery-Mandaten.">
+  <section id="cases" class="mt-4 space-y-5">
     {
-      EXPERIENCE.slice(0, 4).map((exp) => (
-        <div>
-          <h3 class="text-lg font-semibold">{exp.position}</h3>
-          <a class="text-sm text-primary" href={exp?.link ?? ''} target="_blank">
-            {exp.company}
-          </a>
-          <p class="text-sm text-gray-600">
-            {exp.start} - {exp.end}
-          </p>
-        </div>
+      CASE_STUDIES.map((entry) => (
+        <article class="rounded-xl border p-4">
+          <p class="m-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">{entry.client}</p>
+          <h3 class="mt-1 text-lg font-semibold">{entry.title}</h3>
+          <p class="mt-2 text-sm"><span class="font-semibold">Ausgangslage:</span> {entry.challenge}</p>
+          <p class="mt-2 text-sm"><span class="font-semibold">Vorgehen:</span> {entry.approach}</p>
+          <p class="mt-2 text-sm"><span class="font-semibold">Ergebnis:</span> {entry.result}</p>
+          <p class="mt-2 text-xs text-muted-foreground">Fokus: {entry.focus}</p>
+        </article>
       ))
     }
-    <a href="/work">
-      <Button variant="link" className="pl-0"> Mehr anzeigen </Button>
+    <a href="/projects">
+      <Button variant="link" className="pl-0">Alle Projektbeispiele</Button>
     </a>
-  </div>
+  </section>
 </Card>

@@ -1,35 +1,29 @@
 ---
 import Card from '../Card.astro'
-import { Button } from '../ui/button'
-import { STUDIES } from '../../lib/constants'
 ---
 
-<Card colSpan="md:col-span-2 lg:col-span-3"
-      rowSpan="md:row-span-2 lg:row-span-2"
-      title="Studium / Ausbildung">
-  <div class="mt-2 space-y-4">
-    {
-      STUDIES.slice(0, 4).map((s) => (
-          <div>
-            <h3 class="text-lg font-semibold">{s.title}</h3>
+<Card colSpan="md:col-span-2 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Über mich" body="Ich arbeite ruhig, analytisch und umsetzungsorientiert in technisch anspruchsvollen Umfeldern.">
+  <section id="ueber-mich" class="mt-4 space-y-4">
+    <p class="m-0 text-sm text-muted-foreground">
+      Ich kombiniere mehrere Rollen in einer Person: Senior Engineer, Architekturpartner und bei Bedarf externer CTO. Dadurch kann ich
+      sowohl tief im Code arbeiten als auch technische Entscheidungen auf Systemebene absichern.
+    </p>
+    <p class="m-0 text-sm text-muted-foreground">
+      In gewachsenen Projekten übernehme ich typischerweise die Aufgabe, Komplexität zu reduzieren: Abhängigkeiten sichtbar machen,
+      Schnittstellen schärfen, Risiken priorisieren und die Umsetzung in lieferfähige Schritte zerlegen.
+    </p>
+    <p class="m-0 text-sm text-muted-foreground">
+      Mein Schwerpunkt liegt auf C#/.NET- und Integrationsprojekten. XR-/Unity-Erfahrung bringe ich dort ein, wo sie einem Produkt
+      einen klaren Wettbewerbsvorteil gibt und sich sauber in bestehende Systeme integrieren lässt.
+    </p>
 
-            {s?.link ? (
-                <a class="text-sm text-primary" href={s.link} target="_blank" rel="noreferrer">
-                  {s.institution}
-                </a>
-            ) : (
-                <p class="text-sm text-primary">{s.institution}</p>
-            )}
-
-            <p class="text-sm text-gray-600">{s.date}</p>
-
-            {s?.details?.length ? (
-                <ul class="mt-2 list-disc list-inside space-y-1 text-xs text-gray-600">
-                  {s.details.map((d) => <li>{d}</li>)}
-                </ul>
-            ) : null}
-          </div>
-      ))
-    }
-  </div>
+    <div class="rounded-xl border p-4">
+      <h3 class="m-0 text-base font-semibold">Arbeitsweise</h3>
+      <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+        <li>Kurze technische Bestandsaufnahme mit klaren Prioritäten</li>
+        <li>Architektur- und Umsetzungsentscheidungen nachvollziehbar dokumentiert</li>
+        <li>Hands-on Delivery mit regelmäßigen Status- und Risiko-Updates</li>
+      </ul>
+    </div>
+  </section>
 </Card>

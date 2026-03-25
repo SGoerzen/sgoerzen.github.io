@@ -1,57 +1,37 @@
 ---
 import Card from '../Card.astro'
-import {Badge} from '../ui/badge'
+import { Badge } from '../ui/badge'
 ---
 
-<Card colSpan="md:col-span-2 lg:col-span-1" rowSpan="md:row-span-2 lg:row-span-2" title="Skills">
-    <div class="mt-2 space-y-4">
-        <div class="flex flex-col gap-2">
-            <h3 class="text-sm font-semibold text-muted-foreground">Kernkompetenz</h3>
-            <div class="flex w-full flex-wrap items-center justify-center gap-2">
-                <Badge variant="outline">Modernisierung</Badge>
-                <Badge variant="outline">SaaS</Badge>
-                <Badge variant="outline">Softwarearchitektur</Badge>
-                <Badge variant="outline">Full-Stack</Badge>
-                <Badge variant="outline">XR (VR/AR)</Badge>
-                <Badge variant="outline">Learning Analytics</Badge>
-                <Badge variant="outline">CI/CD</Badge>
-            </div>
-        </div>
-        <div class="flex flex-col gap-2">
-            <h3 class="text-sm font-semibold text-muted-foreground">Tech-Stack</h3>
-            <div class="flex w-full flex-wrap items-center justify-center gap-2">
-                <Badge variant="outline">C#/.NET</Badge>
-                <Badge variant="outline">ASP.NET Core</Badge>
-                <Badge variant="outline">TypeScript</Badge>
-                <Badge variant="outline">Node.js</Badge>
-                <Badge variant="outline">React • Vue • Angular</Badge>
-                <Badge variant="outline">SQL</Badge>
-                <Badge variant="outline">AWS</Badge>
-                <Badge variant="outline">Unity</Badge>
-                <Badge variant="outline">AvaloniaUI</Badge>
-                <Badge variant="outline">Flutter</Badge>
-                <Badge variant="outline">C++</Badge>
-                <Badge variant="outline">xAPI</Badge>
-            </div>
-        </div>
-        <div class="flex flex-col gap-2">
-            <h3 class="text-sm font-semibold text-muted-foreground">Dienstleistungen</h3>
-            <div class="flex w-full flex-wrap items-center justify-center gap-2">
-                <Badge variant="outline">Discovery & Tech-Assessment</Badge>
-                <Badge variant="outline">Modernisierungssprint</Badge>
-                <Badge variant="outline">Migrationsplan & Umsetzung</Badge>
-                <Badge variant="outline">Legacy-Stabilisierung</Badge>
-                <Badge variant="outline">Performance-Audit & Tuning</Badge>
-            </div>
-        </div>
-        <div class="flex flex-col gap-2">
-            <h3 class="text-sm font-semibold text-muted-foreground">Sprachen</h3>
-            <div class="flex w-full flex-wrap items-center justify-center gap-2">
-                <Badge variant="outline">Deutsch (Muttersprache)</Badge>
-                <Badge variant="outline">English (verhandlungssicher)</Badge>
-                <Badge variant="outline">Russisch (Muttersprache)</Badge>
-            </div>
-        </div>
+<Card colSpan="md:col-span-2 lg:col-span-1" rowSpan="md:row-span-2 lg:row-span-2" title="Fokus & Zielkunden">
+  <section class="mt-2 space-y-4" id="fokus">
+    <div class="flex flex-col gap-2">
+      <h3 class="text-sm font-semibold text-muted-foreground">Technischer Fokus</h3>
+      <div class="flex w-full flex-wrap gap-2">
+        <Badge variant="outline">C#/.NET Backend</Badge>
+        <Badge variant="outline">Architektur</Badge>
+        <Badge variant="outline">Modernisierung</Badge>
+        <Badge variant="outline">Refactoring</Badge>
+        <Badge variant="outline">Integrationen</Badge>
+        <Badge variant="outline">Performance</Badge>
+        <Badge variant="outline">Tech Delivery</Badge>
+      </div>
     </div>
-</Card>
 
+    <div class="flex flex-col gap-2">
+      <h3 class="text-sm font-semibold text-muted-foreground">Typische Kunden</h3>
+      <div class="space-y-2 text-sm text-muted-foreground">
+        <p class="m-0">Mittelständische Unternehmen mit gewachsenen Systemen</p>
+        <p class="m-0">Produktteams mit Architektur- oder Delivery-Problemen</p>
+        <p class="m-0">Vorhaben mit komplexen .NET-/Backend-/Integrationsanforderungen</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <h3 class="text-sm font-semibold text-muted-foreground">Differenzierung</h3>
+      <div class="space-y-2 text-sm text-muted-foreground">
+        <p class="m-0">XR/Unity/AR als gezielter Produktbaustein, nicht als Selbstzweck.</p>
+      </div>
+    </div>
+  </section>
+</Card>
