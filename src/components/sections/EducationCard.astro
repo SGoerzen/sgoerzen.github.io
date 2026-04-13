@@ -1,0 +1,30 @@
+---
+import Card from '../Card.astro'
+import { STUDIES } from '../../lib/constants'
+---
+
+<Card
+  colSpan="md:col-span-2 lg:col-span-4"
+  rowSpan="md:row-span-1 lg:row-span-1"
+  title="Ausbildung & akademischer Hintergrund"
+  body="Fundiertes Informatikprofil mit Schwerpunkt auf XR, Learning Analytics und Software Engineering."
+>
+  <section id="ausbildung" class="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+    {
+      STUDIES.map((s) => (
+        <article class="rounded-xl border p-4">
+          <h3 class="m-0 text-base font-semibold">{s.title}</h3>
+          <p class="mt-1 text-sm text-muted-foreground">{s.date}</p>
+          {s.link ? (
+            <a href={s.link} target="_blank" rel="noreferrer" class="mt-2 block text-sm text-primary">
+              {s.institution}
+            </a>
+          ) : (
+            <p class="mt-2 text-sm text-muted-foreground">{s.institution}</p>
+          )}
+          {s.details?.length ? <p class="mt-2 text-sm text-muted-foreground">{s.details[0]}</p> : null}
+        </article>
+      ))
+    }
+  </section>
+</Card>

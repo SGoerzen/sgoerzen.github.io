@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import TopLayout from '../layouts/TopLayout.astro'
+import BottomLayout from '../layouts/BottomLayout.astro'
+import { ExternalLink } from 'lucide-react'
+import { PUBLICATIONS_PAGE, PUBLICATIONS, SUPERVISED_WORKS } from '../lib/publications'
+
+const publications = [...PUBLICATIONS].sort((a, b) => b.year - a.year)
+const supervisedWorks = [...SUPERVISED_WORKS].sort((a, b) => b.year - a.year)
+---
+
+<BaseLayout title={PUBLICATIONS_PAGE.TITLE} description={PUBLICATIONS_PAGE.DESCRIPTION}>
+  <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
+    <TopLayout>
+      <h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        {PUBLICATIONS_PAGE.TITLE}
+      </h2>
+    </TopLayout>
+
+    <BottomLayout>
+      <div class="space-y-10">
+        <section class="space-y-4">
+          <h3 class="text-xl font-semibold">Eigene Publikationen und Beiträge</h3>
+          <p class="max-w-3xl text-sm text-muted-foreground">
+            Enthält Publikationen mit Beteiligung von Sergej Görzen. Zu jedem Eintrag sind Autor:innen, Jahr, ggf. Link und ein
+            aufklappbarer Kurzabstract hinterlegt.
+          </p>
+
+          <ul class="space-y-3">
+            {
+              publications.map((entry) => (
+                <li class="rounded-xl border p-4">
+                  <div class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    <span>{entry.year}</span>
+                    <span>•</span>
+                    <span>{entry.venue}</span>
+                  </div>
+
+                  <h4 class="mt-2 text-base font-semibold leading-snug">{entry.title}</h4>
+                  <p class="mt-2 text-sm text-muted-foreground">{entry.authors}</p>
+
+                  <div class="mt-3 flex flex-wrap items-center gap-4">
+                    {
+                      entry.link && (
+                        <a
+                          href={entry.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          class="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                        >
+                          Veröffentlichung
+                          <ExternalLink class="h-4 w-4" />
+                        </a>
+                      )
+                    }
+                  </div>
+
+                  {entry.abstract && <p class="mt-3 text-sm text-muted-foreground">{entry.abstract}</p>}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h3 class="text-xl font-semibold">Betreute Arbeiten (separate Liste)</h3>
+          <p class="max-w-3xl text-sm text-muted-foreground">
+            Diese Einträge sind bewusst getrennt von den Publikationen aufgeführt und enthalten von dir betreute Abschlussarbeiten.
+          </p>
+
+          <ul class="space-y-3">
+            {
+              supervisedWorks.map((entry) => (
+                <li class="rounded-xl border p-4">
+                  <div class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    <span>{entry.year}</span>
+                    <span>•</span>
+                    <span>{entry.degree}</span>
+                    <span>•</span>
+                    <span>{entry.institution}</span>
+                  </div>
+
+                  <h4 class="mt-2 text-base font-semibold leading-snug">{entry.title}</h4>
+                  <p class="mt-2 text-sm text-muted-foreground">Studierende:r: {entry.student}</p>
+
+                  <div class="mt-3 flex flex-wrap items-center gap-4">
+                    {
+                      entry.link && (
+                        <a
+                          href={entry.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          class="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                        >
+                          Eintrag
+                          <ExternalLink class="h-4 w-4" />
+                        </a>
+                      )
+                    }
+                  </div>
+
+                  {entry.abstract && <p class="mt-3 text-sm text-muted-foreground">{entry.abstract}</p>}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+      </div>
+    </BottomLayout>
+  </main>
+</BaseLayout>

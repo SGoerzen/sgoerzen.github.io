@@ -1,26 +1,153 @@
 ---
-import {PROJECTS} from '../lib/constants'
+import { PROJECTS, LEGACY_PROJECTS, OMILAXR_REPOS, CV_PROJECTS } from '../lib/constants'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import TopLayout from '../layouts/TopLayout.astro'
 import BottomLayout from '../layouts/BottomLayout.astro'
-import {Home} from "lucide-react";
+import ProjectDialog from '../components/ProjectDialog.astro'
 
+const getYears = (period: string) => {
+  const match = period.match(/(\d{4})\s*-\s*(\d{4}|xxxx)/i)
+  if (!match) return { start: 0, end: 0 }
+  const start = Number(match[1])
+  const end = match[2].toLowerCase() === 'xxxx' ? 9999 : Number(match[2])
+  return { start, end }
+}
+
+const byRecent = (a: { period: string }, b: { period: string }) => {
+  const aYears = getYears(a.period)
+  const bYears = getYears(b.period)
+  if (aYears.end !== bYears.end) return bYears.end - aYears.end
+  return bYears.start - aYears.start
+}
+
+const sortedCvProjects = [...CV_PROJECTS].sort(byRecent)
+const sortedLegacyProjects = [...LEGACY_PROJECTS].sort(byRecent)
+const sortedOmiLaxrRepos = [...OMILAXR_REPOS].sort(byRecent)
 ---
 
 <BaseLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
   <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
     <TopLayout>
-      <div>
-        <a href="/"><Home /></a>
-      </div>
-      <h2
-        class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"
-      >
+      <h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
         {PROJECTS.TITLE}
       </h2>
     </TopLayout>
+
     <BottomLayout>
-      Diese Seite ist in Bearbeitung.
+      <div class="mb-8 rounded-lg border-4 border-red-600 bg-red-50 p-6 text-center dark:bg-red-950">
+        <p class="text-2xl font-black text-red-600 uppercase tracking-wide">
+          ⚠ Diese Seite ist aktuell im Aufbau und unvollständig ⚠
+        </p>
+        <p class="mt-2 text-base font-bold text-red-500">
+          Inhalte werden schrittweise ergänzt und können sich noch ändern.
+        </p>
+      </div>
+      <div class="space-y-8">
+        <section class="space-y-4">
+          <h3 class="text-xl font-semibold">OmiLAXR Ecosystem Repositories</h3>
+          <p class="max-w-3xl text-sm text-muted-foreground">
+            Erste Beschreibungen der einzelnen Repositories im Ecosystem. Neuere/laufende Einträge sind nach oben sortiert.
+          </p>
+          <div class="grid gap-3 md:grid-cols-2">
+            {
+              sortedOmiLaxrRepos.map((repo, index) => (
+                <article class="rounded-lg border p-4">
+                  <a href={repo.url} target="_blank" rel="noreferrer" class="font-semibold text-primary">{repo.name}</a>
+                  <p class="mt-1 text-xs text-muted-foreground">Zeitraum: {repo.period.replace('xxxx', 'heute')}</p>
+                  <p class="mt-1 text-xs text-muted-foreground">{repo.stack.join(' · ')}</p>
+                  <p class="mt-2 text-sm text-muted-foreground">{repo.description}</p>
+                  <ProjectDialog
+                    dialogId={`omilaxr-${index}`}
+                    title={repo.name}
+                    description={repo.description}
+                    image={repo.image}
+                  >
+                    <p class="text-sm"><span class="font-semibold">Zeitraum:</span> {repo.period}</p>
+                    <p class="text-sm">{repo.stack.join(' · ')}</p>
+                    <p class="text-sm"><span class="font-semibold">Repository:</span> <a href={repo.url} target="_blank" rel="noreferrer" class="text-primary">{repo.url}</a></p>
+                  </ProjectDialog>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section class="space-y-4">
+          <h3 class="text-xl font-semibold">Projekte aus dem CV</h3>
+          <p class="max-w-3xl text-sm text-muted-foreground">
+            Ergänzte Projektliste aus dem CV, damit alle relevanten Stationen auch auf der Projektseite sichtbar sind.
+          </p>
+          <div class="grid gap-3 md:grid-cols-2">
+            {
+              sortedCvProjects.map((project, index) => (
+                <article class="rounded-lg border p-4">
+                  <p class="mt-1 font-semibold">{project.title}</p>
+                  <p class="mt-1 text-xs text-muted-foreground">Zeitraum: {project.period.replace('xxxx', 'heute')}</p>
+                  <p class="mt-1 text-xs text-muted-foreground">{project.stack.join(' · ')}</p>
+                  <p class="mt-2 text-sm text-muted-foreground">{project.description}</p>
+                  <ProjectDialog
+                    dialogId={`cv-${index}`}
+                    title={project.title}
+                    description={project.description}
+                    image={project.image}
+                  >
+                    <p class="text-sm"><span class="font-semibold">Zeitraum:</span> {project.period}</p>
+                    <p class="text-sm">{project.stack.join(' · ')}</p>
+                    <p class="text-sm">{project.details}</p>
+                  </ProjectDialog>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section class="space-y-4">
+          <h3 class="text-xl font-semibold">Frühere Projekte (Auszug)</h3>
+          <p class="max-w-3xl text-sm text-muted-foreground">
+            Aus meinem älteren Jekyll-Portfolio übernommene Projekte. Diese Einträge dienen als zusätzlicher Background und zeigen
+            thematische Breite in früheren Jahren.
+          </p>
+          <div class="grid gap-3 md:grid-cols-2">
+            {
+              sortedLegacyProjects.map((project, index) => (
+                <article class="rounded-lg border p-4">
+                  <p class="m-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">{project.year}</p>
+                  {
+                    project.homepage ? (
+                      <a href={project.homepage} target="_blank" rel="noreferrer" class="mt-1 block font-semibold text-primary">
+                        {project.title}
+                      </a>
+                    ) : (
+                      <p class="mt-1 font-semibold">{project.title}</p>
+                    )
+                  }
+                  <p class="mt-1 text-xs text-muted-foreground">Zeitraum: {project.period.replace('xxxx', 'heute')}</p>
+                  <p class="mt-1 text-xs text-muted-foreground">{project.stack.join(' · ')}</p>
+                  <ProjectDialog
+                    dialogId={`legacy-${index}`}
+                    title={project.title}
+                    description={project.description}
+                    image={project.image}
+                  >
+                    <p class="text-sm"><span class="font-semibold">Zeitraum:</span> {project.period}</p>
+                    <p class="text-sm">{project.stack.join(' · ')}</p>
+                    {
+                      project.homepage && (
+                        <p class="text-sm">
+                          <span class="font-semibold">Homepage:</span>{' '}
+                          <a href={project.homepage} target="_blank" rel="noreferrer" class="text-primary">
+                            {project.homepage}
+                          </a>
+                        </p>
+                      )
+                    }
+                  </ProjectDialog>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+      </div>
     </BottomLayout>
   </main>
 </BaseLayout>

@@ -30,20 +30,17 @@ import { ModeToggle } from '../components/ui/ThemeToggle'
     </div>
     <div class="flex flex-1 items-center justify-end space-x-4">
       <nav class="flex items-center space-x-1">
-        <a
-          href="https://scholar.google.com/citations?user=lBOpQpgAAAAJ&hl=de"
-          target="_blank"
-          rel="noreferrer"
-          class={buttonVariants({ variant: 'ghost' })}>
-          Publikationen
+        <a href="/" class={buttonVariants({ variant: 'ghost' })}>
+          Start
         </a>
-        <a
-            href="/projects"
-            target="_blank"
-            rel="noreferrer"
-            style="margin-right: 5px"
-            class={buttonVariants({ variant: 'ghost' })}>
+        <a href="/projects" class={buttonVariants({ variant: 'ghost' })}>
           Projekte
+        </a>
+        <a href="/work" class={buttonVariants({ variant: 'ghost' })}>
+          Berufserfahrung
+        </a>
+        <a href="/publications" class={buttonVariants({ variant: 'ghost' })}>
+          Publikationen
         </a>
         <ModeToggle transition:persist client:load />
       </nav>

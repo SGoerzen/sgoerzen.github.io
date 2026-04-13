@@ -1,28 +1,38 @@
 ---
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
-import { EXPERIENCE } from '../../lib/constants'
+import { CV_PROJECTS } from '../../lib/constants'
+
+const getYears = (period: string) => {
+  const match = period.match(/(\d{4})\s*-\s*(\d{4}|xxxx)/i)
+  if (!match) return { start: 0, end: 0 }
+  const start = Number(match[1])
+  const end = match[2].toLowerCase() === 'xxxx' ? 9999 : Number(match[2])
+  return { start, end }
+}
+
+const sortedProjects = [...CV_PROJECTS].sort((a, b) => {
+  const aYears = getYears(a.period)
+  const bYears = getYears(b.period)
+  if (aYears.end !== bYears.end) return bYears.end - aYears.end
+  return bYears.start - aYears.start
+})
 ---
 
-<Card colSpan="md:col-span-2 lg:col-span-3"
-      rowSpan="md:row-span-2 lg:row-span-2"
-      title="Berufserfahrung">
-  <div class="mt-2 space-y-4">
+<Card colSpan="md:col-span-2 lg:col-span-3" rowSpan="md:row-span-2 lg:row-span-2" title="Projektbeispiele" body="Auszug aus konkreten Projekten und Mandaten.">
+  <section id="cases" class="mt-4 space-y-5">
     {
-      EXPERIENCE.slice(0, 4).map((exp) => (
-        <div>
-          <h3 class="text-lg font-semibold">{exp.position}</h3>
-          <a class="text-sm text-primary" href={exp?.link ?? ''} target="_blank">
-            {exp.company}
-          </a>
-          <p class="text-sm text-gray-600">
-            {exp.start} - {exp.end}
-          </p>
-        </div>
+      sortedProjects.slice(0, 4).map((entry) => (
+        <article class="rounded-xl border p-4">
+          <p class="m-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Zeitraum: {entry.period.replace('xxxx', 'heute')}</p>
+          <h3 class="mt-1 text-lg font-semibold">{entry.title}</h3>
+          <p class="mt-2 text-xs text-muted-foreground">{entry.stack.join(' · ')}</p>
+          <p class="mt-2 text-sm">{entry.description}</p>
+        </article>
       ))
     }
-    <a href="/work">
-      <Button variant="link" className="pl-0"> Mehr anzeigen </Button>
+    <a href="/projects">
+      <Button variant="link" className="pl-0">Alle Projektbeispiele</Button>
     </a>
-  </div>
+  </section>
 </Card>
