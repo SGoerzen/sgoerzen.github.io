@@ -62,7 +62,7 @@ export const SERVICES = [
     bullets: [
       'Refactoring- und Migrationsstrategie für Bestandssysteme',
       'Domaintaugliche Architektur- und Schnittstellenschnitte',
-      'Performance-, Stabilitaets- und Wartbarkeitsverbesserungen im laufenden Betrieb',
+      'Performance-, Stabilitäts- und Wartbarkeitsverbesserungen im laufenden Betrieb',
     ],
   },
   {
@@ -95,7 +95,7 @@ export const LEGACY_PROJECTS = [
     title: 'Kfz-Schadenmanagement Plattform (Studienprojekt)',
     context: 'Study',
     source: 'Jekyll-Archiv',
-    period: '2017 - xxxx',
+    period: '2017 - 2017',
     stack: ['C#', '.NET', 'Web'],
     image: '/project-images/legacy-projects.svg',
     description:
@@ -106,7 +106,7 @@ export const LEGACY_PROJECTS = [
     title: 'Energieversorger Enterprise-Projekt (Studienprojekt)',
     context: 'Study',
     source: 'Jekyll-Archiv',
-    period: '2017 - xxxx',
+    period: '2017 - 2017',
     stack: ['Web', 'Integrationen', 'Datenverarbeitung'],
     image: '/project-images/legacy-projects.svg',
     description:
@@ -117,7 +117,7 @@ export const LEGACY_PROJECTS = [
     title: 'Diverse Homepages',
     context: 'Work',
     source: 'Jekyll-Archiv',
-    period: '2017 - xxxx',
+    period: '2014 - 2017',
     stack: ['HTML', 'CSS', 'JavaScript', 'CMS'],
     image: '/project-images/legacy-projects.svg',
     description:
@@ -128,7 +128,7 @@ export const LEGACY_PROJECTS = [
     title: 'Bachelorarbeit',
     context: 'Study',
     source: 'Jekyll-Archiv',
-    period: '2017 - xxxx',
+    period: '2017 - 2017',
     stack: ['Forschung', 'Software Engineering', 'Dokumentation'],
     image: '/project-images/BA.png',
     description:
@@ -139,7 +139,7 @@ export const LEGACY_PROJECTS = [
     title: 'LowPoly Hunter',
     context: 'Study, Master Studies, Game Development, Level Generation, Physics Programming',
     source: 'Jekyll-Archiv',
-    period: '2018 - xxxx',
+    period: '2018 - 2019',
     stack: ['C++', 'OpenGL', 'GLSL', 'Game Development', 'Physics Programming', 'Level Generation'],
     image: '/project-images/low-poly-game.jpg',
     description:
@@ -150,7 +150,7 @@ export const LEGACY_PROJECTS = [
     title: 'Printlayout Editor',
     context: 'Work',
     source: 'Jekyll-Archiv',
-    period: '2019 - xxxx',
+    period: '2019 - 2020',
     stack: ['JavaScript', 'Canvas', 'UI Engineering'],
     image: '/project-images/legacy-projects.svg',
     description:
@@ -161,7 +161,7 @@ export const LEGACY_PROJECTS = [
     title: 'Spritesheet Editor',
     context: 'Freetime',
     source: 'Jekyll-Archiv',
-    period: '2019 - xxxx',
+    period: '2019 - 2019',
     stack: ['JavaScript', 'Canvas', 'Tooling'],
     image: '/project-images/legacy-projects.svg',
     description:
@@ -172,7 +172,7 @@ export const LEGACY_PROJECTS = [
     title: 'Mosaik mit KonvaJS',
     context: 'Work',
     source: 'Jekyll-Archiv',
-    period: '2019 - xxxx',
+    period: '2019 - 2020',
     stack: ['JavaScript', 'KonvaJS', 'Canvas'],
     image: '/project-images/legacy-projects.svg',
     description:
@@ -193,7 +193,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'LiMoxAPI',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/limoxapi',
-    period: '2017 - xxxx',
+    period: '2022 - xxxx',
     stack: ['TypeScript', 'Web', 'xAPI'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -202,7 +202,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'ReCoPa',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/reco-pa',
-    period: '2017 - xxxx',
+    period: '2021 - xxxx',
     stack: ['XR', 'Learning Analytics', 'Recommendation'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -211,7 +211,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'OmiLAXR Website',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/omilaxr-website',
-    period: '2017 - xxxx',
+    period: '2021 - xxxx',
     stack: ['Web', 'Documentation'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -220,7 +220,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'XR OER Inventory',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/xr-oer-inventory',
-    period: '2017 - xxxx',
+    period: '2022 - xxxx',
     stack: ['XR', 'Inventory', 'Web'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -229,7 +229,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'Adapter Systems',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/adapter-systems',
-    period: '2017 - xxxx',
+    period: '2021 - xxxx',
     stack: ['Integration', 'Adapters', 'XR'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -238,7 +238,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'Assistance System',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/assistance-system',
-    period: '2017 - xxxx',
+    period: '2021 - xxxx',
     stack: ['XR', 'Guidance', 'Application Logic'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -247,7 +247,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'OmiLAXR Godot Framework and Modules',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/omilaxr-godot-framework-and-modules',
-    period: '2017 - xxxx',
+    period: '2021 - xxxx',
     stack: ['Godot', 'XR', 'Modules'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -256,7 +256,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'OmiLAXRv2 Framework and Modules',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/omilaxrv2-framework-and-modules',
-    period: '2017 - xxxx',
+    period: '2023 - xxxx',
     stack: ['XR', 'Framework', 'Modules'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -265,7 +265,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'OmiVAXR Modules and Visualization Modules',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/omivaxr-modules-and-visualization-modules',
-    period: '2017 - xxxx',
+    period: '2022 - xxxx',
     stack: ['Visualization', 'XR', 'Modules'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -274,7 +274,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'Research',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/research',
-    period: '2017 - xxxx',
+    period: '2021 - xxxx',
     stack: ['Research', 'XR', 'Learning Analytics'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -283,7 +283,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'SceneManager',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/scenemanager',
-    period: '2017 - xxxx',
+    period: '2021 - xxxx',
     stack: ['Unity', 'Scene Management', 'XR'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -292,7 +292,7 @@ export const OMILAXR_REPOS = [
   {
     name: 'Starter Dashboard',
     url: 'https://gitlab.com/learntech-rwth/omilaxr-ecosystem/starter-dashboard',
-    period: '2017 - xxxx',
+    period: '2022 - xxxx',
     stack: ['Dashboard', 'Web', 'Analytics'],
     image: '/project-images/omilaxr.svg',
     description:
@@ -302,14 +302,14 @@ export const OMILAXR_REPOS = [
 
 export const CV_PROJECTS = [
   {
-    title: 'Indoor-AR-Anwendungen mit Systemanbindung',
-    period: '2022 - xxxx',
-    stack: ['Unity', 'C#', 'AR', 'iOS/Android', 'Backend APIs'],
+    title: 'AR Service App – Indoor-Navigation mit VPS',
+    period: '2024 - 2025',
+    stack: ['Flutter', 'Unity', 'C#', 'AR', 'iOS', 'Immersal', 'Supabase', '.NET MAUI'],
     image: '/project-images/cv-projects.svg',
     description:
-      'Umsetzung von Indoor-AR-Funktionen mit technischer Anbindung an bestehende App- und Backend-Strukturen.',
+      'Integration von Indoor-AR in eine laufende iOS-App: Native Unity-Module mit Immersal VPS, Flutter-Unity-Kommunikation, Supabase-Backend und produktionsreife Auslieferung – ohne Rebuild der bestehenden App-Architektur.',
     details:
-      'Fokus auf produktionsnahe Integration, stabile Schnittstellen und handhabbare Weiterentwicklung im Bestand.',
+      'Enthielt Authoring-Tooling (Unity Editor Extensions, Web-Admin-Panel), .NET MAUI Utility zur Scan-Frame-Analyse, iOS-Releases (TestFlight) und Bewertung von VPS-SDKs (Immersal, Vuforia, MultiSet).',
   },
   {
     title: 'CTO-nahe Modernisierungsmandate im Mittelstand',
@@ -317,9 +317,39 @@ export const CV_PROJECTS = [
     stack: ['C#', '.NET', 'Architektur', 'Refactoring', 'Delivery Management'],
     image: '/project-images/cv-projects.svg',
     description:
-      'Mehrere externe CTO-/Senior-Engineer-Mandate mit Fokus auf Stabilisierung, Architekturentscheidungen und technische Lieferfähigkeit.',
+      'Externe CTO-Mandate im Mittelstand: Bestandsanalyse, Architekturentscheidungen und Abbau kritischer technischer Schulden. Jeweils von der Erstanalyse bis zur stabilen Lieferung – ohne laufende Agentur im Hintergrund.',
     details:
-      'Enthielt Bestandsanalyse, Priorisierung von technischen Schulden, Entscheidungsvorlagen für Stakeholder und hands-on Umsetzung kritischer Maßnahmen.',
+      'Enthielt Priorisierung technischer Schulden, Entscheidungsvorlagen für Stakeholder und hands-on Umsetzung kritischer Maßnahmen.',
+  },
+  {
+    title: 'Virtual Photo Booth – WebAR-Fotoerlebnis',
+    period: '2020 - 2025',
+    stack: ['TypeScript', 'Three.js', 'WebGL', 'Vue 3', 'Nuxt 3', 'React', 'DeepAR', 'AWS', 'Node.js'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Browserbasiertes WebAR-Fotoerlebnis mit Live-WebGL-Mosaik für tausende Bilder, AR-Filtern (DeepAR inkl. Smile-Erkennung via 2D-Landmarks) und interaktiven UI-Workflows. Admin-Panel in Vue/Nuxt, Weiterentwicklung in React.',
+    details:
+      'Tech Lead und Koordination externer Freelancer sowie eines Nearshore-Partners. Mitgestaltung der neuen Plattformarchitektur (React-Frontend, serviceorientiertes Backend).',
+  },
+  {
+    title: 'BuddyAnalytics – Analyse-Dashboard für Studiengänge',
+    period: '2022 - 2025',
+    stack: ['TypeScript', 'Angular', 'Python', 'MongoDB', 'Node.js', 'Fastify', 'Docker'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Analytics-Dashboard für evidenzbasierte Curriculumentscheidungen im Hochschulkontext. Tech Lead in einem Konsortium aus drei Universitäten – von Anforderungsklärung bis Konferenzpräsentation.',
+    details:
+      'Anforderungsklärung mit Stakeholdern (Curriculum Designer), Umsetzungsplanung, Reviews und Präsentation der Ergebnisse auf Konferenzen.',
+  },
+  {
+    title: 'SWOFI – Modernisierung eines Lehr-Workflow-Systems',
+    period: '2021 - 2025',
+    stack: ['TypeScript', 'React', 'Vite', 'Node.js', 'Express.js', 'MongoDB', 'Docker'],
+    image: '/project-images/cv-projects.svg',
+    description:
+      'Modernisierung eines bestehenden Lehrsystems in eine wartbare neue Version (PUG → React/TypeScript). Fokus auf Stabilität, Testbarkeit und Integrationsfähigkeit.',
+    details:
+      'Evaluation in der Praxis, Präsentation auf Konferenzen, Förderung der Nutzung bei Professorinnen und Doktorandinnen.',
   },
   {
     title: 'API- und Integrationsplattform in .NET/AWS',
@@ -327,7 +357,7 @@ export const CV_PROJECTS = [
     stack: ['.NET Core', 'C#', 'AWS', 'REST APIs', 'SQL'],
     image: '/project-images/cv-projects.svg',
     description:
-      'Aufbau und Weiterentwicklung von API- und Integrationskomponenten in kunden- und produktnahen Projekten.',
+      'Aufbau und Weiterentwicklung einer API- und Integrationsplattform für Drittsystem-Anbindungen: belastbares API-Design, saubere Datenpipelines, laufender Delivery-Betrieb ohne Unterbrechung.',
     details:
       'Schwerpunkt auf belastbarem API-Design, Datenflüssen zwischen Drittsystemen und technischer Qualität im laufenden Delivery-Betrieb.',
   },
@@ -342,22 +372,22 @@ export const CV_PROJECTS = [
       'Fokus auf robuste Bedienlogik, Integrationsfähigkeit und Wartbarkeit in einem wachsenden Funktionsumfang.',
   },
   {
-    title: 'RePiX VR - Interaktive Lernumgebung',
-    period: '2021 - xxxx',
+    title: 'RePiX VR – Interaktive Lernumgebung',
+    period: '2020 - 2023',
     stack: ['Unity', 'C#', 'VR', 'Learning Analytics', 'xAPI'],
     image: '/project-images/cv-projects.svg',
     description:
-      'Projekt im RWTH-Umfeld zur interaktiven Vermittlung der Rendering-Pipeline in VR mit Analytics-Bezug.',
+      'VR-Lernumgebung zur interaktiven Vermittlung der Rendering-Pipeline (RWTH Aachen) mit xAPI-Integration und Pilotstudie. Grundlage für mehrere Publikationen und Abschlussarbeiten.',
     details:
       'Diente als praxisnahes XR-/Learning-Projekt mit Fokus auf didaktische Wirksamkeit, technische Instrumentierung und Forschungstransfer.',
   },
   {
     title: 'LiMoxAPI Monitoring Tool',
-    period: '2023 - xxxx',
-    stack: ['xAPI', 'Web', 'Analytics', 'Developer Tooling'],
+    period: '2022 - xxxx',
+    stack: ['TypeScript', 'xAPI', 'Web', 'Analytics', 'Developer Tooling'],
     image: '/project-images/cv-projects.svg',
     description:
-      'Live-Monitoring-Ansatz zur Unterstützung von XR-Entwicklern bei Analyse und Fehlerbehebung von xAPI-Statements.',
+      'Live-Monitoring-Tool zur Unterstützung von XR-Entwicklern bei Analyse und Fehlerbehebung von xAPI-Statements in Echtzeit.',
     details:
       'Positioniert als Tooling-Baustein im OmiLAXR-Ökosystem zur Transparenz und Qualitätssicherung von Analytics-Datenflüssen.',
   },
@@ -388,7 +418,7 @@ export const STUDIES = [
     title: 'Dr.-Ing. Informatik (Promotion)',
     institution: 'RWTH Aachen University',
     link: 'https://learntech.rwth-aachen.de',
-    date: '2021 - vsl. Juni 2026',
+    date: '2021 - vsl. Apr. 2026',
     details: [
       'Fokus: Framework-Entwicklung, komplexe Softwaresysteme, Performance und Big-Data-Verarbeitung sowie Learning Technologies, XR (AR/VR) und Learning Analytics.',
       'Produktnahe Forschungssoftware, Frameworkdesign und Evaluation',
@@ -400,6 +430,7 @@ export const STUDIES = [
     link: 'https://www.rwth-aachen.de',
     date: '2017 - 2021',
     details: [
+      'Masterarbeit (Note 1,0): RePiX VR – Konzeption und Umsetzung einer VR-Lernumgebung inkl. xAPI-Integration.',
       'Schwerpunkte: XR/EdTech, VR, Game Development, Computergrafik, Software Engineering',
     ],
   },
@@ -409,6 +440,7 @@ export const STUDIES = [
     link: 'https://www.th-koeln.de',
     date: '2012 - 2017',
     details: [
+      'Bachelorarbeit (Note 1,0): Lernmodul für Boolesche Algebra (interaktives KV-Diagramm, Canvas, Auswertungslogik).',
       'Schwerpunkte: Software Engineering, Webentwicklung, Algorithmen',
     ],
   },
@@ -474,6 +506,30 @@ export const EXPERIENCE = [
       'Entwicklung interaktiver Web-Produkte und Services.',
       'API-Design und Implementierung, u. a. mit .NET Core und AWS.',
       'Mitarbeit an Architektur- und Umsetzungsentscheidungen.',
+    ],
+  },
+  {
+    company: 'apofair',
+    location: 'Remote',
+    position: 'In-house SEO & IT-Beratung',
+    start: 'Nov 2016',
+    link: '',
+    end: 'Mai 2017',
+    tasks: [
+      'SEO-Optimierung und Shop-Betreuung.',
+      'Koordination mit externer Entwicklungsagentur.',
+    ],
+  },
+  {
+    company: 'ir-interactive GmbH',
+    location: 'Köln',
+    position: 'Web- und Anwendungsentwicklung',
+    start: 'Okt 2014',
+    link: '',
+    end: 'Mai 2016',
+    tasks: [
+      'Responsive Webentwicklung und Umsetzung von TYPO3-Extensions.',
+      'Grundlegendes MySQL-Datenbankdesign in produktionsnahen Projekten.',
     ],
   },
   {

@@ -3,35 +3,83 @@ import Card from '../Card.astro'
 import { Badge } from '../ui/badge'
 ---
 
-<Card colSpan="md:col-span-2 lg:col-span-1" rowSpan="md:row-span-2 lg:row-span-2" title="Fokus & Zielkunden">
-  <section class="mt-2 space-y-4" id="fokus">
+<Card colSpan="md:col-span-2 lg:col-span-1" rowSpan="md:row-span-2 lg:row-span-2" title="Fokus & Stack">
+  <section class="mt-2 space-y-5" id="fokus">
+
+    <p class="text-sm text-muted-foreground">
+      Ich bin Sergej – Senior Software Engineer mit Fokus auf C#/.NET, Web-Engineering und XR-Systeme.
+      Während meines Masters habe ich ein Startup durch Corona gebracht und eine SaaS-Plattform aufgebaut, die heute noch läuft.
+      Seitdem arbeite ich als Freelancer und externer CTO für Mittelständler, die technische Verantwortung brauchen – nicht nur Beratung.
+      Milestone-basiert, ohne Overhead.
+    </p>
+
     <div class="flex flex-col gap-2">
-      <h3 class="text-sm font-semibold text-muted-foreground">Technischer Fokus</h3>
+      <h3 class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Primär</h3>
       <div class="flex w-full flex-wrap gap-2">
-        <Badge variant="outline">C#/.NET Backend</Badge>
-        <Badge variant="outline">Architektur</Badge>
-        <Badge variant="outline">Modernisierung</Badge>
-        <Badge variant="outline">Refactoring</Badge>
-        <Badge variant="outline">Integrationen</Badge>
-        <Badge variant="outline">Performance</Badge>
-        <Badge variant="outline">Tech Delivery</Badge>
+        <Badge variant="outline">C#</Badge>
+        <Badge variant="outline">.NET</Badge>
+        <Badge variant="outline">ASP.NET Core</Badge>
+        <Badge variant="outline">WPF</Badge>
+        <Badge variant="outline">AvaloniaUI</Badge>
+        <Badge variant="outline">.NET MAUI</Badge>
       </div>
     </div>
 
     <div class="flex flex-col gap-2">
-      <h3 class="text-sm font-semibold text-muted-foreground">Typische Kunden</h3>
-      <div class="space-y-2 text-sm text-muted-foreground">
-        <p class="m-0">Mittelständische Unternehmen mit gewachsenen Systemen</p>
-        <p class="m-0">Produktteams mit Architektur- oder Delivery-Problemen</p>
-        <p class="m-0">Vorhaben mit komplexen .NET-/Backend-/Integrationsanforderungen</p>
+      <h3 class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Web & APIs</h3>
+      <div class="flex w-full flex-wrap gap-2">
+        <Badge variant="outline">TypeScript</Badge>
+        <Badge variant="outline">React</Badge>
+        <Badge variant="outline">Angular</Badge>
+        <Badge variant="outline">Vue</Badge>
+        <Badge variant="outline">Three.js / WebGL</Badge>
+        <Badge variant="outline">REST</Badge>
+        <Badge variant="outline">GraphQL</Badge>
       </div>
     </div>
 
     <div class="flex flex-col gap-2">
-      <h3 class="text-sm font-semibold text-muted-foreground">Differenzierung</h3>
-      <div class="space-y-2 text-sm text-muted-foreground">
-        <p class="m-0">XR/Unity/AR als gezielter Produktbaustein, nicht als Selbstzweck.</p>
+      <h3 class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Cloud, Infra & Datenbanken</h3>
+      <div class="flex w-full flex-wrap gap-2">
+        <Badge variant="outline">AWS</Badge>
+        <Badge variant="outline">Azure</Badge>
+        <Badge variant="outline">Supabase</Badge>
+        <Badge variant="outline">MongoDB</Badge>
+        <Badge variant="outline">PostgreSQL</Badge>
+        <Badge variant="outline">Docker</Badge>
+        <Badge variant="outline">CI/CD</Badge>
       </div>
     </div>
+
+    <div class="flex flex-col gap-2">
+      <h3 class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">XR & Spezial</h3>
+      <div class="flex w-full flex-wrap gap-2">
+        <Badge variant="outline">Unity</Badge>
+        <Badge variant="outline">AR/VR</Badge>
+        <Badge variant="outline">Immersal</Badge>
+        <Badge variant="outline">Vuforia</Badge>
+        <Badge variant="outline">xAPI</Badge>
+        <Badge variant="outline">Learning Analytics</Badge>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <h3 class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Weitere Sprachen & Mobile</h3>
+      <div class="flex w-full flex-wrap gap-2">
+        <Badge variant="outline">Go</Badge>
+        <Badge variant="outline">Dart / Flutter</Badge>
+        <Badge variant="outline">C++</Badge>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <h3 class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Arbeitsweise</h3>
+      <div class="flex w-full flex-wrap gap-2">
+        <Badge variant="outline">Milestone-basiert</Badge>
+        <Badge variant="outline">Remote / Hybrid</Badge>
+        <Badge variant="outline">Direkt + Vermittler</Badge>
+      </div>
+    </div>
+
   </section>
 </Card>

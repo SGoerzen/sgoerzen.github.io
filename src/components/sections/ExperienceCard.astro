@@ -24,7 +24,7 @@ const sortedProjects = [...CV_PROJECTS].sort((a, b) => {
     {
       sortedProjects.slice(0, 4).map((entry) => (
         <article class="rounded-xl border p-4">
-          <p class="m-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Zeitraum: {entry.period}</p>
+          <p class="m-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Zeitraum: {entry.period.replace('xxxx', 'heute')}</p>
           <h3 class="mt-1 text-lg font-semibold">{entry.title}</h3>
           <p class="mt-2 text-xs text-muted-foreground">{entry.stack.join(' · ')}</p>
           <p class="mt-2 text-sm">{entry.description}</p>
