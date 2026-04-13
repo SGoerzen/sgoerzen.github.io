@@ -92,7 +92,7 @@ export const LEGACY_PROJECTS = [
   },
   {
     year: '2017',
-    title: 'Control Expert',
+    title: 'Kfz-Schadenmanagement Plattform (Studienprojekt)',
     context: 'Study',
     source: 'Jekyll-Archiv',
     period: '2017 - xxxx',
@@ -103,14 +103,14 @@ export const LEGACY_PROJECTS = [
   },
   {
     year: '2017',
-    title: 'E.ON',
+    title: 'Energieversorger Enterprise-Projekt (Studienprojekt)',
     context: 'Study',
     source: 'Jekyll-Archiv',
     period: '2017 - xxxx',
     stack: ['Web', 'Integrationen', 'Datenverarbeitung'],
     image: '/project-images/legacy-projects.svg',
     description:
-      'Archivprojekt im Umfeld größerer Organisationskontexte; im Altbestand sind nur Basisdaten vorhanden.',
+      'Archivprojekt im Umfeld eines großen Energieversorgers; im Altbestand sind nur Basisdaten vorhanden.',
   },
   {
     year: '2017',
