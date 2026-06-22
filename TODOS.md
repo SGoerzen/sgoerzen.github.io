@@ -29,6 +29,17 @@
 - [ ] SEO insgesamt prüfen und auf neue Positionierung ausrichten
 - [ ] Hero-Subheadline unter dem Slogan weiter schärfen und kürzen
 - [ ] SEO-/Meta-Description an die neue Positionierung anpassen
+- [ ] Pricing-/Budgetlogik überlegen (ob und wie Preisrahmen, Pakete oder Einstiegspreise sichtbar werden sollen)
+- [ ] Kein simplen Preisrechner nach Referenzseiten-Muster bauen; für mein Profil wirkt das schnell scheingenau
+- [ ] Statt Preisrechner eher `Typische Formate der Zusammenarbeit` definieren (z. B. technische Ersteinschätzung, Prototyp/PoC, produktnahe Umsetzung)
+- [ ] Für Pricing eher Abhängigkeiten und Budgetlogik erklären (Komplexität, Anzahl der Technologien, Integrationen, Produktreife, Unsicherheiten)
+- [ ] Prüfen, ob ein `Passt mein Vorhaben?`-Block sinnvoller ist als ein Preis-/Projektkonfigurator
+- [ ] FAQ-Sektion für typische Einwände ergänzen (Kosten, Dauer, Technologien, Zusammenarbeit, Code/IP)
+- [ ] Vertrauenssignale sichtbarer machen (z. B. Antwortzeit, Verfügbarkeit, Projekttypen, Forschung/Promotion, Team-/Führungsverantwortung)
+- [ ] Projektbeispiele stärker ergebnisorientiert machen (Outcome, Nutzen, Besonderheit statt nur Tech-Stack)
+- [ ] Prüfen, ob eine kleine `Wofür ich typischerweise angefragt werde`-Sektion sinnvoll ist
+- [ ] Prüfen, ob eine `Beliebte Formate`-/`Typische Vorhaben`-Sektion sinnvoll ist (z. B. Prototyp, Spezialintegration, Architektur-/Produktkonzeption)
+- [ ] CTA-Pfade schärfen: Erstgespräch, Projektanfrage, Projektbeispiele, ggf. `Passt mein Vorhaben?`
 - [ ] Projektseite von Sammel-/Archivseite zu kuratierter Belegseite umbauen
 - [ ] Großen roten `im Aufbau`-Block auf der Projektseite entfernen oder deutlich entschärfen
 - [ ] 3-5 starke Projekte auf der Projektseite priorisieren und nach oben ziehen
