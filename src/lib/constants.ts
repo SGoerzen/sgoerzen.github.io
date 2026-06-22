@@ -46,33 +46,33 @@ export const PROJECTS: Page = {
 
 export const SERVICES = [
   {
-    title: 'Systemanalyse & Tech-Assessment',
+    title: 'Technische Produktkonzeption',
     description:
-      'Ich analysiere gewachsene Systeme, identifiziere Engpässe und mache technische Risiken transparent.',
+      'Ich übersetze anspruchsvolle Produktideen in eine belastbare technische Grundlage, bevor Umsetzung teuer oder beliebig wird.',
     bullets: [
-      'Codebase-, Architektur- und Schnittstellenanalyse',
-      'Priorisierte Handlungsempfehlungen statt pauschaler Rewrite-Empfehlungen',
-      'Klare Entscheidungsgrundlagen für Produkt, Tech und Management',
+      'Technischer Zuschnitt für Produkte mit .NET, Web, XR oder mehreren Systemen',
+      'Machbarkeit, Architektur und sinnvolle Umsetzungsreihenfolge früh geklärt',
+      'Klare Entscheidungsgrundlagen für Produkt, Tech und Stakeholder',
     ],
   },
   {
-    title: 'Architektur & Modernisierung',
+    title: 'Speziallösungen & Systemintegration',
     description:
-      'Ich strukturiere komplexe .NET- und Integrationslandschaften so, dass Weiterentwicklung wieder planbar wird.',
+      'Ich realisiere Software, wenn mehrere Technologien, Plattformen oder Spezialanforderungen zu einem funktionierenden Produkt zusammenfinden müssen.',
     bullets: [
-      'Refactoring- und Migrationsstrategie für Bestandssysteme',
-      'Domaintaugliche Architektur- und Schnittstellenschnitte',
-      'Performance-, Stabilitäts- und Wartbarkeitsverbesserungen im laufenden Betrieb',
+      'Integration von .NET, Web, Unity, Mobile, AR/VR und externen Diensten',
+      'Schnittstellen, Datenflüsse und technische Übergänge sauber aufgesetzt',
+      'Nicht nur Prototypen, sondern tragfähige Lösungen für den realen Einsatz',
     ],
   },
   {
-    title: 'Technische Produktumsetzung & Delivery',
+    title: 'Umsetzung, Delivery & Weiterentwicklung',
     description:
-      'Ich übernehme Verantwortung von der technischen Konzeption bis zur belastbaren Lieferung.',
+      'Ich begleite anspruchsvolle Softwarevorhaben von der technischen Konzeption bis zur belastbaren Lieferung und Weiterentwicklung.',
     bullets: [
-      'Hands-on Umsetzung in C#/.NET, APIs und Integrationen',
-      'Technische Führung, Reviews und Enablement im Team',
-      'Planbare Lieferfähigkeit mit klaren Prioritäten und sauberer Übergabe',
+      'Hands-on Umsetzung in C#/.NET, APIs, Frontends und produktnahen Spezialthemen',
+      'Technische Führung, Reviews und strukturierte Priorisierung im Projekt',
+      'Bei Bedarf auch Architekturarbeit und Modernisierung in gewachsenen Systemen',
     ],
   },
 ]
