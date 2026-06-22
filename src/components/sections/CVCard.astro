@@ -7,7 +7,7 @@ import { LINKS } from '../../lib/constants'
 ---
 
 <Card colSpan="md:col-span-2 lg:col-span-1" rowSpan="md:row-span-2 lg:row-span-2" title="Kontakt">
-  <section id="kontakt" class="mt-2 space-y-4">
+  <section id="kontakt" class="mt-4 space-y-5">
     <p class="m-0 text-sm text-muted-foreground">
       Kurzen Kontext schicken – ich antworte mit einem konkreten nächsten Schritt.
     </p>
@@ -15,13 +15,17 @@ import { LINKS } from '../../lib/constants'
       Was hilft: Welches System, welches Problem, welcher Zeithorizont. Was nicht nötig ist: Ein ausformuliertes Briefing.
     </p>
 
-    <div class="space-y-3">
-      <a href="mailto:sergej@goerzen.consulting?subject=Projektanfrage%20Softwarearchitektur%20und%20Delivery">
-        <Button className="w-full justify-start">
-          <Mail />
-          <span class="ml-2">sergej@goerzen.consulting</span>
-        </Button>
-      </a>
+    <div class="space-y-4">
+      <Button
+        type="button"
+        className="w-full justify-start"
+        data-open-dialog="contact-form"
+        aria-haspopup="dialog"
+        aria-controls="contact-form"
+      >
+        <Mail />
+        <span class="ml-2">sergej@goerzen.consulting</span>
+      </Button>
       <a href={LINKS.calendly} target="_blank" rel="noreferrer">
         <Button variant="outline" className="w-full justify-start">
           <File />

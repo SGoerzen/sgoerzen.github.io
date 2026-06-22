@@ -30,12 +30,16 @@ import { LINKS } from '../../lib/constants'
               <span class="ml-2">Erstgespräch buchen</span>
             </Button>
           </a>
-          <a href="mailto:sergej@goerzen.consulting?subject=Projektanfrage%20komplexe%20Softwareumsetzung">
-            <Button variant="outline">
-              <Mail />
-              <span class="ml-2">Projektanfrage senden</span>
-            </Button>
-          </a>
+          <Button
+            type="button"
+            variant="outline"
+            data-open-dialog="contact-form"
+            aria-haspopup="dialog"
+            aria-controls="contact-form"
+          >
+            <Mail />
+            <span class="ml-2">Projektanfrage senden</span>
+          </Button>
           <a href="/projects">
             <Button variant="ghost">Projektbeispiele ansehen</Button>
           </a>
