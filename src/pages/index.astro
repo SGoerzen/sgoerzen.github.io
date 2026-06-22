@@ -10,26 +10,22 @@ import EducationCard from '../components/sections/EducationCard.astro'
 ---
 
 <script>
-  import { stagger, spring, timeline, type TimelineDefinition } from 'motion'
+  import { animate, stagger, spring } from 'motion'
   import { loaderAnimation } from '../lib/constants'
 
   const cards = document.querySelectorAll('.card-animate')
+  const [loaderTarget, loaderKeyframes, loaderOptions] = loaderAnimation
 
-  const sequence = [
-    loaderAnimation,
-    [
-      cards,
-      { y: ['40%', '0%'], opacity: [0, 1] },
-      {
-        at: '-0.1',
-        duration: 0.4,
-        delay: stagger(0.3),
-        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
-      },
-    ],
-  ]
-
-  timeline(sequence as TimelineDefinition)
+  animate(loaderTarget, loaderKeyframes, loaderOptions)
+  animate(
+    cards,
+    { y: ['40%', '0%'], opacity: [0, 1] },
+    {
+      duration: 0.4,
+      delay: stagger(0.3, { startDelay: 0.3 }),
+      easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+    },
+  )
 </script>
 
 <BaseLayout
