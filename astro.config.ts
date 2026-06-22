@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 
 const configuredSite = process.env.PUBLIC_SITE_URL
 const site = (() => {
@@ -22,10 +22,8 @@ export default defineConfig({
   // This can be overridden by the BASE_URL environment variable during build
   base: process.env.BASE_URL || '/',
   site,
-  integrations: [
-    react(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
-  ],
+  integrations: [react()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 })
