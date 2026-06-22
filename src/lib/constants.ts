@@ -426,7 +426,7 @@ export const STUDIES = [
     ],
   },
   {
-    title: 'M. Sc. Informatik',
+    title: 'M. Sc. RWTH Informatik',
     institution: 'RWTH Aachen University',
     link: 'https://www.rwth-aachen.de',
     date: 'Apr. 2017 - Feb. 2021',
