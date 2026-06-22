@@ -415,7 +415,7 @@ export const CV_PROJECTS = [
 
 export const STUDIES = [
   {
-    title: 'Dr. des. (Dr.-Ing.) Informatik',
+    title: 'Dr. des. (Dr.-Ing.), Informatik',
     institution: 'RWTH Aachen University',
     link: 'https://learntech.rwth-aachen.de',
     date: 'Apr. 2021 - Juni 2026',
@@ -426,7 +426,7 @@ export const STUDIES = [
     ],
   },
   {
-    title: 'M. Sc. RWTH Informatik',
+    title: 'M. Sc. RWTH, Informatik',
     institution: 'RWTH Aachen University',
     link: 'https://www.rwth-aachen.de',
     date: 'Apr. 2017 - Feb. 2021',
@@ -436,7 +436,7 @@ export const STUDIES = [
     ],
   },
   {
-    title: 'B. Sc. Informatik',
+    title: 'B. Sc., Informatik',
     institution: 'TH Köln (Campus Gummersbach)',
     link: 'https://www.th-koeln.de',
     date: 'Okt. 2012 - Feb. 2017',
@@ -446,7 +446,7 @@ export const STUDIES = [
     ],
   },
   {
-    title: 'Staatl. gepr. Informationstechnischer Assistent (ITA) mit Fachhochschulreife',
+    title: 'Informationstechnischer Assistent (ITA) mit Fachhochschulreife',
     institution: 'Berufskolleg Oberberg (Dieringhausen)',
     link: '',
     date: 'Aug. 2009 - Juni 2012',
