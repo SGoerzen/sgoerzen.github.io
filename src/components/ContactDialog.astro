@@ -8,6 +8,7 @@ const {
   title = "Kontakt",
   description = "Schreib mir kurz, worum es geht — ich melde mich zeitnah zurück.",
 } = Astro.props as Props;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
 ---
 
@@ -73,6 +74,17 @@ const {
         ></textarea>
       </div>
 
+      {turnstileSiteKey ? (
+        <div class="space-y-2">
+          <div
+            class="cf-turnstile"
+            data-sitekey={turnstileSiteKey}
+            data-theme="auto"
+            data-size="flexible"
+          ></div>
+        </div>
+      ) : null}
+
       <div class="flex items-center justify-between gap-3 pt-2">
         <p class="text-xs text-gray-500 dark:text-gray-400">
           Dieses Formular wird über <a
@@ -93,6 +105,14 @@ const {
     </form>
   </div>
 </dialog>
+
+{turnstileSiteKey ? (
+  <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+  ></script>
+) : null}
 
 <script is:inline>
     (() => {

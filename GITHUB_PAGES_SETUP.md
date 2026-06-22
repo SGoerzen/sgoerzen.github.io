@@ -25,6 +25,13 @@ This repository is configured to automatically deploy to GitHub Pages when you p
      - Name: `PUBLIC_SITE_URL`
      - Value: `https://your-username.github.io` (or your custom domain)
 
+4. **Optional: Enable Cloudflare Turnstile for the contact form:**
+   - Go to **Settings** → **Secrets and variables** → **Actions** → **Variables**
+   - Add variable:
+     - Name: `PUBLIC_TURNSTILE_SITE_KEY`
+     - Value: your Cloudflare Turnstile site key
+   - The contact form will only render Turnstile when this variable is present during the build.
+
 ## How It Works
 
 - The workflow (`.github/workflows/deploy.yml`) automatically:
@@ -54,4 +61,3 @@ pnpm preview
 ```
 
 This will build and preview your site with the same configuration as production.
-

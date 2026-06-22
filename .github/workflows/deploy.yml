@@ -21,6 +21,7 @@ jobs:
         env:
           BASE_URL: ${{ vars.BASE_URL }}
           PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL }}
+          PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
 
   deploy:
     needs: build
