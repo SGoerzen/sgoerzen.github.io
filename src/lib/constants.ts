@@ -15,16 +15,16 @@ export const LINKS = {
 }
 
 export const SITE: Site = {
-  TITLE: 'Sergej Görzen | Senior Software Engineer',
+  TITLE: 'Dr. des. Sergej Görzen | Senior Software Engineer',
   DESCRIPTION:
     'Senior Software Engineer für komplexe Systeme, Architektur und technische Produktumsetzung mit Fokus auf C#/.NET, Modernisierung und Delivery.',
-  AUTHOR: 'Sergej Görzen',
+  AUTHOR: 'Dr. des. Sergej Görzen',
 }
 
 export const IMPRESSUM = {
   TITLE: 'Impressum',
   DESCRIPTION: 'Anbieterkennzeichnung und rechtliche Hinweise.',
-  NAME: 'Sergej Görzen',
+  NAME: 'Dr. des. Sergej Görzen',
   ADDRESS_LINE1: 'Hähner Weg 6',
   ADDRESS_LINE2: '51580 Reichshof',
   COUNTRY: 'Deutschland',
@@ -415,11 +415,12 @@ export const CV_PROJECTS = [
 
 export const STUDIES = [
   {
-    title: 'Dr.-Ing. Informatik (Promotion)',
+    title: 'Dr. des. (Dr.-Ing.) Informatik',
     institution: 'RWTH Aachen University',
     link: 'https://learntech.rwth-aachen.de',
-    date: '2021 - vsl. Apr. 2026',
+    date: 'Apr. 2021 - Juni 2026',
     details: [
+      'Promotion im Juni 2026 abgeschlossen; Abschlussnote: magna cum laude. Bis zur Urkundenausstellung wird der Zusatz Dr. des. geführt.',
       'Fokus: Framework-Entwicklung, komplexe Softwaresysteme, Performance und Big-Data-Verarbeitung sowie Learning Technologies, XR (AR/VR) und Learning Analytics.',
       'Produktnahe Forschungssoftware, Frameworkdesign und Evaluation',
     ],
@@ -428,7 +429,7 @@ export const STUDIES = [
     title: 'M. Sc. Informatik',
     institution: 'RWTH Aachen University',
     link: 'https://www.rwth-aachen.de',
-    date: '2017 - 2021',
+    date: 'Apr. 2017 - Feb. 2021',
     details: [
       'Masterarbeit (Note 1,0): RePiX VR – Konzeption und Umsetzung einer VR-Lernumgebung inkl. xAPI-Integration.',
       'Schwerpunkte: XR/EdTech, VR, Game Development, Computergrafik, Software Engineering',
@@ -438,7 +439,7 @@ export const STUDIES = [
     title: 'B. Sc. Informatik',
     institution: 'TH Köln (Campus Gummersbach)',
     link: 'https://www.th-koeln.de',
-    date: '2012 - 2017',
+    date: 'Okt. 2012 - Feb. 2017',
     details: [
       'Bachelorarbeit (Note 1,0): Lernmodul für Boolesche Algebra (interaktives KV-Diagramm, Canvas, Auswertungslogik).',
       'Schwerpunkte: Software Engineering, Webentwicklung, Algorithmen',
@@ -448,9 +449,10 @@ export const STUDIES = [
     title: 'Staatl. gepr. Informationstechnischer Assistent (ITA) mit Fachhochschulreife',
     institution: 'Berufskolleg Oberberg (Dieringhausen)',
     link: '',
-    date: '2009 - 2012',
+    date: 'Aug. 2009 - Juni 2012',
     details: [
-      'Informatiknahe Ausbildung mit Schwerpunkt auf Programmierung und technischen Grundlagen.',
+      'Informatiknahe schulische Ausbildung mit Schwerpunkt auf Programmierung und technischen Grundlagen.',
+      'Abschluss: Fachhochschulreife.',
     ],
   },
 ]
@@ -472,7 +474,7 @@ export const EXPERIENCE = [
   {
     company: 'RWTH Aachen University',
     location: 'Aachen',
-    position: 'Wissenschaftlicher Mitarbeiter & Doktorand',
+    position: 'Wissenschaftlicher Mitarbeiter',
     start: 'Apr 2021',
     link: 'https://learntech.rwth-aachen.de',
     end: 'heute',
@@ -480,6 +482,7 @@ export const EXPERIENCE = [
       'Entwicklung produktnaher Software in XR- und Analytics-Kontexten.',
       'Lehre, Mentoring und technische Qualitätssicherung in Entwicklungsprojekten.',
       'Teamkoordination, Reviews und Strukturierung von Umsetzungsarbeiten.',
+      'Promotion im Juni 2026 abgeschlossen.',
     ],
   },
   {
