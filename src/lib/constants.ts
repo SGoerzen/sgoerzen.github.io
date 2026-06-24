@@ -15,7 +15,7 @@ export const LINKS = {
 }
 
 export const SITE: Site = {
-  TITLE: 'Dr. des. Sergej Görzen | Senior Software Engineer',
+  TITLE: 'Sergej Görzen | Senior Software Engineer',
   DESCRIPTION:
     'Senior Software Engineer für komplexe Systeme, Architektur und technische Produktumsetzung mit Fokus auf C#/.NET, Modernisierung und Delivery.',
   AUTHOR: 'Dr. des. Sergej Görzen',
@@ -415,12 +415,12 @@ export const CV_PROJECTS = [
 
 export const STUDIES = [
   {
-    title: 'Dr. des. (Dr.-Ing.), Informatik',
+    title: 'Promotion (Dr.-Ing.), Informatik',
     institution: 'RWTH Aachen University',
     link: 'https://learntech.rwth-aachen.de',
     date: 'Apr. 2021 - Juni 2026',
     details: [
-      'Promotion im Juni 2026 abgeschlossen; Abschlussnote: magna cum laude. Bis zur Urkundenausstellung wird der Zusatz Dr. des. geführt.',
+      'Promotion im Juni 2026 abgeschlossen; Abschlussnote: magna cum laude. Veröffentlichung und Urkundenaushändigung stehen noch aus; Abschluss: Dr.-Ing.',
       'Fokus: Framework-Entwicklung, komplexe Softwaresysteme, Performance und Big-Data-Verarbeitung sowie Learning Technologies, XR (AR/VR) und Learning Analytics.',
       'Produktnahe Forschungssoftware, Frameworkdesign und Evaluation',
     ],
