@@ -18,13 +18,13 @@ export const SITE: Site = {
   TITLE: 'Sergej Görzen | Senior Software Engineer',
   DESCRIPTION:
     'Senior Software Engineer für komplexe Systeme, Architektur und technische Produktumsetzung mit Fokus auf C#/.NET, Modernisierung und Delivery.',
-  AUTHOR: 'Dr. des. Sergej Görzen',
+  AUTHOR: 'Sergej Görzen',
 }
 
 export const IMPRESSUM = {
   TITLE: 'Impressum',
   DESCRIPTION: 'Anbieterkennzeichnung und rechtliche Hinweise.',
-  NAME: 'Dr. des. Sergej Görzen',
+  NAME: 'Sergej Görzen',
   ADDRESS_LINE1: 'Hähner Weg 6',
   ADDRESS_LINE2: '51580 Reichshof',
   COUNTRY: 'Deutschland',
@@ -302,48 +302,50 @@ export const OMILAXR_REPOS = [
 
 export const CV_PROJECTS = [
   {
-    title: 'AR Service App – Indoor-Navigation mit VPS',
+    title: 'Mobile App mit AR-Navigation (iOS)',
     period: '2024 - 2025',
-    stack: ['Flutter', 'Unity', 'C#', 'AR', 'iOS', 'Immersal', 'Supabase', '.NET MAUI'],
+    featured: true,
+    role: 'Technische Gesamtverantwortung (CTO)',
+    sector: 'Gastronomie',
+    stack: ['Flutter', 'Unity', 'C#', 'AR', 'iOS', 'Immersal', 'Supabase', 'PostgreSQL', '.NET MAUI'],
     image: '/project-images/cv-projects.svg',
     description:
-      'Integration von Indoor-AR in eine laufende iOS-App: Native Unity-Module mit Immersal VPS, Flutter-Unity-Kommunikation, Supabase-Backend und produktionsreife Auslieferung – ohne Rebuild der bestehenden App-Architektur.',
+      'Kundenprojekt (Projektvolumen ca. 70.000 €): AR-Navigations-Modul (Unity/C#, Immersal VPS) als eingebettete Komponente in einer Flutter-App (Unity as a Library). Architektur, Technologieauswahl, Team-Koordination und Delivery bis zur Übergabe.',
     details:
-      'Enthielt Authoring-Tooling (Unity Editor Extensions, Web-Admin-Panel), .NET MAUI Utility zur Scan-Frame-Analyse, iOS-Releases (TestFlight) und Bewertung von VPS-SDKs (Immersal, Vuforia, MultiSet).',
+      'Backend über Supabase (PostgreSQL): Auth, Storage, Datenmodell inkl. 2D-Map-Preview (SVG) für die Routenplanung. Digital Twin mit Matterport, 360°-Kamera und Immersal SDK; Unity-Editor für Service-Routen inkl. Routensimulation; .NET-MAUI-App zur Scan-Frame-Analyse; iOS-Releases via TestFlight.',
   },
   {
-    title: 'CTO-nahe Modernisierungsmandate im Mittelstand',
-    period: '2024 - xxxx',
-    stack: ['C#', '.NET', 'Architektur', 'Refactoring', 'Delivery Management'],
+    title: 'Virtuelle Fotobox (Web & AR)',
+    period: '2021 - xxxx',
+    featured: true,
+    role: 'Tech Lead',
+    sector: 'Event-Branche',
+    stack: ['TypeScript', 'Vue 3', 'Node.js', 'PostgreSQL', 'Three.js', 'WebGL', 'DeepAR', 'React', 'AWS'],
     image: '/project-images/cv-projects.svg',
     description:
-      'Externe CTO-Mandate im Mittelstand: Bestandsanalyse, Architekturentscheidungen und Abbau kritischer technischer Schulden. Jeweils von der Erstanalyse bis zur stabilen Lieferung – ohne laufende Agentur im Hintergrund.',
+      'Browserbasierte Foto-/AR-Plattform mit interaktiven Effekten und Editor-WebApp zur Konfiguration (Vue 3). Backend eigenständig auf Node.js + PostgreSQL migriert – seit 2021 durchgehend produktiv. Im Einsatz auf Events u. a. von Großunternehmen, politischen Parteien und Musical-/Theaterproduktionen.',
     details:
-      'Enthielt Priorisierung technischer Schulden, Entscheidungsvorlagen für Stakeholder und hands-on Umsetzung kritischer Maßnahmen.',
-  },
-  {
-    title: 'Virtual Photo Booth – WebAR-Fotoerlebnis',
-    period: '2020 - 2025',
-    stack: ['TypeScript', 'Three.js', 'WebGL', 'Vue 3', 'Nuxt 3', 'React', 'DeepAR', 'AWS', 'Node.js'],
-    image: '/project-images/cv-projects.svg',
-    description:
-      'Browserbasiertes WebAR-Fotoerlebnis mit Live-WebGL-Mosaik für tausende Bilder, AR-Filtern (DeepAR inkl. Smile-Erkennung via 2D-Landmarks) und interaktiven UI-Workflows. Admin-Panel in Vue/Nuxt, Weiterentwicklung in React.',
-    details:
-      'Tech Lead und Koordination externer Freelancer sowie eines Nearshore-Partners. Mitgestaltung der neuen Plattformarchitektur (React-Frontend, serviceorientiertes Backend).',
+      '3D-Rendering im Browser (Three.js/WebGL), Face-Tracking mit DeepAR inkl. Smile-Erkennung. Tech Lead und Koordination externer Freelancer sowie eines Nearshore-Partners; Mitgestaltung der neuen Plattformarchitektur (React-Frontend, serviceorientiertes Backend).',
   },
   {
     title: 'BuddyAnalytics – Analyse-Dashboard für Studiengänge',
     period: '2022 - 2025',
+    featured: true,
+    role: 'Tech Lead (Konsortium aus drei Universitäten)',
+    sector: 'Hochschulwesen',
     stack: ['TypeScript', 'Angular', 'Python', 'MongoDB', 'Node.js', 'Fastify', 'Docker'],
     image: '/project-images/cv-projects.svg',
     description:
-      'Analytics-Dashboard für evidenzbasierte Curriculumentscheidungen im Hochschulkontext. Tech Lead in einem Konsortium aus drei Universitäten – von Anforderungsklärung bis Konferenzpräsentation.',
+      'Analytics-Dashboard für evidenzbasierte Curriculumentscheidungen im Hochschulkontext (Verbundprojekt, Projektvolumen 3,9 Mio. €). Tech Lead in einem Konsortium aus drei Universitäten – von Anforderungsklärung bis Konferenzpräsentation.',
     details:
       'Anforderungsklärung mit Stakeholdern (Curriculum Designer), Umsetzungsplanung, Reviews und Präsentation der Ergebnisse auf Konferenzen.',
   },
   {
     title: 'SWOFI – Modernisierung eines Lehr-Workflow-Systems',
     period: '2021 - 2025',
+    featured: true,
+    role: 'Entwicklung & Modernisierung',
+    sector: 'Hochschulwesen',
     stack: ['TypeScript', 'React', 'Vite', 'Node.js', 'Express.js', 'MongoDB', 'Docker'],
     image: '/project-images/cv-projects.svg',
     description:
@@ -354,6 +356,9 @@ export const CV_PROJECTS = [
   {
     title: 'API- und Integrationsplattform in .NET/AWS',
     period: '2017 - 2021',
+    featured: true,
+    role: 'Softwareentwickler (API-Design & Integration)',
+    sector: '',
     stack: ['.NET Core', 'C#', 'AWS', 'REST APIs', 'SQL'],
     image: '/project-images/cv-projects.svg',
     description:
@@ -364,6 +369,9 @@ export const CV_PROJECTS = [
   {
     title: 'Desktop-Tooling mit Electron',
     period: '2018 - 2020',
+    featured: false,
+    role: '',
+    sector: '',
     stack: ['Electron', 'TypeScript', 'Node.js', 'UI Engineering'],
     image: '/project-images/cv-projects.svg',
     description:
@@ -374,6 +382,9 @@ export const CV_PROJECTS = [
   {
     title: 'RePiX VR – Interaktive Lernumgebung',
     period: '2020 - 2023',
+    featured: true,
+    role: 'Konzeption & Entwicklung',
+    sector: 'Forschung & Lehre (RWTH Aachen)',
     stack: ['Unity', 'C#', 'VR', 'Learning Analytics', 'xAPI'],
     image: '/project-images/cv-projects.svg',
     description:
@@ -382,8 +393,24 @@ export const CV_PROJECTS = [
       'Diente als praxisnahes XR-/Learning-Projekt mit Fokus auf didaktische Wirksamkeit, technische Instrumentierung und Forschungstransfer.',
   },
   {
+    title: 'xAPI4Unity / OmiLAXR – Open-Source C#-Frameworks',
+    period: '2021 - xxxx',
+    featured: true,
+    role: 'Framework-Konzeption & -Entwicklung (Dissertationsprojekt)',
+    sector: 'Open Source / Forschung',
+    stack: ['C#', 'Unity', 'xAPI', 'XR', 'Learning Analytics', 'Open Source'],
+    image: '/project-images/omilaxr.svg',
+    description:
+      'Modulare C#-/Unity-Frameworks zur Integration und Auswertung von XR-Daten, u. a. Eye-Tracking-, Herzfrequenz- und Interaktionsdaten. Kern der Dissertation, als Open Source veröffentlicht.',
+    details:
+      'Anforderungsanalyse über Stakeholder-Interviews, iterative Weiterentwicklung, Developer-Dokumentation und API-Beispiele, Workshops und Onboarding sowie wissenschaftliche Publikationen.',
+  },
+  {
     title: 'LiMoxAPI Monitoring Tool',
     period: '2022 - xxxx',
+    featured: false,
+    role: '',
+    sector: '',
     stack: ['TypeScript', 'xAPI', 'Web', 'Analytics', 'Developer Tooling'],
     image: '/project-images/cv-projects.svg',
     description:
@@ -394,6 +421,9 @@ export const CV_PROJECTS = [
   {
     title: 'Web- und CMS-Projekte (TYPO3 / Unternehmensseiten)',
     period: '2014 - 2017',
+    featured: false,
+    role: '',
+    sector: '',
     stack: ['TYPO3', 'PHP', 'MySQL', 'Frontend', 'SEO'],
     image: '/project-images/cv-projects.svg',
     description:
@@ -404,6 +434,9 @@ export const CV_PROJECTS = [
   {
     title: 'Frühe C#-Webanwendung mit Marktplatz-APIs',
     period: '2012 - 2014',
+    featured: false,
+    role: '',
+    sector: '',
     stack: ['C#', 'PHP', 'MySQL', 'API Integration'],
     image: '/project-images/cv-projects.svg',
     description:
@@ -420,7 +453,7 @@ export const STUDIES = [
     link: 'https://learntech.rwth-aachen.de',
     date: 'Apr. 2021 - Juni 2026',
     details: [
-      'Promotion im Juni 2026 abgeschlossen; Abschlussnote: magna cum laude. Veröffentlichung und Urkundenaushändigung stehen noch aus; Abschluss: Dr.-Ing.',
+      'Abschluss Dr.-Ing. (Juni 2026), Note: magna cum laude.',
       'Fokus: Framework-Entwicklung, komplexe Softwaresysteme, Performance und Big-Data-Verarbeitung sowie Learning Technologies, XR (AR/VR) und Learning Analytics.',
       'Produktnahe Forschungssoftware, Frameworkdesign und Evaluation',
     ],
@@ -461,14 +494,14 @@ export const EXPERIENCE = [
   {
     company: 'Freiberuflich',
     location: 'Remote',
-    position: 'Senior Software Engineer / externer CTO',
+    position: 'IT-Berater & Softwaresystem-Engineer',
     start: 'Apr 2024',
     link: 'https://goerzen.consulting',
     end: 'heute',
     tasks: [
-      'Analyse und Modernisierung gewachsener Systeme mit Fokus auf C#/.NET, Architektur und Delivery.',
-      'CTO-nahe Verantwortung in Mandaten: technische Entscheidungen, Priorisierung, Risiko- und Qualitätsmanagement.',
-      'Hands-on Umsetzung in Backend-, Integrations- und Plattformthemen bis zur stabilen Produktivlieferung.',
+      'Umsetzung produktnaher Softwarelösungen in C#/.NET und Full-Stack (Web/Mobile/Services), inkl. Integration in bestehende Produkte.',
+      'Backend-Anbindung und Datenmodellierung mit Supabase (PostgreSQL); Serverless-Betrieb auf AWS.',
+      'Delivery: Anforderungsklärung, technische Konzeption, Umsetzung, Reviews, Go-Live-Begleitung und Übergabe ins Team.',
     ],
   },
   {
