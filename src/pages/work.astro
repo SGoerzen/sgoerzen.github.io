@@ -14,20 +14,44 @@ import BottomLayout from '../layouts/BottomLayout.astro'
     </TopLayout>
 
     <BottomLayout>
-      <h3 class="text-xl font-semibold">Berufserfahrung</h3>
+      <section class="rounded-2xl border bg-gradient-to-br from-primary/10 via-background to-background p-6 md:p-8" aria-labelledby="experience-offer">
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Erfahrung als Grundlage für dein XR-Projekt</p>
+        <h3 id="experience-offer" class="mt-2 max-w-3xl text-2xl font-semibold tracking-tight">
+          Von der Anforderung bis zur umgesetzten und evaluierbaren XR-Anwendung
+        </h3>
+        <p class="mt-3 max-w-4xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          Mein heutiges Angebot verbindet langjährige Software- und Delivery-Erfahrung mit Forschung zu XR und Learning Analytics. Ich unterstütze Unternehmen, Hochschulen und Forschungsteams bei einzelnen Arbeitspaketen oder als technischer Partner über den gesamten Projektverlauf.
+        </p>
+
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <div class="border-t pt-3">
+            <p class="font-semibold">XR-Konzeption & Entwicklung</p>
+            <p class="mt-1 text-sm leading-relaxed text-muted-foreground">Scoping, Szenariodesign und Umsetzung mit Unity, Three.js und WebXR.</p>
+          </div>
+          <div class="border-t pt-3">
+            <p class="font-semibold">Daten & Evaluation</p>
+            <p class="mt-1 text-sm leading-relaxed text-muted-foreground">xAPI, Learning Analytics, Pilotierung, Auswertung und belastbarer Report.</p>
+          </div>
+          <div class="border-t pt-3">
+            <p class="font-semibold">Projekt- & Antragspartnerschaft</p>
+            <p class="mt-1 text-sm leading-relaxed text-muted-foreground">Machbarkeit, technische Arbeitspakete, Prototyping und Delivery in Einzel- oder Verbundprojekten.</p>
+          </div>
+        </div>
+      </section>
+
+      <h3 class="mt-10 text-xl font-semibold">Stationen & Verantwortung</h3>
       <ul class="mt-4">
         {
           EXPERIENCE.map((entry) => (
             <li class="animate mt-4 border-b border-black/10 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none dark:border-white/25">
               <div class="mb-2 text-sm uppercase">{entry.start} - {entry.end}</div>
-              <a
-                href={entry.link ?? ''}
-                target="_blank"
-                class={`font-semibold ${entry?.link ? 'text-primary' : 'text-foreground'}`}
-                rel="noreferrer"
-              >
-                {entry.company}
-              </a>
+              {entry.link ? (
+                <a href={entry.link} target="_blank" class="font-semibold text-primary" rel="noreferrer">
+                  {entry.company}
+                </a>
+              ) : (
+                <div class="font-semibold text-foreground">{entry.company}</div>
+              )}
               <div class="text-sm font-semibold">{entry.position}</div>
               <div class="text-sm text-muted-foreground">{entry.location}</div>
               <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-muted-foreground">

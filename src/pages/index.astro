@@ -2,13 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import IntroCard from '../components/sections/IntroCard.astro'
 import ExperienceCard from '../components/sections/ExperienceCard.astro'
-import SkillsCard from '../components/sections/SkillsCard.astro'
 import ServiceCard from '../components/sections/ServiceCard.astro'
 import XRPipelineCard from '../components/sections/XRPipelineCard.astro'
 import XRProjectCheckCard from '../components/sections/XRProjectCheckCard.astro'
-import StudyCard from '../components/sections/StudyCard.astro'
-import CVCard from '../components/sections/CVCard.astro'
-import EducationCard from '../components/sections/EducationCard.astro'
 ---
 
 <script>
@@ -32,7 +28,7 @@ import EducationCard from '../components/sections/EducationCard.astro'
 
 <BaseLayout
   title="Sergej Görzen | XR Learning Analytics · Training · Evaluation"
-  description="XR-Lern- und Trainingsszenarien von der Anforderungsanalyse über Unity/XR, xAPI und Learning Analytics bis zur Evaluation und zum Report."
+  description="XR-Lern- und Trainingsszenarien von der Anforderungsanalyse über Unity, Three.js und WebXR bis zu Learning Analytics, Evaluation und Report."
 >
   <div
     slot="loader"
@@ -47,9 +43,5 @@ import EducationCard from '../components/sections/EducationCard.astro'
     <XRPipelineCard />
     <ServiceCard />
     <ExperienceCard />
-    <SkillsCard />
-    <StudyCard />
-    <CVCard />
-    <EducationCard />
   </main>
 </BaseLayout>

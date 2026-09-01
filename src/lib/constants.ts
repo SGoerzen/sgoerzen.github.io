@@ -17,7 +17,7 @@ export const LINKS = {
 export const SITE: Site = {
   TITLE: 'Sergej Görzen | XR Learning Analytics',
   DESCRIPTION:
-    'XR-Lern- und Trainingsszenarien mit Unity/XR, xAPI, Learning Analytics, Evaluation und belastbarem Report.',
+    'XR-Lern- und Trainingsszenarien mit Unity, Three.js und WebXR – ergänzt um xAPI, Learning Analytics und Evaluation.',
   AUTHOR: 'Sergej Görzen',
 }
 
@@ -36,13 +36,86 @@ export const IMPRESSUM = {
 
 export const WORK: Page = {
   TITLE: 'Berufserfahrung',
-  DESCRIPTION: 'Stationen, Rollen und technische Verantwortung.',
+  DESCRIPTION: 'Erfahrung in XR-Entwicklung, Learning Analytics, Evaluation und technischer Projektverantwortung.',
 }
 
 export const PROJECTS: Page = {
-  TITLE: 'Projektbeispiele',
-  DESCRIPTION: 'Ausgewählte Mandate zu Architektur, Modernisierung und Delivery.',
+  TITLE: 'XR-Projekte & Referenzen',
+  DESCRIPTION: 'Ausgewählte XR-Lern- und Trainingsszenarien von der Konzeption bis zur Evaluation.',
 }
+
+export const XR_PROJECTS = [
+  {
+    slug: 'repix-vr',
+    category: 'learning',
+    title: 'RePiX VR',
+    focus: 'VR · Computer Graphics',
+    organization: 'Learning Technologies · RWTH Aachen University',
+    url: 'https://gitlab.com/learntech-rwth/repix-vr/repix-vr-app',
+    summary: 'Eine begehbare Rendering-Pipeline, in der Lernende Grafikprozesse direkt untersuchen und verändern.',
+    description:
+      'RePiX VR macht die Rendering-Pipeline als interaktive Lernumgebung begehbar. Lernende verändern unter anderem Sichtvolumen und Geometrien direkt in VR. Interaktionen, Blickdaten und Lernverläufe liefern eine Grundlage für Forschung und Evaluation.',
+    tags: ['Unity', 'VR', 'Eye Tracking', 'xAPI'],
+  },
+  {
+    slug: 'teach-r',
+    category: 'learning',
+    title: 'Teach-R',
+    focus: 'VR · Lehrkräftetraining',
+    organization: 'Universität Potsdam · RWTH Aachen University',
+    url: 'https://www.uni-potsdam.de/de/multimedia/projekte/anwendungen/teach-r',
+    summary: 'Beratung zur Einbindung von Learning Analytics in einen virtuellen Klassenraum für das Lehrkräftetraining.',
+    description:
+      'Teach-R versetzt angehende Lehrkräfte in einen realitätsnahen virtuellen Klassenraum. Ich habe das Projektteam bei der Integration von OmiLAXR und der strukturierten Erfassung von Interaktionsdaten beraten.',
+    tags: ['VR', 'Simulation', 'Training', 'Learning Analytics'],
+  },
+  {
+    slug: 'inside-the-router',
+    category: 'learning',
+    title: 'Inside the Router',
+    focus: 'VR · Informatikdidaktik',
+    organization: 'Didaktik der Informatik · TU Dresden',
+    url: 'https://ddigames.inf.tu-dresden.de/sites/vr/router/',
+    summary: 'Beratung zur Erfassung und Auswertung von Interaktionen in einem VR-Lernspiel über Netzwerk-Routing.',
+    description:
+      'Inside the Router macht Netzwerk-Routing durch den Umgang mit virtuellen Datenpaketen erfahrbar. Ich habe zur Integration von OmiLAXR und zur Modellierung auswertbarer xAPI-Interaktionen beraten.',
+    tags: ['VR', 'Game-based Learning', 'Networking', 'xAPI'],
+  },
+  {
+    slug: 'schuelerlarbor',
+    category: 'learning',
+    title: 'SchülerlARbor Chemie',
+    focus: 'AR/MR · Chemiedidaktik',
+    organization: 'Didaktik der Chemie · RWTH Aachen University',
+    url: 'https://apps.apple.com/de/app/sch%C3%BClerlarbor-chemie/id1590309131',
+    summary: 'AR- und MR-Lernmodule machen chemische Vorgänge sichtbar, die im realen Labor schwer zu beobachten sind.',
+    description:
+      'SchülerlARbor Chemie erweitert das Schülerlabor CheERs! um AR- und Mixed-Reality-Lernmodule. Inhalte zu Lithium-Ionen-Akkus, Piezo-Kristallen und Reaktionsmechanismen werden räumlich erfahrbar und ergänzen das praktische Experimentieren.',
+    tags: ['AR/MR', 'Chemie', 'Mobile Learning', 'Learning Analytics'],
+  },
+  {
+    slug: 'ar-routen',
+    category: 'technical',
+    title: 'AR-Routen & Indoor-Navigation',
+    focus: 'AR · Spatial Computing',
+    organization: 'Kundenprojekt · Gastronomie',
+    summary: 'Technische Gesamtverantwortung für eine produktionsnahe AR-Navigation – von der Architektur bis zur Übergabe.',
+    description:
+      'Ich verantwortete Architektur, Technologieauswahl, Teamkoordination und Delivery eines AR-Navigationsmoduls mit Unity, Flutter und Immersal. Die Erfahrungen aus dem Kundenprojekt lassen sich direkt auf geführte Trainings, Onboarding, Wartungsabläufe und Orientierung in realen Arbeitsumgebungen übertragen.',
+    tags: ['Unity', 'AR', 'Indoor Navigation', 'Flutter', 'Immersal'],
+  },
+  {
+    slug: 'virtual-booth',
+    category: 'technical',
+    title: 'Virtual Booth & Live Mosaic',
+    focus: 'Event-Tech · WebAR',
+    organization: 'Kundenprojekt · Event-Branche',
+    summary: 'Browserbasierte AR-Erlebnisse und Live-Mosaic-Visualisierungen für den Einsatz auf Veranstaltungen.',
+    description:
+      'Als Tech Lead entwickelte ich für die Event-Branche eine produktiv eingesetzte Plattform mit Virtual Booth und Live Mosaic. Three.js und WebGL ermöglichen interaktive 3D- und Mosaik-Visualisierungen direkt im Browser; die AR-Fotobox ergänzt Face-Tracking und konfigurierbare Effekte. Der Ansatz eignet sich für interaktive Events, Markeninszenierungen und niedrigschwellige AR-Erlebnisse ohne zusätzliche App.',
+    tags: ['Three.js', 'WebGL', 'WebAR', 'Live Mosaic', 'Face Tracking'],
+  },
+]
 
 export const SERVICES = [
   {
@@ -64,7 +137,7 @@ export const SERVICES = [
     bullets: [
       'Lernziele, Aufgabenlogik, Feedback und Transfer in die Praxis ausarbeiten',
       'Interaktionskonzept, technischer Zuschnitt und Analytics-Events definieren',
-      'Geeignet vor Neuentwicklung, Ausschreibung oder Projektantrag',
+      'Auch als technischer Umsetzungspartner für Projektanträge und Verbundvorhaben',
     ],
   },
   {
@@ -73,7 +146,7 @@ export const SERVICES = [
     description:
       'Ein fokussiertes XR-Lern- oder Trainingsszenario mit technischer und analytischer Grundlage.',
     bullets: [
-      'Unity/XR-Umsetzung für ein klar begrenztes Szenario',
+      'Umsetzung mit Unity oder Three.js/WebXR für ein klar begrenztes Szenario',
       'xAPI-/Telemetry-Grundlage, Monitoring und Pilotierung',
       'Report mit Ergebnissen, Risiken und nächster Ausbaustufe',
     ],
@@ -95,7 +168,7 @@ export const SERVICES = [
     description:
       'Technische Integration von Datenpunkten, xAPI-/Telemetry-Pipeline und Monitoring in vorhandene Apps.',
     bullets: [
-      'xAPI- oder Telemetry-Events in Unity/XR integrieren',
+      'xAPI- oder Telemetry-Events in Unity-, Three.js- oder WebXR-Anwendungen integrieren',
       'Anbindung an LRS, Backend, Dashboard oder bestehende Systeme',
       'Datenqualitätscheck und Übergabe an Team, Forschung oder Training',
     ],
@@ -530,14 +603,15 @@ export const EXPERIENCE = [
   {
     company: 'Freiberuflich',
     location: 'Remote',
-    position: 'IT-Berater & Softwaresystem-Engineer',
+    position: 'XR-/Software-Berater & Technical Lead',
     start: 'Apr 2024',
     link: 'https://goerzen.consulting',
     end: 'heute',
     tasks: [
-      'Umsetzung produktnaher Softwarelösungen in C#/.NET und Full-Stack (Web/Mobile/Services), inkl. Integration in bestehende Produkte.',
-      'Backend-Anbindung und Datenmodellierung mit Supabase (PostgreSQL); Serverless-Betrieb auf AWS.',
-      'Delivery: Anforderungsklärung, technische Konzeption, Umsetzung, Reviews, Go-Live-Begleitung und Übergabe ins Team.',
+      'Konzeption und Umsetzung produktionsnaher XR-, AR- und Softwaresysteme mit Unity, C#/.NET, Flutter und Webtechnologien.',
+      'Technische Gesamtverantwortung für eine AR-Indoor-Navigation: Architektur, Technologieauswahl, Teamkoordination, Delivery und Übergabe.',
+      'Begleitung von Anforderungsanalyse und Scoping über Prototyping und Integration bis Go-live, Evaluation und belastbarem Ergebnisbericht.',
+      'Einbindung spezialisierter Freelancer für 3D, Design, Entwicklung oder Datenanalyse, wenn der Projektrahmen zusätzliche Expertise verlangt.',
     ],
   },
   {
@@ -546,11 +620,12 @@ export const EXPERIENCE = [
     position: 'Wissenschaftlicher Mitarbeiter',
     start: 'Apr 2021',
     link: 'https://learntech.rwth-aachen.de',
-    end: 'heute',
+    end: 'Sep 2026',
     tasks: [
-      'Entwicklung produktnaher Software in XR- und Analytics-Kontexten.',
-      'Lehre, Mentoring und technische Qualitätssicherung in Entwicklungsprojekten.',
-      'Teamkoordination, Reviews und Strukturierung von Umsetzungsarbeiten.',
+      'Konzeption, Entwicklung und Evaluation von XR-Lernszenarien sowie des modularen OmiLAXR-Frameworks für xAPI-basiertes Learning Analytics.',
+      'Beratung externer Projektteams bei der Integration von XR-Interaktionsdaten und Analytics, unter anderem bei Teach-R und Inside the Router.',
+      'Anforderungsanalyse, Stakeholder-Interviews, Prototyping, Pilotstudien und wissenschaftlich belastbare Auswertung.',
+      'Technische Koordination, Reviews und Umsetzung in Forschungs- und Verbundprojekten sowie Betreuung studentischer Entwicklungsarbeiten.',
       'Promotion im Juni 2026 abgeschlossen.',
     ],
   },
@@ -562,9 +637,9 @@ export const EXPERIENCE = [
     link: 'https://mintano.com/',
     end: 'März 2021',
     tasks: [
-      'Technische Leitung in Kunden- und Produktprojekten.',
-      'Koordination von Team/Freelancern und Qualitätssicherung bis zur Auslieferung.',
-      'Abstimmung mit Stakeholdern zu Scope, Prioritäten und Umsetzungsentscheidungen.',
+      'Technische Leitung einer produktiv eingesetzten Event-Tech-Plattform mit Virtual Booth, WebAR und Live Mosaic.',
+      'Interaktive 3D- und Mosaik-Visualisierungen mit Three.js/WebGL sowie Face-Tracking und konfigurierbare AR-Effekte.',
+      'Koordination interner und externer Entwickler, Architekturentscheidungen, Qualitätssicherung und Delivery bis zur Auslieferung.',
     ],
   },
   {
