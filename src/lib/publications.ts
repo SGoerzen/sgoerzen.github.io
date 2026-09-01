@@ -20,7 +20,7 @@ export type SupervisedWorkEntry = {
 export const PUBLICATIONS_PAGE = {
   TITLE: 'Publikationen / Beiträge',
   DESCRIPTION:
-    'Wissenschaftliche Publikationen, Beiträge und betreute Abschlussarbeiten von Sergej Görzen.',
+    'Wissenschaftliche Publikationen, Beiträge und betreute Abschlussarbeiten von Dr.-Ing. Sergej Görzen.',
 }
 
 export const PUBLICATIONS: PublicationEntry[] = [

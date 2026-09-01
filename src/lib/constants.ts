@@ -15,16 +15,16 @@ export const LINKS = {
 }
 
 export const SITE: Site = {
-  TITLE: 'Sergej Görzen | XR Learning Analytics',
+  TITLE: 'Dr.-Ing. Sergej Görzen | XR Learning Analytics',
   DESCRIPTION:
     'XR-Lern- und Trainingsszenarien mit Unity, Three.js und WebXR – ergänzt um xAPI, Learning Analytics und Evaluation.',
-  AUTHOR: 'Sergej Görzen',
+  AUTHOR: 'Dr.-Ing. Sergej Görzen',
 }
 
 export const IMPRESSUM = {
   TITLE: 'Impressum',
   DESCRIPTION: 'Anbieterkennzeichnung und rechtliche Hinweise.',
-  NAME: 'Sergej Görzen',
+  NAME: 'Dr.-Ing. Sergej Görzen',
   ADDRESS_LINE1: 'Hähner Weg 6',
   ADDRESS_LINE2: '51580 Reichshof',
   COUNTRY: 'Deutschland',
