@@ -1,26 +1,12 @@
 ---
-import { PROJECTS, CV_PROJECTS } from '../lib/constants'
+import { PROJECTS, XR_PROJECTS } from '../lib/constants'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import TopLayout from '../layouts/TopLayout.astro'
 import BottomLayout from '../layouts/BottomLayout.astro'
-import ProjectDialog from '../components/ProjectDialog.astro'
+import OmiLAXRProjectCard from '../components/OmiLAXRProjectCard.astro'
 
-const getYears = (period: string) => {
-  const match = period.match(/(\d{4})\s*-\s*(\d{4}|xxxx)/i)
-  if (!match) return { start: 0, end: 0 }
-  const start = Number(match[1])
-  const end = match[2].toLowerCase() === 'xxxx' ? 9999 : Number(match[2])
-  return { start, end }
-}
-
-const byRecent = (a: { period: string }, b: { period: string }) => {
-  const aYears = getYears(a.period)
-  const bYears = getYears(b.period)
-  if (aYears.end !== bYears.end) return bYears.end - aYears.end
-  return bYears.start - aYears.start
-}
-
-const featuredProjects = CV_PROJECTS.filter((project) => project.featured).sort(byRecent)
+const learningProjects = XR_PROJECTS.filter((project) => project.category === 'learning')
+const technicalProjects = XR_PROJECTS.filter((project) => project.category === 'technical')
 ---
 
 <BaseLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
@@ -33,42 +19,74 @@ const featuredProjects = CV_PROJECTS.filter((project) => project.featured).sort(
 
     <BottomLayout>
       <div class="space-y-8">
-        <section class="space-y-4">
-          <p class="max-w-3xl text-sm text-muted-foreground">
-            Ausgewählte Projekte und Mandate aus den letzten Jahren. Die vollständige Berufserfahrung findet sich unter &nbsp;
-            <a href="/work" class="text-primary">Berufserfahrung</a>.
+        <section class="overflow-hidden rounded-2xl border bg-gradient-to-br from-primary/10 via-background to-background p-6 md:p-8" aria-labelledby="xr-intro">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Konzeption · Entwicklung · Evaluation</p>
+          <h3 id="xr-intro" class="mt-3 max-w-3xl text-2xl font-semibold tracking-tight md:text-3xl">
+            XR-Szenarien, die nicht bei der technischen Demo aufhören.
+          </h3>
+          <p class="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            Ich entwickle VR-, AR- und Mixed-Reality-Anwendungen von der Anforderungsanalyse und dem didaktischen Szenario über die Umsetzung mit Unity oder Three.js/WebXR bis zur Pilotierung. Wenn Messbarkeit gefragt ist, ergänze ich passende Interaktionsdaten, Learning Analytics und eine belastbare Evaluation.
           </p>
-          <div class="grid gap-3 md:grid-cols-2">
+
+          <div class="mt-6 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-xl border bg-background/80 p-4">
+              <p class="font-semibold">Konzept & Didaktik</p>
+              <p class="mt-1 text-xs leading-relaxed text-muted-foreground">Lernziel, Zielgruppe, Interaktion und Feedback werden zu einem umsetzbaren Szenario.</p>
+            </div>
+            <div class="rounded-xl border bg-background/80 p-4">
+              <p class="font-semibold">Unity, Three.js & XR</p>
+              <p class="mt-1 text-xs leading-relaxed text-muted-foreground">Native oder browserbasierte Prototypen, Piloten und produktive XR-Anwendungen.</p>
+            </div>
+            <div class="rounded-xl border bg-background/80 p-4">
+              <p class="font-semibold">Analytics & Evaluation</p>
+              <p class="mt-1 text-xs leading-relaxed text-muted-foreground">Optional mit xAPI, Messkonzept, Auswertung und Report.</p>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="xr-projects">
+          <div class="mb-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Referenzen</p>
+            <h3 id="xr-projects" class="mt-1 text-xl font-semibold tracking-tight">Ausgewählte XR-Lernszenarien</h3>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2">
             {
-              featuredProjects.map((project, index) => (
-                <article class="rounded-lg border p-4">
-                  <p class="mt-1 font-semibold">{project.title}</p>
-                  {(project.role || project.sector) && (
-                    <p class="mt-1 text-xs font-medium text-muted-foreground">
-                      {[project.role, project.sector].filter(Boolean).join(' · ')}
-                    </p>
-                  )}
-                  <p class="mt-1 text-xs text-muted-foreground">Zeitraum: {project.period.replace('xxxx', 'heute')}</p>
-                  <p class="mt-1 text-xs text-muted-foreground">{project.stack.join(' · ')}</p>
-                  <p class="mt-2 text-sm text-muted-foreground">{project.description}</p>
-                  <ProjectDialog
-                    dialogId={`cv-${index}`}
-                    title={project.title}
-                    description={project.description}
-                    image={project.image}
-                  >
-                    {(project.role || project.sector) && (
-                      <p class="text-sm"><span class="font-semibold">Rolle:</span> {[project.role, project.sector].filter(Boolean).join(' · ')}</p>
-                    )}
-                    <p class="text-sm"><span class="font-semibold">Zeitraum:</span> {project.period.replace('xxxx', 'heute')}</p>
-                    <p class="text-sm">{project.stack.join(' · ')}</p>
-                    <p class="text-sm">{project.details}</p>
-                  </ProjectDialog>
-                </article>
+              learningProjects.map((project) => (
+                <OmiLAXRProjectCard project={project} />
               ))
             }
           </div>
         </section>
+
+        <section aria-labelledby="technical-xr-projects">
+          <div class="mb-5 max-w-3xl">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Technische XR-Referenz</p>
+            <h3 id="technical-xr-projects" class="mt-1 text-xl font-semibold tracking-tight">XR-Kompetenz über den Bildungskontext hinaus</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Produktionsnahe AR-Erfahrung für räumliche Navigation und niedrigschwellige Browser-Erlebnisse – übertragbar auf Training, Onboarding und interaktive Kommunikation.
+            </p>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2">
+            {
+              technicalProjects.map((project) => (
+                <OmiLAXRProjectCard project={project} />
+              ))
+            }
+          </div>
+        </section>
+
+        <aside class="rounded-2xl border border-primary/20 bg-primary/5 p-5 md:flex md:items-center md:justify-between md:gap-8">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-primary">Messbarkeit als Erweiterung</p>
+            <h3 class="mt-1 text-lg font-semibold">OmiLAXR für standardisierte XR-Lerndaten</h3>
+            <p class="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+              Für Projekte mit Forschungs-, Nachweis- oder Evaluationsbedarf nutze und entwickle ich OmiLAXR – ein modulares Open-Source-Framework für xAPI-basiertes Learning Analytics in Unity und XR.
+            </p>
+          </div>
+          <a href="https://omilaxr.dev/" target="_blank" rel="noreferrer" class="mt-4 inline-block shrink-0 text-sm font-medium text-primary hover:underline md:mt-0">
+            OmiLAXR ansehen →
+          </a>
+        </aside>
       </div>
     </BottomLayout>
   </main>

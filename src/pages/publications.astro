@@ -5,7 +5,12 @@ import BottomLayout from '../layouts/BottomLayout.astro'
 import { ExternalLink } from 'lucide-react'
 import { PUBLICATIONS_PAGE, PUBLICATIONS, SUPERVISED_WORKS } from '../lib/publications'
 
-const publications = [...PUBLICATIONS].sort((a, b) => b.year - a.year)
+const publications = PUBLICATIONS.filter((entry) => entry.kind !== 'thesis').sort(
+  (a, b) => b.year - a.year,
+)
+const ownTheses = PUBLICATIONS.filter((entry) => entry.kind === 'thesis').sort(
+  (a, b) => b.year - a.year,
+)
 const supervisedWorks = [...SUPERVISED_WORKS].sort((a, b) => b.year - a.year)
 ---
 
@@ -20,11 +25,39 @@ const supervisedWorks = [...SUPERVISED_WORKS].sort((a, b) => b.year - a.year)
     <BottomLayout>
       <div class="space-y-10">
         <section class="space-y-4">
-          <h3 class="text-xl font-semibold">Eigene Publikationen und Beiträge</h3>
+          <h3 class="text-xl font-semibold">Publikationen und wissenschaftliche Beiträge</h3>
           <p class="max-w-3xl text-sm text-muted-foreground">
-            Enthält Publikationen mit Beteiligung von Sergej Görzen. Zu jedem Eintrag sind Autor:innen, Jahr, ggf. Link und ein
-            aufklappbarer Kurzabstract hinterlegt.
+            Publikationen, Beiträge und Forschungsdaten mit Autorenschaft oder Herausgeberschaft von Dr.-Ing. Sergej Görzen. Metadaten und Links sind mit dem RWTH-Publikationsprofil abgeglichen.
           </p>
+          <div class="flex flex-wrap gap-x-5 gap-y-2">
+            <a
+              href="https://learntech.rwth-aachen.de/cms/learntech/Das-Lehr-und-Forschungsgebiet/Mitarbeiter/Wissenschaftliche-Mitarbeiterinnen-und-M/~nwbzq/Sergej-Goerzen/?allou=1"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+            >
+              RWTH-Publikationsprofil
+              <ExternalLink class="h-4 w-4" />
+            </a>
+            <a
+              href="https://scholar.google.com/citations?user=lBOpQpgAAAAJ&hl=de"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+            >
+              Google Scholar
+              <ExternalLink class="h-4 w-4" />
+            </a>
+            <a
+              href="https://www.researchgate.net/profile/Sergej-Goerzen/research"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+            >
+              ResearchGate
+              <ExternalLink class="h-4 w-4" />
+            </a>
+          </div>
 
           <ul class="space-y-3">
             {
@@ -63,9 +96,51 @@ const supervisedWorks = [...SUPERVISED_WORKS].sort((a, b) => b.year - a.year)
         </section>
 
         <section class="space-y-4">
-          <h3 class="text-xl font-semibold">Betreute Arbeiten (separate Liste)</h3>
+          <h3 class="text-xl font-semibold">Eigene Abschlussarbeiten</h3>
           <p class="max-w-3xl text-sm text-muted-foreground">
-            Diese Einträge sind bewusst getrennt von den Publikationen aufgeführt und enthalten von dir betreute Abschlussarbeiten.
+            Dissertation und weitere wissenschaftliche Abschlussarbeiten von Dr.-Ing. Sergej Görzen.
+          </p>
+
+          <ul class="space-y-3">
+            {
+              ownTheses.map((entry) => (
+                <li class="rounded-xl border p-4">
+                  <div class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    <span>{entry.year}</span>
+                    <span>•</span>
+                    <span>{entry.venue}</span>
+                  </div>
+
+                  <h4 class="mt-2 text-base font-semibold leading-snug">{entry.title}</h4>
+                  <p class="mt-2 text-sm text-muted-foreground">{entry.authors}</p>
+
+                  <div class="mt-3 flex flex-wrap items-center gap-4">
+                    {
+                      entry.link && (
+                        <a
+                          href={entry.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          class="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                        >
+                          Abschlussarbeit
+                          <ExternalLink class="h-4 w-4" />
+                        </a>
+                      )
+                    }
+                  </div>
+
+                  {entry.abstract && <p class="mt-3 text-sm text-muted-foreground">{entry.abstract}</p>}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="space-y-4">
+          <h3 class="text-xl font-semibold">Betreute Abschlussarbeiten</h3>
+          <p class="max-w-3xl text-sm text-muted-foreground">
+            Bachelor- und Masterarbeiten, bei denen Dr.-Ing. Sergej Görzen im RWTH-Publikationsprofil als Betreuer beziehungsweise Consultant geführt wird.
           </p>
 
           <ul class="space-y-3">
@@ -81,7 +156,7 @@ const supervisedWorks = [...SUPERVISED_WORKS].sort((a, b) => b.year - a.year)
                   </div>
 
                   <h4 class="mt-2 text-base font-semibold leading-snug">{entry.title}</h4>
-                  <p class="mt-2 text-sm text-muted-foreground">Studierende:r: {entry.student}</p>
+                  <p class="mt-2 text-sm text-muted-foreground">Verfasser:in: {entry.student}</p>
 
                   <div class="mt-3 flex flex-wrap items-center gap-4">
                     {
