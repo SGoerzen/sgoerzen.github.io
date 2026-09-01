@@ -1,0 +1,200 @@
+---
+import { Calendar, Mail } from 'lucide-react'
+import Card from '../Card.astro'
+import { Button } from '../ui/button'
+import { LINKS } from '../../lib/constants'
+---
+
+<Card colSpan="md:col-span-2 lg:col-span-4" rowSpan="md:row-span-1 lg:row-span-1" title="XR-Projektcheck" body="Drei schnelle Entscheidungen für den passenden Einstieg.">
+  <section id="xr-projektcheck" class="mt-5 grid gap-7 lg:grid-cols-[1.15fr_0.85fr]">
+    <form data-project-check class="space-y-6">
+      <fieldset class="space-y-3">
+        <legend class="text-sm font-semibold">Ausgangslage</legend>
+        <div class="grid gap-2 sm:grid-cols-2">
+          <label class="cursor-pointer">
+            <input class="peer sr-only" type="radio" name="state" value="new" checked />
+            <span class="flex min-h-11 items-center justify-center rounded-md border px-3 py-2 text-center text-sm font-medium transition peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+              Neues Szenario
+            </span>
+          </label>
+          <label class="cursor-pointer">
+            <input class="peer sr-only" type="radio" name="state" value="existing" />
+            <span class="flex min-h-11 items-center justify-center rounded-md border px-3 py-2 text-center text-sm font-medium transition peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+              Bestehende XR-App
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="space-y-3">
+        <legend class="text-sm font-semibold">Ziel</legend>
+        <div class="grid gap-2 sm:grid-cols-4">
+          <label class="cursor-pointer">
+            <input class="peer sr-only" type="radio" name="goal" value="concept" checked />
+            <span class="flex min-h-11 items-center justify-center rounded-md border px-3 py-2 text-center text-sm font-medium transition peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+              Konzept
+            </span>
+          </label>
+          <label class="cursor-pointer">
+            <input class="peer sr-only" type="radio" name="goal" value="pilot" />
+            <span class="flex min-h-11 items-center justify-center rounded-md border px-3 py-2 text-center text-sm font-medium transition peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+              Pilot
+            </span>
+          </label>
+          <label class="cursor-pointer">
+            <input class="peer sr-only" type="radio" name="goal" value="evaluation" />
+            <span class="flex min-h-11 items-center justify-center rounded-md border px-3 py-2 text-center text-sm font-medium transition peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+              Evaluation
+            </span>
+          </label>
+          <label class="cursor-pointer">
+            <input class="peer sr-only" type="radio" name="goal" value="full" />
+            <span class="flex min-h-11 items-center justify-center rounded-md border px-3 py-2 text-center text-sm font-medium transition peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+              Komplett
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="space-y-3">
+        <legend class="text-sm font-semibold">Datenbedarf</legend>
+        <div class="grid gap-2 sm:grid-cols-3">
+          <label class="cursor-pointer">
+            <input class="peer sr-only" type="radio" name="data" value="orientation" checked />
+            <span class="flex min-h-11 items-center justify-center rounded-md border px-3 py-2 text-center text-sm font-medium transition peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+              Messpunkte klären
+            </span>
+          </label>
+          <label class="cursor-pointer">
+            <input class="peer sr-only" type="radio" name="data" value="analytics" />
+            <span class="flex min-h-11 items-center justify-center rounded-md border px-3 py-2 text-center text-sm font-medium transition peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+              xAPI integrieren
+            </span>
+          </label>
+          <label class="cursor-pointer">
+            <input class="peer sr-only" type="radio" name="data" value="report" />
+            <span class="flex min-h-11 items-center justify-center rounded-md border px-3 py-2 text-center text-sm font-medium transition peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+              Report erhalten
+            </span>
+          </label>
+        </div>
+      </fieldset>
+    </form>
+
+    <aside class="flex flex-col justify-between gap-5 border-l-2 border-primary pl-5">
+      <div class="space-y-2">
+        <p class="m-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Empfohlener Einstieg</p>
+        <h3 data-result-title class="m-0 text-2xl font-semibold">XR-Konzeptpaket</h3>
+        <p data-result-price class="m-0 text-lg font-semibold text-primary">ab 9.900 €</p>
+        <p data-result-text class="m-0 text-sm text-muted-foreground">
+          Anforderungen, didaktisches Konzept, XR-Szenario, Messkonzept und realistische Umsetzungsplanung.
+        </p>
+        <p data-result-next class="m-0 text-sm">
+          Danach kann die Umsetzung als Pilot/MVP oder vollständige Pipeline sauber beauftragt werden.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <a href={LINKS.calendly} target="_blank" rel="noreferrer">
+          <Button>
+            <Calendar />
+            <span class="ml-2">Erstgespräch buchen</span>
+          </Button>
+        </a>
+        <Button
+          type="button"
+          variant="outline"
+          data-open-dialog="contact-form"
+          aria-haspopup="dialog"
+          aria-controls="contact-form"
+        >
+          <Mail />
+          <span class="ml-2">Anfrage senden</span>
+        </Button>
+      </div>
+    </aside>
+  </section>
+</Card>
+
+<script>
+  type Recommendation = {
+    title: string
+    price: string
+    text: string
+    next: string
+  }
+
+  const recommendations = {
+    audit: {
+      title: 'Analytics Audit für bestehende XR-Apps',
+      price: 'ab 6.900 €',
+      text: 'App, Lernziele, Codebasis, Datenpunkte und Integrationsrisiken werden geprüft.',
+      next: 'Danach liegen Messkonzept, Aufwandsschätzung und Integrationsplan vor.',
+    },
+    integration: {
+      title: 'Analytics-Integration für bestehende XR-Apps',
+      price: 'typ. 14.000-29.000 €',
+      text: 'xAPI-/Telemetry-Events, LRS-/Backend-Anbindung, Monitoring und Datenvalidierung werden umgesetzt.',
+      next: 'Geeignet, wenn eine App existiert und für Training, Forschung oder Nachweisführung messbar werden soll.',
+    },
+    evaluation: {
+      title: 'Evaluation & Report',
+      price: 'ab 9.000 €',
+      text: 'Evaluationsdesign, Datenerhebung, Auswertung, Visualisierung und Ergebnisbericht.',
+      next: 'Geeignet, wenn der Fokus auf Wirksamkeit, Nutzungsverhalten oder Entscheidungsgrundlagen liegt.',
+    },
+    concept: {
+      title: 'XR-Konzeptpaket',
+      price: 'ab 9.900 €',
+      text: 'Anforderungen, didaktisches Konzept, XR-Szenario, Messkonzept und realistische Umsetzungsplanung.',
+      next: 'Danach kann die Umsetzung als Pilot/MVP oder vollständige Pipeline sauber beauftragt werden.',
+    },
+    pilot: {
+      title: 'XR-Pilot/MVP',
+      price: 'typ. 39.000-69.000 €',
+      text: 'Ein fokussiertes XR-Lern- oder Trainingsszenario mit Analytics-Grundlage und Pilotierung.',
+      next: 'Geeignet, wenn ein belastbarer erster Einsatz statt nur einer Demo entstehen soll.',
+    },
+    full: {
+      title: 'Vollständige XR Learning Pipeline',
+      price: 'ab 79.000 €',
+      text: 'Konzept, Umsetzung, Analytics, Evaluation, Auswertung und Report aus einer Hand.',
+      next: 'Geeignet für Teams, die ein Szenario nicht nur bauen, sondern fachlich und datenbasiert bewerten wollen.',
+    },
+  } satisfies Record<string, Recommendation>
+
+  const pickRecommendation = (formData: FormData): Recommendation => {
+    const state = String(formData.get('state') || 'new')
+    const goal = String(formData.get('goal') || 'concept')
+    const data = String(formData.get('data') || 'orientation')
+
+    if (state === 'existing') {
+      if (goal === 'evaluation' || data === 'report') return recommendations.evaluation
+      if (data === 'analytics' || goal === 'pilot' || goal === 'full') return recommendations.integration
+      return recommendations.audit
+    }
+
+    if (goal === 'full' || data === 'report') return recommendations.full
+    if (goal === 'pilot' || data === 'analytics') return recommendations.pilot
+    return recommendations.concept
+  }
+
+  document.querySelectorAll<HTMLFormElement>('[data-project-check]').forEach((form) => {
+    const section = form.closest('section')
+    const title = section?.querySelector<HTMLElement>('[data-result-title]')
+    const price = section?.querySelector<HTMLElement>('[data-result-price]')
+    const text = section?.querySelector<HTMLElement>('[data-result-text]')
+    const next = section?.querySelector<HTMLElement>('[data-result-next]')
+
+    const update = () => {
+      const recommendation = pickRecommendation(new FormData(form))
+      if (title) title.textContent = recommendation.title
+      if (price) price.textContent = recommendation.price
+      if (text) text.textContent = recommendation.text
+      if (next) next.textContent = recommendation.next
+    }
+
+    form.addEventListener('change', update)
+    update()
+  })
+</script>

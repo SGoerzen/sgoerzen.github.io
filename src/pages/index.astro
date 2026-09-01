@@ -4,6 +4,8 @@ import IntroCard from '../components/sections/IntroCard.astro'
 import ExperienceCard from '../components/sections/ExperienceCard.astro'
 import SkillsCard from '../components/sections/SkillsCard.astro'
 import ServiceCard from '../components/sections/ServiceCard.astro'
+import XRPipelineCard from '../components/sections/XRPipelineCard.astro'
+import XRProjectCheckCard from '../components/sections/XRProjectCheckCard.astro'
 import StudyCard from '../components/sections/StudyCard.astro'
 import CVCard from '../components/sections/CVCard.astro'
 import EducationCard from '../components/sections/EducationCard.astro'
@@ -29,8 +31,8 @@ import EducationCard from '../components/sections/EducationCard.astro'
 </script>
 
 <BaseLayout
-  title="Sergej Görzen | Freelance Senior Software Engineer · C#/.NET · Köln / Remote"
-  description="Freelance Senior Software Engineer & Tech Lead für C#/.NET, Unity/XR und Full-Stack. 10+ Jahre Erfahrung, Promotion an der RWTH Aachen. Für Mittelstand und Produktteams – deutschlandweit remote."
+  title="Sergej Görzen | XR Learning Analytics · Training · Evaluation"
+  description="XR-Lern- und Trainingsszenarien von der Anforderungsanalyse über Unity/XR, xAPI und Learning Analytics bis zur Evaluation und zum Report."
 >
   <div
     slot="loader"
@@ -41,6 +43,8 @@ import EducationCard from '../components/sections/EducationCard.astro'
     class="relative m-auto grid w-full max-w-6xl gap-2 overflow-hidden p-2 sm:gap-2 sm:p-4 md:grid-cols-2 md:gap-3 md:p-6 lg:grid-cols-4 lg:gap-4"
   >
     <IntroCard />
+    <XRProjectCheckCard />
+    <XRPipelineCard />
     <ServiceCard />
     <ExperienceCard />
     <SkillsCard />

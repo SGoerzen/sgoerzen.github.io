@@ -15,9 +15,9 @@ export const LINKS = {
 }
 
 export const SITE: Site = {
-  TITLE: 'Sergej Görzen | Senior Software Engineer',
+  TITLE: 'Sergej Görzen | XR Learning Analytics',
   DESCRIPTION:
-    'Senior Software Engineer für komplexe Systeme, Architektur und technische Produktumsetzung mit Fokus auf C#/.NET, Modernisierung und Delivery.',
+    'XR-Lern- und Trainingsszenarien mit Unity/XR, xAPI, Learning Analytics, Evaluation und belastbarem Report.',
   AUTHOR: 'Sergej Görzen',
 }
 
@@ -46,33 +46,69 @@ export const PROJECTS: Page = {
 
 export const SERVICES = [
   {
-    title: 'Technische Produktkonzeption',
+    title: 'XR Scoping Sprint',
+    price: 'ab 3.900 €',
     description:
-      'Ich übersetze anspruchsvolle Produktideen in eine belastbare technische Grundlage, bevor Umsetzung teuer oder beliebig wird.',
+      'Der strukturierte Einstieg, wenn Idee, Lernziel, Technik und Budget noch sortiert werden müssen.',
     bullets: [
-      'Technischer Zuschnitt für Produkte mit .NET, Web, XR oder mehreren Systemen',
-      'Machbarkeit, Architektur und sinnvolle Umsetzungsreihenfolge früh geklärt',
-      'Klare Entscheidungsgrundlagen für Produkt, Tech und Stakeholder',
+      'Anforderungen, Stakeholder, Plattform, Risiken und Erfolgskriterien klären',
+      'Machbarkeit, Aufwandsspanne und sinnvolle Umsetzungsreihenfolge bestimmen',
+      'Kompakte Entscheidungsgrundlage für Budget, Förderung oder interne Freigabe',
     ],
   },
   {
-    title: 'Speziallösungen & Systemintegration',
+    title: 'Didaktik & XR-Konzept',
+    price: 'ab 9.900 €',
     description:
-      'Ich realisiere Software, wenn mehrere Technologien, Plattformen oder Spezialanforderungen zu einem funktionierenden Produkt zusammenfinden müssen.',
+      'Aus einem Lern- oder Trainingsziel wird ein belastbares XR-Szenario mit Messkonzept.',
     bullets: [
-      'Integration von .NET, Web, Unity, Mobile, AR/VR und externen Diensten',
-      'Schnittstellen, Datenflüsse und technische Übergänge sauber aufgesetzt',
-      'Nicht nur Prototypen, sondern tragfähige Lösungen für den realen Einsatz',
+      'Lernziele, Aufgabenlogik, Feedback und Transfer in die Praxis ausarbeiten',
+      'Interaktionskonzept, technischer Zuschnitt und Analytics-Events definieren',
+      'Geeignet vor Neuentwicklung, Ausschreibung oder Projektantrag',
     ],
   },
   {
-    title: 'Umsetzung, Delivery & Weiterentwicklung',
+    title: 'Neuer XR-Pilot / MVP',
+    price: '39.000-69.000 €',
     description:
-      'Ich begleite anspruchsvolle Softwarevorhaben von der technischen Konzeption bis zur belastbaren Lieferung und Weiterentwicklung.',
+      'Ein fokussiertes XR-Lern- oder Trainingsszenario mit technischer und analytischer Grundlage.',
     bullets: [
-      'Hands-on Umsetzung in C#/.NET, APIs, Frontends und produktnahen Spezialthemen',
-      'Technische Führung, Reviews und strukturierte Priorisierung im Projekt',
-      'Bei Bedarf auch Architekturarbeit und Modernisierung in gewachsenen Systemen',
+      'Unity/XR-Umsetzung für ein klar begrenztes Szenario',
+      'xAPI-/Telemetry-Grundlage, Monitoring und Pilotierung',
+      'Report mit Ergebnissen, Risiken und nächster Ausbaustufe',
+    ],
+  },
+  {
+    title: 'Analytics Audit für XR-Apps',
+    price: 'ab 6.900 €',
+    description:
+      'Für bestehende XR-Anwendungen, die messbar, evaluierbar oder forschungsfähig werden sollen.',
+    bullets: [
+      'App, Code, Datenflüsse, Lernziele und Evaluationsfähigkeit prüfen',
+      'Messpunkte, Event-Modell und Integrationsrisiken sichtbar machen',
+      'Umsetzbarer Plan für xAPI, LRS, Dashboard oder Report',
+    ],
+  },
+  {
+    title: 'Analytics-Integration',
+    price: '14.000-29.000 €',
+    description:
+      'Technische Integration von Datenpunkten, xAPI-/Telemetry-Pipeline und Monitoring in vorhandene Apps.',
+    bullets: [
+      'xAPI- oder Telemetry-Events in Unity/XR integrieren',
+      'Anbindung an LRS, Backend, Dashboard oder bestehende Systeme',
+      'Datenqualitätscheck und Übergabe an Team, Forschung oder Training',
+    ],
+  },
+  {
+    title: 'Evaluation & Report',
+    price: 'ab 9.000 €',
+    description:
+      'Methodische Begleitung, Auswertung und Ergebnisbericht für XR-Lern- und Trainingsszenarien.',
+    bullets: [
+      'Evaluationsdesign, Pilotstudie oder Nutzertest vorbereiten',
+      'Interaktions-, Lern- oder Trainingsdaten auswerten und visualisieren',
+      'Report mit Handlungsempfehlungen für Stakeholder und Weiterentwicklung',
     ],
   },
 ]
