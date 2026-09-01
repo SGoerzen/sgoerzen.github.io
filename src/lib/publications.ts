@@ -3,6 +3,7 @@ export type PublicationEntry = {
   authors: string
   year: number
   venue: string
+  kind?: 'publication' | 'thesis'
   link?: string
   abstract?: string
 }
@@ -30,6 +31,7 @@ export const PUBLICATIONS: PublicationEntry[] = [
     authors: 'Görzen, Sergej',
     year: 2026,
     venue: 'Dissertation · RWTH Aachen University',
+    kind: 'thesis',
     link: 'https://doi.org/10.18154/RWTH-2026-06580',
     abstract:
       'Entwickelt und evaluiert OmiLAXR als modulare, standardbasierte Pipeline, um Learning Analytics verlässlich und mit geringerem Integrationsaufwand in XR-Anwendungen einzusetzen.',
@@ -97,6 +99,7 @@ export const PUBLICATIONS: PublicationEntry[] = [
     authors: 'Görzen, Sergej',
     year: 2024,
     venue: 'Masterarbeit · abgeschlossen 2020, veröffentlicht 2024',
+    kind: 'thesis',
     link: 'https://doi.org/10.18154/RWTH-2021-03146',
     abstract:
       'Untersucht eine VR-Lernumgebung zur interaktiven Vermittlung der Computergrafik-Rendering-Pipeline und bildet die Grundlage für RePiX VR.',
