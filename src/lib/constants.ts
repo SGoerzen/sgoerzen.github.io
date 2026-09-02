@@ -72,7 +72,7 @@ export const XR_PROJECTS = [
     summary: 'Beratung zur Einbindung von Learning Analytics in einen virtuellen Klassenraum für das Lehrkräftetraining.',
     description:
       'Teach-R versetzt angehende Lehrkräfte in einen realitätsnahen virtuellen Klassenraum. Ich habe das Projektteam bei der Integration von OmiLAXR und der strukturierten Erfassung von Interaktionsdaten beraten.',
-    tags: ['VR', 'Simulation', 'Training', 'Learning Analytics'],
+    tags: ['Unity', 'VR', 'Simulation', 'Training', 'Learning Analytics'],
   },
   {
     slug: 'inside-the-router',
@@ -86,7 +86,7 @@ export const XR_PROJECTS = [
     summary: 'Beratung zur Erfassung und Auswertung von Interaktionen in einem VR-Lernspiel über Netzwerk-Routing.',
     description:
       'Inside the Router macht Netzwerk-Routing durch den Umgang mit virtuellen Datenpaketen erfahrbar. Ich habe zur Integration von OmiLAXR und zur Modellierung auswertbarer xAPI-Interaktionen beraten.',
-    tags: ['VR', 'Game-based Learning', 'Networking', 'xAPI'],
+    tags: ['Unity', 'VR', 'Game-based Learning', 'Networking', 'xAPI'],
   },
   {
     slug: 'schuelerlarbor',
@@ -101,7 +101,7 @@ export const XR_PROJECTS = [
     summary: 'AR- und MR-Lernmodule machen chemische Vorgänge sichtbar, die im realen Labor schwer zu beobachten sind.',
     description:
       'SchülerlARbor Chemie erweitert das Schülerlabor CheERs! um AR- und Mixed-Reality-Lernmodule. Inhalte zu Lithium-Ionen-Akkus, Piezo-Kristallen und Reaktionsmechanismen werden räumlich erfahrbar und ergänzen das praktische Experimentieren.',
-    tags: ['AR/MR', 'Chemie', 'Mobile Learning', 'Learning Analytics'],
+    tags: ['Unity', 'AR/MR', 'Chemie', 'Mobile Learning', 'Learning Analytics'],
   },
   {
     slug: 'ar-routen',
@@ -110,12 +110,17 @@ export const XR_PROJECTS = [
     title: 'Service Route: AR-gestützte Mitarbeiterschulung',
     focus: 'AR · Mitarbeiterschulung & Qualitätssicherung',
     organization: 'Kundenprojekt · Gastronomie',
+    image: '/project-images/ServiceRouteAR.png',
+    imageAlt:
+      'Anonymisierte Ansichten der Service-Route-App mit Routenauswahl, AR-Navigation, Prüfschritten und Abschlussmeldung',
     summary:
       '40 % kürzere Kontrollrundgänge und deutlich schnellere Mängelbehebung durch ortsgebundene AR-Service-Routen.',
+    note:
+      'Abbildung anonymisiert – standortbezogene Informationen wurden aus Vertraulichkeitsgründen unkenntlich gemacht.',
     challenge:
       'Einheitliche Qualitäts- und Hygienestandards sollten in allen Restaurants täglich sichergestellt werden. Das bestehende QS-Prüfsystem war rein checklistengesteuert: Neuen Mitarbeitenden fehlten konkrete Anleitungen, während Prüfschritte nicht verbindlich mit den jeweiligen Orten im Restaurant verknüpft waren.',
     description:
-      'Service Route führt Mitarbeitende Schritt für Schritt durch räumlich gebundene Prüf- und Serviceabläufe. Routen lassen sich in einem Unity-Editor planen und simulieren; die iOS-App verbindet AR-Navigation, konkrete Arbeitsanweisungen und digitale Dokumentation. Ich verantwortete Architektur, Technologieauswahl, Teamkoordination und Delivery bis zur Übergabe.',
+      'Service Route führt Mitarbeitende Schritt für Schritt durch räumlich gebundene Prüf- und Serviceabläufe. Routen lassen sich in einem Unity-Editor planen und simulieren; die mit Flutter umgesetzte iOS-App verbindet AR-Navigation, konkrete Arbeitsanweisungen und digitale Dokumentation. Ich verantwortete Architektur, Technologieauswahl, Teamkoordination und Delivery bis zur Übergabe.',
     outcome:
       'Nachweislich höhere Prozesssicherheit, schnellere interne Audits und erhebliche Zeitersparnis durch den Wegfall der Papierdokumentation.',
     metrics: [
@@ -145,13 +150,14 @@ export const XR_PROJECTS = [
   {
     slug: 'virtual-booth',
     category: 'technical',
-    title: 'Virtual Booth & Live Mosaic',
-    focus: 'Event-Tech · WebAR',
+    title: 'Virtual Booth: AR- & Kamerafilter',
+    focus: 'WebAR · Three.js/WebGL · Camera & Face Filters',
     organization: 'Kundenprojekt · Event-Branche',
-    summary: 'Browserbasierte AR-Erlebnisse und Live-Mosaic-Visualisierungen für den Einsatz auf Veranstaltungen.',
+    summary:
+      'Browserbasierte Fotobox mit konfigurierbaren Hintergrund-, Vordergrund- und Gesichtsfiltern – ohne zusätzliche App.',
     description:
-      'Als Tech Lead entwickelte ich für die Event-Branche eine produktiv eingesetzte Plattform mit Virtual Booth und Live Mosaic. Three.js und WebGL ermöglichen interaktive 3D- und Mosaik-Visualisierungen direkt im Browser; die AR-Fotobox ergänzt Face-Tracking und konfigurierbare Effekte. Der Ansatz eignet sich für interaktive Events, Markeninszenierungen und niedrigschwellige AR-Erlebnisse ohne zusätzliche App.',
-    tags: ['Three.js', 'WebGL', 'WebAR', 'Live Mosaic', 'Face Tracking'],
+      'Als Tech Lead entwickelte ich mit Three.js und WebGL eine produktiv eingesetzte browserbasierte Virtual Booth für interaktive Foto- und AR-Erlebnisse. Die konfigurierbare Filter-Pipeline kombiniert austauschbare Hintergründe, Vordergrund-Overlays und per Face Tracking positionierte Gesichtsfilter direkt im Kamerabild. Kampagnen und Events lassen sich dadurch individuell inszenieren, ohne dass Gäste eine App installieren müssen. Live Mosaic ergänzt die Booth, indem die aufgenommenen Bilder zu einer gemeinsamen Echtzeit-Visualisierung zusammengeführt werden.',
+    tags: ['Three.js', 'WebGL', 'WebAR', 'Camera Filters', 'Backgrounds', 'Foreground Overlays', 'Face Tracking', 'Live Mosaic'],
   },
 ]
 

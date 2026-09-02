@@ -1,7 +1,7 @@
 ---
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
-import { BarChart3, Calendar, FolderOpen, Mail, Route } from 'lucide-react'
+import { Calendar, Mail } from 'lucide-react'
 import { LINKS } from '../../lib/constants'
 ---
 
@@ -24,12 +24,7 @@ import { LINKS } from '../../lib/constants'
             XR-Lern- und Trainingsszenarien, die didaktisch funktionieren und messbare Daten liefern.
           </h1>
           <p class="m-0 max-w-4xl text-base text-muted-foreground md:text-lg">
-            Ich begleite Unternehmen, Hochschulen und Forschungsteams von der Anforderungsanalyse über XR-Umsetzung und xAPI-/Learning-Analytics-Integration bis zur Evaluation und zum belastbaren Report.
-            Bei Bedarf ergänze ich das Projektteam um bewährte Spezialisten für 3D, UX und Datenanalyse. Konzeption, technische Leitung und zentrale Kommunikation bleiben bei mir.
-          </p>
-          <p class="m-0 max-w-4xl text-sm text-muted-foreground">
-            <span class="font-semibold text-foreground">Projektanträge & Verbundvorhaben:</span>
-            {' '}Auch als technischer Umsetzungspartner – von Machbarkeitsprüfung und Arbeitspaketen bis Prototyping, Datenintegration und Evaluation.
+            Ich konzipiere und entwickle messbare VR-, AR- und WebXR-Anwendungen für Unternehmen, Hochschulen und Forschungsteams – vom Lernziel und Prototyp bis zu Learning Analytics, Evaluation und Report.
           </p>
         </div>
 
@@ -40,15 +35,9 @@ import { LINKS } from '../../lib/constants'
               <span class="ml-2">Erstgespräch buchen</span>
             </Button>
           </a>
-          <a href="#xr-projektcheck">
-            <Button variant="outline">
-              <BarChart3 />
-              <span class="ml-2">Projektcheck starten</span>
-            </Button>
-          </a>
           <Button
             type="button"
-            variant="secondary"
+            variant="outline"
             data-open-dialog="contact-form"
             aria-haspopup="dialog"
             aria-controls="contact-form"
@@ -56,18 +45,6 @@ import { LINKS } from '../../lib/constants'
             <Mail />
             <span class="ml-2">Projektanfrage senden</span>
           </Button>
-          <a href="#xr-pipeline">
-            <Button variant="ghost">
-              <Route />
-              <span class="ml-2">Pipeline ansehen</span>
-            </Button>
-          </a>
-          <a href="/projects">
-            <Button variant="ghost">
-              <FolderOpen />
-              <span class="ml-2">Belege ansehen</span>
-            </Button>
-          </a>
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ interface Project {
   image?: string
   imageAlt?: string
   summary: string
+  note?: string
   challenge?: string
   description: string
   outcome?: string
@@ -79,7 +80,7 @@ const metricStyles = [
   href={project.url}
   target={isExternal ? '_blank' : undefined}
   rel={isExternal ? 'noreferrer' : undefined}
-  class={`group flex h-full flex-col rounded-2xl border p-5 transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md ${visual.surface} ${!compact && project.featured ? 'md:col-span-2' : ''}`}
+  class={`group flex h-full flex-col rounded-2xl border p-5 transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md ${visual.surface} ${project.featured ? 'md:col-span-2' : ''}`}
 >
   <div class="flex items-start justify-between gap-4">
     <div class={`flex h-10 w-10 items-center justify-center rounded-xl ${visual.iconColor}`}>
@@ -122,6 +123,14 @@ const metricStyles = [
       </div>
     ) : (
       <p class="mt-4 text-sm leading-relaxed text-muted-foreground md:min-h-20">{project.description}</p>
+    )
+  }
+
+  {
+    project.note && (
+      <p class="mt-3 border-l-2 border-foreground/15 pl-3 text-xs italic leading-relaxed text-muted-foreground">
+        {project.note}
+      </p>
     )
   }
 
