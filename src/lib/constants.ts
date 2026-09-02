@@ -40,11 +40,6 @@ export const WORK: Page = {
     'Profil von Dr.-Ing. Sergej Görzen: Arbeitsweise, technischer Fokus, Berufserfahrung, akademischer Hintergrund und persönliche Interessen.',
 }
 
-export const PROJECTS: Page = {
-  TITLE: 'XR-Projekte & Referenzen',
-  DESCRIPTION: 'Ausgewählte XR-Lern- und Trainingsszenarien von der Konzeption bis zur Evaluation.',
-}
-
 export const XR_PROJECTS = [
   {
     slug: 'repix-vr',
@@ -52,12 +47,65 @@ export const XR_PROJECTS = [
     title: 'RePiX VR',
     focus: 'VR · Computer Graphics',
     organization: 'Learning Technologies · RWTH Aachen University',
-    url: 'https://gitlab.com/learntech-rwth/repix-vr/repix-vr-app',
     image: '/project-images/repix.png',
     imageAlt: 'Collage interaktiver Lernstationen in der VR-Anwendung RePiX',
-    summary: 'Eine begehbare Rendering-Pipeline, in der Lernende Grafikprozesse direkt untersuchen und verändern.',
+    summary:
+      'Aus meiner Masterarbeit entstand eine begehbare Rendering-Pipeline, in der Lernende Grafikprozesse direkt untersuchen und verändern. Die Weiterentwicklung begleitete ich anschließend in elf Bachelor- und Masterarbeiten fachlich.',
+    recognition:
+      'Best Educational Paper (Eurographics 2022) · erweiterter Journalartikel in Computers & Graphics (2023) · Best Poster für eine RePiX-basierte Folgearbeit (DELFI 2022)',
     description:
-      'RePiX VR macht die Rendering-Pipeline als interaktive Lernumgebung begehbar. Lernende verändern unter anderem Sichtvolumen und Geometrien direkt in VR. Interaktionen, Blickdaten und Lernverläufe liefern eine Grundlage für Forschung und Evaluation.',
+      'RePiX VR macht die Rendering-Pipeline als interaktive Lernumgebung begehbar. Lernende verändern unter anderem Sichtvolumen und Geometrien direkt in VR. Aufbauend auf meiner Masterarbeit betreute ich elf Folgearbeiten zu didaktischem Design, Desktop-Transfer, Learning Analytics, Eye Tracking, Assistenzsystemen, Assessment und einzelnen Rendering-Stufen.',
+    resourcesLabel: 'Weitere Arbeiten ansehen (12)',
+    resources: [
+      {
+        label: 'Projektursprung: Technology-enhanced learning of the computer graphics rendering pipeline in virtual reality (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/816378',
+      },
+      {
+        label: 'Didaktische Analyse des Lerninhalts von RePiX VR (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/841011',
+      },
+      {
+        label: 'Multimodal Learning Analytics Dashboard for VR Data in Moodle (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/849933',
+      },
+      {
+        label: 'Technology-enhanced learning in VR: Light and shadow in computer graphics (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/977487',
+      },
+      {
+        label: 'Theory-based redesign of a VR learning environment for desktop (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/963850',
+      },
+      {
+        label: 'Interactive summative assessment in an educational VR application (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/973682',
+      },
+      {
+        label: 'Enhancing learner assistance in RePiX VR (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/975347',
+      },
+      {
+        label: 'Effects of character design on presence experience in VR applications (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/975560',
+      },
+      {
+        label: 'Interactive learning of 3D transformations in virtual reality (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/975561',
+      },
+      {
+        label: 'Integrating gaze-based interaction into RePiX using mobile VR (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/977615',
+      },
+      {
+        label: 'Explorative analysis of multimodal data using VR Learning Analytics (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/977616',
+      },
+      {
+        label: 'Interactive visualization of rasterization in virtual reality (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/977480',
+      },
+    ],
     tags: ['Unity', 'VR', 'Eye Tracking', 'xAPI'],
   },
   {
@@ -94,14 +142,28 @@ export const XR_PROJECTS = [
     title: 'SchülerlARbor Chemie',
     focus: 'AR/MR · Chemiedidaktik',
     organization: 'Didaktik der Chemie · RWTH Aachen University',
-    url: 'https://apps.apple.com/de/app/sch%C3%BClerlarbor-chemie/id1590309131',
     image: '/project-images/chemielarbor.png',
     imageAlt:
       'AR- und MR-Visualisierungen zu Batterie, Elektrochemie und Molekülen im SchülerlARbor Chemie',
-    summary: 'AR- und MR-Lernmodule machen chemische Vorgänge sichtbar, die im realen Labor schwer zu beobachten sind.',
+    summary:
+      'Die MR-Weiterentwicklung entstand im Rahmen einer von mir mitbetreuten Abschlussarbeit. Zusätzlich beriet ich den Lehrstuhl für Didaktik der Chemie zu Learning Analytics und unterstützte die Implementierung der AR-/MR-Lernmodule.',
     description:
-      'SchülerlARbor Chemie erweitert das Schülerlabor CheERs! um AR- und Mixed-Reality-Lernmodule. Inhalte zu Lithium-Ionen-Akkus, Piezo-Kristallen und Reaktionsmechanismen werden räumlich erfahrbar und ergänzen das praktische Experimentieren.',
-    tags: ['Unity', 'AR/MR', 'Chemie', 'Mobile Learning', 'Learning Analytics'],
+      'SchülerlARbor Chemie erweitert das Schülerlabor CheERs! um AR- und Mixed-Reality-Lernmodule. Inhalte zu Lithium-Ionen-Akkus, Piezo-Kristallen und Reaktionsmechanismen werden räumlich erfahrbar und ergänzen das praktische Experimentieren. Ich betreute die Abschlussarbeit zur MR-Weiterentwicklung mit und beriet den Lehrstuhl für Didaktik der Chemie bei der Konzeption von Learning Analytics sowie der technischen Implementierung.',
+    resources: [
+      {
+        label: 'Bachelorarbeit',
+        url: 'https://doi.org/10.18154/RWTH-2023-12092',
+      },
+      {
+        label: 'DELFI-Paper 2024',
+        url: 'https://doi.org/10.18420/delfi2024_47',
+      },
+      {
+        label: 'Quellcode',
+        url: 'https://doi.org/10.17605/OSF.IO/6PZ85',
+      },
+    ],
+    tags: ['Unity', 'AR/MR', 'HoloLens', 'Chemiedidaktik', 'Learning Analytics'],
   },
   {
     slug: 'ar-routen',
@@ -114,13 +176,13 @@ export const XR_PROJECTS = [
     imageAlt:
       'Anonymisierte Ansichten der Service-Route-App mit Routenauswahl, AR-Navigation, Prüfschritten und Abschlussmeldung',
     summary:
-      '40 % kürzere Kontrollrundgänge und deutlich schnellere Mängelbehebung durch ortsgebundene AR-Service-Routen.',
+      'Ich entwickelte die App einschließlich der AR-basierten Indoor-Navigation. Sie etablierte einen digitalen Qualitätssicherungsprozess für Mitarbeitende: Standortgebundene Routen führen durch Kontrollen, dokumentieren Mängel und beschleunigen deren Behebung. Ergebnis: 40 % kürzere Kontrollrundgänge.',
     note:
       'Abbildung anonymisiert – standortbezogene Informationen wurden aus Vertraulichkeitsgründen unkenntlich gemacht.',
     challenge:
       'Einheitliche Qualitäts- und Hygienestandards sollten in allen Restaurants täglich sichergestellt werden. Das bestehende QS-Prüfsystem war rein checklistengesteuert: Neuen Mitarbeitenden fehlten konkrete Anleitungen, während Prüfschritte nicht verbindlich mit den jeweiligen Orten im Restaurant verknüpft waren.',
     description:
-      'Service Route führt Mitarbeitende Schritt für Schritt durch räumlich gebundene Prüf- und Serviceabläufe. Routen lassen sich in einem Unity-Editor planen und simulieren; die mit Flutter umgesetzte iOS-App verbindet AR-Navigation, konkrete Arbeitsanweisungen und digitale Dokumentation. Ich verantwortete Architektur, Technologieauswahl, Teamkoordination und Delivery bis zur Übergabe.',
+      'Ich entwickelte Service Route als App für einen digitalen Qualitätssicherungsprozess und implementierte die AR-basierte Indoor-Navigation. Routen lassen sich in einem Unity-Editor planen und simulieren; die mit Flutter umgesetzte iOS-App führt Mitarbeitende standortbezogen durch Prüf- und Serviceabläufe und verbindet Navigation, konkrete Arbeitsanweisungen und digitale Dokumentation.',
     outcome:
       'Nachweislich höhere Prozesssicherheit, schnellere interne Audits und erhebliche Zeitersparnis durch den Wegfall der Papierdokumentation.',
     metrics: [
@@ -145,19 +207,54 @@ export const XR_PROJECTS = [
         detail: 'Im Mittel pro Schicht über alle erfassten Routen',
       },
     ],
-    tags: ['AR Training', 'Onboarding', 'Qualitätssicherung', 'Unity', 'Flutter', 'Immersal'],
+    tags: [
+      'AR Training',
+      'Onboarding',
+      'Qualitätssicherung',
+      'Unity as a Library',
+      'Flutter',
+      'Supabase',
+      'Immersal',
+      'External CTO',
+    ],
+  },
+  {
+    slug: 'omilaxr',
+    category: 'technical',
+    featured: true,
+    title: 'OmiLAXR',
+    focus: 'Dissertationsprojekt · XR Learning Analytics',
+    organization: 'Learning Technologies · RWTH Aachen University',
+    image: '/project-images/OmiLAXR_Pipeline.drawio.png',
+    imageAlt:
+      'Modulare OmiLAXR-Pipeline von Listenern und Tracking-Komponenten bis zu Datenanbietern und externen Endpunkten',
+    summary:
+      'Im Rahmen meiner Dissertation entwickelte und evaluierte ich OmiLAXR: ein modulares Framework, das die Integration standardisierter Learning-Analytics-Daten in Unity-XR-Anwendungen vereinfacht und mit xAPI konsistente, auswertbare Daten erzeugt.',
+    description:
+      'OmiLAXR strukturiert die Datenerfassung in XR-Anwendungen als erweiterbare Pipeline aus Listenern, Filtern, Tracking-Komponenten, Composern, Hooks und Endpunkten. Das Framework verbindet Unity-basierte VR-, AR- und MR-Anwendungen mit xAPI und externen Learning-Record-Stores. Wiederverwendbare Module, C#-Codegenerierung und IDE-Unterstützung reduzieren den Integrationsaufwand und verbessern Konsistenz und Qualität der erhobenen Daten.',
+    resources: [
+      {
+        label: 'OmiLAXR Framework',
+        url: 'https://omilaxr.dev/',
+      },
+      {
+        label: 'Dissertation',
+        url: 'https://doi.org/10.18154/RWTH-2026-06580',
+      },
+    ],
+    tags: ['Unity', 'C#', 'xAPI', 'Learning Analytics', 'XR', 'Open Source', 'Modulare Architektur'],
   },
   {
     slug: 'virtual-booth',
     category: 'technical',
-    title: 'Virtual Booth: AR- & Kamerafilter',
-    focus: 'WebAR · Three.js/WebGL · Camera & Face Filters',
+    title: 'Virtual Booth: AR Photo Booth & Live Mosaic',
+    focus: 'SaaS · WebAR · Interaktive Fotoerlebnisse',
     organization: 'Kundenprojekt · Event-Branche',
     summary:
-      'Browserbasierte Fotobox mit konfigurierbaren Hintergrund-, Vordergrund- und Gesichtsfiltern – ohne zusätzliche App.',
+      'Ich verantwortete die Architektur und implementierte die Kernfunktionen einer produktiv eingesetzten Event-SaaS: Node.js-Backend, Vue.js-Frontend, eine AR Photo Booth mit WebGL und DeepAR sowie ein interaktives Three.js-Fotomosaik.',
     description:
-      'Als Tech Lead entwickelte ich mit Three.js und WebGL eine produktiv eingesetzte browserbasierte Virtual Booth für interaktive Foto- und AR-Erlebnisse. Die konfigurierbare Filter-Pipeline kombiniert austauschbare Hintergründe, Vordergrund-Overlays und per Face Tracking positionierte Gesichtsfilter direkt im Kamerabild. Kampagnen und Events lassen sich dadurch individuell inszenieren, ohne dass Gäste eine App installieren müssen. Live Mosaic ergänzt die Booth, indem die aufgenommenen Bilder zu einer gemeinsamen Echtzeit-Visualisierung zusammengeführt werden.',
-    tags: ['Three.js', 'WebGL', 'WebAR', 'Camera Filters', 'Backgrounds', 'Foreground Overlays', 'Face Tracking', 'Live Mosaic'],
+      'Als Tech Lead verantwortete ich die Systemarchitektur und implementierte das Node.js-Backend, das Vue.js-Frontend sowie die zentralen visuellen Erlebnisse. Die browserbasierte AR Photo Booth nutzt WebGL und DeepAR für konfigurierbare Hintergrund-, Vordergrund- und Gesichtsfilter. Zusätzlich entwickelte ich mit Three.js ein interaktives Live Mosaic, das die aufgenommenen Fotos zu einer gemeinsamen Echtzeit-Visualisierung zusammenführt. Daraus entstand eine produktiv eingesetzte SaaS-Plattform für Events und Kampagnen.',
+    tags: ['SaaS', 'Node.js', 'Vue.js', 'WebGL', 'DeepAR', 'Three.js', 'AR Photo Booth', 'Live Mosaic'],
   },
 ]
 

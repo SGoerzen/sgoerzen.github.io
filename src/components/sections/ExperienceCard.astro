@@ -1,9 +1,12 @@
 ---
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react'
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
 import { XR_PROJECTS } from '../../lib/constants'
 import OmiLAXRProjectCard from '../OmiLAXRProjectCard.astro'
+import AcademicSupervisionCard from './AcademicSupervisionCard.astro'
+
+const carouselItemCount = XR_PROJECTS.length + 1
 ---
 
 <Card
@@ -19,7 +22,7 @@ import OmiLAXRProjectCard from '../OmiLAXRProjectCard.astro'
           <span data-carousel-current>1</span>
           <span aria-hidden="true"> / </span>
           <span class="sr-only">von</span>
-          <span>{XR_PROJECTS.length}</span>
+          <span>{carouselItemCount}</span>
         </p>
 
         <div class="flex gap-2">
@@ -36,6 +39,16 @@ import OmiLAXRProjectCard from '../OmiLAXRProjectCard.astro'
             type="button"
             variant="outline"
             size="icon"
+            data-carousel-toggle
+            aria-label="Automatisches Abspielen pausieren"
+          >
+            <Pause data-carousel-pause-icon aria-hidden="true" />
+            <Play data-carousel-play-icon className="hidden" aria-hidden="true" />
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            size="icon"
             data-carousel-next
             aria-label="Nächstes Projekt"
           >
@@ -46,7 +59,7 @@ import OmiLAXRProjectCard from '../OmiLAXRProjectCard.astro'
 
       <div
         data-carousel-track
-        class="carousel-track -mx-1 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-2 scroll-smooth"
+        class="carousel-track -mx-1 -mt-2 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-2 pt-2 scroll-smooth"
         tabindex="0"
         aria-label="XR-Projektkarten"
       >
@@ -56,15 +69,23 @@ import OmiLAXRProjectCard from '../OmiLAXRProjectCard.astro'
               data-carousel-slide
               class="flex w-[calc(100%-0.25rem)] shrink-0 snap-start sm:w-[calc(50%-0.5rem)]"
               role="group"
-              aria-label={`${index + 1} von ${XR_PROJECTS.length}: ${project.title}`}
+              aria-label={`${index + 1} von ${carouselItemCount}: ${project.title}`}
             >
               <OmiLAXRProjectCard project={project} compact />
             </div>
           ))
         }
+        <div
+          data-carousel-slide
+          class="flex w-[calc(100%-0.25rem)] shrink-0 snap-start sm:w-[calc(50%-0.5rem)]"
+          role="group"
+          aria-label={`${carouselItemCount} von ${carouselItemCount}: Akademische Betreuung`}
+        >
+          <AcademicSupervisionCard />
+        </div>
       </div>
 
-      <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+      <div class="mt-4 flex flex-wrap items-center gap-3">
         <div class="flex gap-1.5" aria-label="Projekt auswählen">
           {
             XR_PROJECTS.map((project, index) => (
@@ -78,12 +99,16 @@ import OmiLAXRProjectCard from '../OmiLAXRProjectCard.astro'
               />
             ))
           }
+          <button
+            type="button"
+            data-carousel-dot
+            data-index={XR_PROJECTS.length}
+            class="h-2.5 w-2.5 rounded-full bg-muted-foreground/30 transition-all hover:bg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="Akademische Betreuung anzeigen"
+          />
         </div>
-
-        <a href="/projects">
-          <Button variant="link" className="h-auto p-0">Details & Wirkungen ansehen</Button>
-        </a>
       </div>
+
     </xr-project-carousel>
   </section>
 </Card>
@@ -112,6 +137,7 @@ import OmiLAXRProjectCard from '../OmiLAXRProjectCard.astro'
     private autoplay: number | undefined
     private observer: IntersectionObserver | undefined
     private resumeTimeout: number | undefined
+    private userPaused = false
 
     connectedCallback() {
       this.track = this.querySelector('[data-carousel-track]')
@@ -135,10 +161,10 @@ import OmiLAXRProjectCard from '../OmiLAXRProjectCard.astro'
         })
       })
 
-      this.addEventListener('mouseenter', this.stopAutoplay)
-      this.addEventListener('mouseleave', this.startAutoplay)
-      this.addEventListener('focusin', this.stopAutoplay)
-      this.addEventListener('focusout', this.startAutoplay)
+      this.userPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      this.querySelector('[data-carousel-toggle]')?.addEventListener('click', this.toggleAutoplay)
+      this.updateAutoplayButton()
+
       this.track.addEventListener('pointerdown', this.stopAutoplay)
       this.track.addEventListener('pointerup', this.pauseTemporarily)
 
@@ -201,14 +227,33 @@ import OmiLAXRProjectCard from '../OmiLAXRProjectCard.astro'
     }
 
     private startAutoplay = () => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-      if (this.matches(':hover') || this.contains(document.activeElement)) return
+      if (this.userPaused) return
       this.stopAutoplay()
       this.autoplay = window.setInterval(() => this.goTo(this.current + 1), 5500)
     }
 
     private stopAutoplay = () => {
       window.clearInterval(this.autoplay)
+    }
+
+    private toggleAutoplay = () => {
+      this.userPaused = !this.userPaused
+      window.clearTimeout(this.resumeTimeout)
+      if (this.userPaused) this.stopAutoplay()
+      else this.startAutoplay()
+      this.updateAutoplayButton()
+    }
+
+    private updateAutoplayButton() {
+      const button = this.querySelector<HTMLButtonElement>('[data-carousel-toggle]')
+      const pauseIcon = this.querySelector<HTMLElement>('[data-carousel-pause-icon]')
+      const playIcon = this.querySelector<HTMLElement>('[data-carousel-play-icon]')
+      button?.setAttribute(
+        'aria-label',
+        this.userPaused ? 'Automatisches Abspielen fortsetzen' : 'Automatisches Abspielen pausieren',
+      )
+      pauseIcon?.classList.toggle('hidden', this.userPaused)
+      playIcon?.classList.toggle('hidden', !this.userPaused)
     }
 
     private pauseTemporarily = () => {
