@@ -1,5 +1,5 @@
 ---
-import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Card from '../Card.astro'
 import { Button } from '../ui/button'
 import { XR_PROJECTS } from '../../lib/constants'
@@ -32,18 +32,9 @@ const carouselItemCount = XR_PROJECTS.length + 1
             size="icon"
             data-carousel-previous
             aria-label="Vorheriges Projekt"
+            disabled
           >
             <ArrowLeft aria-hidden="true" />
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            size="icon"
-            data-carousel-toggle
-            aria-label="Automatisches Abspielen pausieren"
-          >
-            <Pause data-carousel-pause-icon aria-hidden="true" />
-            <Play data-carousel-play-icon className="hidden" aria-hidden="true" />
           </Button>
           <Button
             type="button"
@@ -59,7 +50,7 @@ const carouselItemCount = XR_PROJECTS.length + 1
 
       <div
         data-carousel-track
-        class="carousel-track -mx-1 -mt-2 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-2 pt-2 scroll-smooth"
+        class="carousel-track -mx-1 -mt-2 flex snap-x snap-mandatory gap-4 overflow-x-auto px-1 pb-2 pt-2"
         tabindex="0"
         aria-label="XR-Projektkarten"
       >
@@ -93,7 +84,7 @@ const carouselItemCount = XR_PROJECTS.length + 1
                 type="button"
                 data-carousel-dot
                 data-index={index}
-                class="h-2.5 w-2.5 rounded-full bg-muted-foreground/30 transition-all hover:bg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                class="h-2.5 w-2.5 rounded-full bg-muted-foreground/30 hover:bg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 aria-label={`${project.title} anzeigen`}
                 aria-current={index === 0 ? 'true' : undefined}
               />
@@ -103,12 +94,11 @@ const carouselItemCount = XR_PROJECTS.length + 1
             type="button"
             data-carousel-dot
             data-index={XR_PROJECTS.length}
-            class="h-2.5 w-2.5 rounded-full bg-muted-foreground/30 transition-all hover:bg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            class="h-2.5 w-2.5 rounded-full bg-muted-foreground/30 hover:bg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             aria-label="Akademische Betreuung anzeigen"
           />
         </div>
       </div>
-
     </xr-project-carousel>
   </section>
 </Card>
@@ -123,7 +113,6 @@ const carouselItemCount = XR_PROJECTS.length + 1
   }
 
   [data-carousel-dot][aria-current='true'] {
-    width: 1.75rem;
     background: hsl(var(--primary));
   }
 </style>
@@ -134,10 +123,7 @@ const carouselItemCount = XR_PROJECTS.length + 1
     private slides: HTMLElement[] = []
     private dots: HTMLButtonElement[] = []
     private current = 0
-    private autoplay: number | undefined
     private observer: IntersectionObserver | undefined
-    private resumeTimeout: number | undefined
-    private userPaused = false
 
     connectedCallback() {
       this.track = this.querySelector('[data-carousel-track]')
@@ -148,45 +134,37 @@ const carouselItemCount = XR_PROJECTS.length + 1
 
       this.querySelector('[data-carousel-previous]')?.addEventListener('click', () => {
         this.goTo(this.current - 1)
-        this.pauseTemporarily()
       })
       this.querySelector('[data-carousel-next]')?.addEventListener('click', () => {
         this.goTo(this.current + 1)
-        this.pauseTemporarily()
       })
       this.dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          this.goTo(index)
-          this.pauseTemporarily()
-        })
+        dot.addEventListener('click', () => this.goTo(index))
       })
 
-      this.userPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      this.querySelector('[data-carousel-toggle]')?.addEventListener('click', this.toggleAutoplay)
-      this.updateAutoplayButton()
-
-      this.track.addEventListener('pointerdown', this.stopAutoplay)
-      this.track.addEventListener('pointerup', this.pauseTemporarily)
+      this.track.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return
+        event.preventDefault()
+        this.goTo(this.current + (event.key === 'ArrowRight' ? 1 : -1))
+      })
 
       this.observer = new IntersectionObserver(
         () => this.syncCurrentSlide(),
         { root: this.track, threshold: [0.55, 0.75, 1] },
       )
       this.slides.forEach((slide) => this.observer?.observe(slide))
-      this.startAutoplay()
+      this.updateStatus()
     }
 
     disconnectedCallback() {
-      this.stopAutoplay()
-      window.clearTimeout(this.resumeTimeout)
       this.observer?.disconnect()
     }
 
     private goTo(index: number) {
-      const normalizedIndex = (index + this.slides.length) % this.slides.length
-      this.current = normalizedIndex
-      this.slides[normalizedIndex]?.scrollIntoView({
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      const boundedIndex = Math.max(0, Math.min(index, this.slides.length - 1))
+      this.current = boundedIndex
+      this.slides[boundedIndex]?.scrollIntoView({
+        behavior: 'auto',
         block: 'nearest',
         inline: 'start',
       })
@@ -200,6 +178,14 @@ const carouselItemCount = XR_PROJECTS.length + 1
         if (index === this.current) dot.setAttribute('aria-current', 'true')
         else dot.removeAttribute('aria-current')
       })
+      this.querySelector<HTMLButtonElement>('[data-carousel-previous]')?.toggleAttribute(
+        'disabled',
+        this.current === 0,
+      )
+      this.querySelector<HTMLButtonElement>('[data-carousel-next]')?.toggleAttribute(
+        'disabled',
+        this.current === this.slides.length - 1,
+      )
     }
 
     private syncCurrentSlide() {
@@ -224,42 +210,6 @@ const carouselItemCount = XR_PROJECTS.length + 1
       }
 
       this.updateStatus()
-    }
-
-    private startAutoplay = () => {
-      if (this.userPaused) return
-      this.stopAutoplay()
-      this.autoplay = window.setInterval(() => this.goTo(this.current + 1), 5500)
-    }
-
-    private stopAutoplay = () => {
-      window.clearInterval(this.autoplay)
-    }
-
-    private toggleAutoplay = () => {
-      this.userPaused = !this.userPaused
-      window.clearTimeout(this.resumeTimeout)
-      if (this.userPaused) this.stopAutoplay()
-      else this.startAutoplay()
-      this.updateAutoplayButton()
-    }
-
-    private updateAutoplayButton() {
-      const button = this.querySelector<HTMLButtonElement>('[data-carousel-toggle]')
-      const pauseIcon = this.querySelector<HTMLElement>('[data-carousel-pause-icon]')
-      const playIcon = this.querySelector<HTMLElement>('[data-carousel-play-icon]')
-      button?.setAttribute(
-        'aria-label',
-        this.userPaused ? 'Automatisches Abspielen fortsetzen' : 'Automatisches Abspielen pausieren',
-      )
-      pauseIcon?.classList.toggle('hidden', this.userPaused)
-      playIcon?.classList.toggle('hidden', !this.userPaused)
-    }
-
-    private pauseTemporarily = () => {
-      this.stopAutoplay()
-      window.clearTimeout(this.resumeTimeout)
-      this.resumeTimeout = window.setTimeout(this.startAutoplay, 9000)
     }
   }
 

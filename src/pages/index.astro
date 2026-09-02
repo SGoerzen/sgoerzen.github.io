@@ -1,29 +1,28 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import IntroCard from '../components/sections/IntroCard.astro'
-import ExperienceCard from '../components/sections/ExperienceCard.astro'
-import ServiceCard from '../components/sections/ServiceCard.astro'
-import XRPipelineCard from '../components/sections/XRPipelineCard.astro'
-import ProjectTeamCard from '../components/sections/ProjectTeamCard.astro'
+import BaseLayout from "../layouts/BaseLayout.astro";
+import IntroCard from "../components/sections/IntroCard.astro";
+import ExperienceCard from "../components/sections/ExperienceCard.astro";
+import XRPipelineCard from "../components/sections/XRPipelineCard.astro";
+import ProjectTeamCard from "../components/sections/ProjectTeamCard.astro";
 ---
 
 <script>
-  import { animate, stagger, spring } from 'motion'
-  import { loaderAnimation } from '../lib/constants'
+  import { animate, stagger, spring } from "motion";
+  import { loaderAnimation } from "../lib/constants";
 
-  const cards = document.querySelectorAll('.card-animate')
-  const [loaderTarget, loaderKeyframes, loaderOptions] = loaderAnimation
+  const cards = document.querySelectorAll(".card-animate");
+  const [loaderTarget, loaderKeyframes, loaderOptions] = loaderAnimation;
 
-  animate(loaderTarget, loaderKeyframes, loaderOptions)
+  animate(loaderTarget, loaderKeyframes, loaderOptions);
   animate(
     cards,
-    { y: ['40%', '0%'], opacity: [0, 1] },
+    { y: ["40%", "0%"], opacity: [0, 1] },
     {
       duration: 0.4,
       delay: stagger(0.3, { startDelay: 0.3 }),
       easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
     },
-  )
+  );
 </script>
 
 <BaseLayout
@@ -40,7 +39,6 @@ import ProjectTeamCard from '../components/sections/ProjectTeamCard.astro'
   >
     <IntroCard />
     <ExperienceCard />
-    <ServiceCard />
     <XRPipelineCard />
     <ProjectTeamCard />
   </main>

@@ -6,6 +6,7 @@ import {
   ChevronRight,
   DraftingCompass,
   Lightbulb,
+  MessageCircle,
   ScanSearch,
   Sparkles,
 } from "lucide-react";
@@ -68,9 +69,78 @@ const paths = [
   colSpan="md:col-span-2 lg:col-span-4"
   rowSpan="md:row-span-1 lg:row-span-1"
   title="So greifen die Angebote ineinander"
-  body="Zwei Einstiegspunkte, ein modularer Weg zur belastbaren XR-Entscheidung."
+  body="Ein unverbindliches Erstgespräch, zwei Einstiegspunkte und ein modularer Weg zur belastbaren XR-Entscheidung."
 >
-  <section id="xr-pipeline" class="mt-6" aria-label="Angebots-Pipeline">
+  <section id="leistungen" class="mt-6" aria-label="Angebots-Pipeline">
+    <article
+      class="relative mx-auto max-w-xl overflow-hidden rounded-xl border border-primary/35 bg-gradient-to-br from-primary/10 via-background to-background p-5 shadow-sm"
+    >
+      <div
+        aria-hidden="true"
+        class="absolute right-0 top-0 h-28 w-28 rounded-full bg-primary/10 blur-3xl"
+      >
+      </div>
+      <div class="relative flex flex-col gap-4 sm:flex-row sm:items-center">
+        <span
+          class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm"
+        >
+          <MessageCircle aria-hidden="true" size={23} strokeWidth={1.8} />
+        </span>
+        <div class="min-w-0 flex-1">
+          <div class="flex flex-wrap items-center gap-2">
+            <p
+              class="m-0 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-primary"
+            >
+              Gemeinsamer Einstieg
+            </p>
+            <span
+              class="rounded-full border border-primary/20 bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary"
+            >
+              unverbindlich
+            </span>
+          </div>
+          <h3 class="m-0 mt-1 text-lg font-semibold">
+            Unverbindliches Erstgespräch
+          </h3>
+          <p class="m-0 mt-1 text-sm text-muted-foreground">
+            Ziel, Ausgangslage und den passenden nächsten Schritt gemeinsam
+            klären.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <div class="relative hidden h-16 lg:block" aria-hidden="true">
+      <svg
+        class="h-full w-full text-primary/55"
+        viewBox="0 0 1000 64"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M500 0 V12 Q500 32 480 32 H270 Q250 32 250 52 V64"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-dasharray="5 5"></path>
+        <path
+          d="M500 0 V12 Q500 32 520 32 H730 Q750 32 750 52 V64"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-dasharray="5 5"></path>
+        <circle cx="500" cy="32" r="4" fill="currentColor"></circle>
+      </svg>
+    </div>
+    <div
+      class="mx-auto flex h-12 w-px items-center justify-center bg-gradient-to-b from-primary/60 to-transparent lg:hidden"
+      aria-hidden="true"
+    >
+      <span
+        class="whitespace-nowrap rounded-full border bg-background px-2 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+        >Startpunkt wählen</span
+      >
+    </div>
+
     <div class="grid gap-5 lg:grid-cols-2">
       {
         paths.map(({ eyebrow, title, description, Icon, gridClass, steps }) => (
@@ -220,5 +290,13 @@ const paths = [
         aria-hidden="true"></span>
       <span>Pakete lassen sich einzeln beauftragen</span>
     </div>
+
+    <p
+      class="mx-auto mb-0 mt-3 max-w-4xl text-center text-[0.7rem] leading-relaxed text-muted-foreground"
+    >
+      Alle Preisangaben sind Richtwerte. Ein verbindlicher Festpreis entsteht
+      nach dem Scoping; externe Kosten wie Hardware, 3D-Assets, Reisen,
+      Cloud-Betrieb oder Systemintegrationen werden separat betrachtet.
+    </p>
   </section>
 </Card>
