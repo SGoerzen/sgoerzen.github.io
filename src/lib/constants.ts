@@ -35,8 +35,9 @@ export const IMPRESSUM = {
 }
 
 export const WORK: Page = {
-  TITLE: 'Berufserfahrung',
-  DESCRIPTION: 'Erfahrung in XR-Entwicklung, Learning Analytics, Evaluation und technischer Projektverantwortung.',
+  TITLE: 'Profil',
+  DESCRIPTION:
+    'Profil von Dr.-Ing. Sergej Görzen: Arbeitsweise, technischer Fokus, Berufserfahrung, akademischer Hintergrund und persönliche Interessen.',
 }
 
 export const PROJECTS: Page = {

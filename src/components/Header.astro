@@ -1,6 +1,15 @@
 ---
 import { buttonVariants } from '../components/ui/button'
 import { ModeToggle } from '../components/ui/ThemeToggle'
+
+const navItems = [
+  { href: '/', label: 'Start' },
+  { href: '/#leistungen', label: 'Angebot' },
+  { href: '/projects', label: 'Projekte' },
+  { href: '/network', label: 'Netzwerk' },
+  { href: '/work', label: 'Profil' },
+  { href: '/publications', label: 'Publikationen' },
+]
 ---
 
 <script is:inline>
@@ -21,35 +30,73 @@ import { ModeToggle } from '../components/ui/ThemeToggle'
   class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 >
   <div
-    class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0"
+    class="container flex h-16 items-center justify-between gap-2 px-4 sm:px-8"
   >
-    <div class="flex gap-6 md:gap-10">
-      <a href="/" class="flex items-center space-x-2">
-        <span class="inline-block font-bold">Dr.-Ing. Sergej Görzen</span>
-      </a>
-    </div>
-    <div class="flex flex-1 items-center justify-end space-x-4">
-      <nav class="flex items-center space-x-1">
-        <a href="/" class={buttonVariants({ variant: 'ghost' })}>
-          Start
-        </a>
-        <a href="/#leistungen" class={buttonVariants({ variant: 'ghost' })}>
-          Angebot
-        </a>
-        <a href="/projects" class={buttonVariants({ variant: 'ghost' })}>
-          Projekte
-        </a>
-        <a href="/network" class={`${buttonVariants({ variant: 'ghost' })} hidden lg:inline-flex`}>
-          Netzwerk
-        </a>
-        <a href="/work" class={buttonVariants({ variant: 'ghost' })}>
-          Berufserfahrung
-        </a>
-        <a href="/publications" class={buttonVariants({ variant: 'ghost' })}>
-          Publikationen
-        </a>
-        <ModeToggle transition:persist client:load />
+    <a href="/" class="min-w-0 shrink font-bold">
+      <span class="block truncate">Dr.-Ing. Sergej Görzen</span>
+    </a>
+
+    <div class="flex shrink-0 items-center gap-2">
+      <nav
+        class="hidden items-center space-x-1 lg:flex"
+        aria-label="Hauptnavigation"
+      >
+        {
+          navItems.map(({ href, label }) => (
+            <a href={href} class={buttonVariants({ variant: 'ghost' })}>
+              {label}
+            </a>
+          ))
+        }
       </nav>
+
+      <ModeToggle transition:persist client:load />
+
+      <details class="group relative lg:hidden">
+        <summary
+          class="inline-flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md border border-input bg-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background [&::-webkit-details-marker]:hidden"
+        >
+          <span class="sr-only">Navigation öffnen</span>
+          <svg
+            aria-hidden="true"
+            class="h-5 w-5 group-open:hidden"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg
+            aria-hidden="true"
+            class="hidden h-5 w-5 group-open:block"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="m6 6 12 12M18 6 6 18"></path>
+          </svg>
+        </summary>
+
+        <nav
+          aria-label="Mobile Navigation"
+          class="absolute right-0 top-12 z-50 flex w-64 flex-col rounded-lg border bg-popover p-2 text-popover-foreground shadow-lg"
+        >
+          {
+            navItems.map(({ href, label }) => (
+              <a
+                href={href}
+                class={`${buttonVariants({ variant: 'ghost' })} justify-start`}
+              >
+                {label}
+              </a>
+            ))
+          }
+        </nav>
+      </details>
     </div>
   </div>
 </header>
