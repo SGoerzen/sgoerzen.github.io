@@ -1,0 +1,77 @@
+---
+import { BarChart3, Box, Code2, Palette } from 'lucide-react'
+import Card from '../Card.astro'
+
+const specialties = [
+  {
+    title: '3D & Spatial Design',
+    description: 'Modelle, Animationen, Umgebungen und optimierte Assets für VR, AR und WebXR.',
+    icon: Box,
+  },
+  {
+    title: 'UX & Interaction Design',
+    description: 'Verständliche Nutzerführung sowie Interface- und Interaktionskonzepte für XR.',
+    icon: Palette,
+  },
+  {
+    title: 'Zusätzliche Entwicklungskapazität',
+    description: 'Projektbezogene Unterstützung für Unity, Web, Backend und Integrationen.',
+    icon: Code2,
+  },
+  {
+    title: 'Datenanalyse & Evaluation',
+    description: 'Messkonzepte, statistische Auswertung, Visualisierung und Ergebnisberichte.',
+    icon: BarChart3,
+  },
+]
+---
+
+<Card
+  colSpan="md:col-span-2 lg:col-span-4"
+  rowSpan="md:row-span-1 lg:row-span-1"
+  title="Erweiterbares Projektteam"
+  body="Zusätzliche Expertise, wenn dein Vorhaben sie braucht – mit mir als zentralem Ansprechpartner."
+>
+  <section id="projektteam" class="mt-5 space-y-6">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        specialties.map(({ title, description, icon: Icon }) => (
+          <article class="border-t pt-4">
+            <div class="flex items-start gap-3">
+              <div class="rounded-lg bg-primary/10 p-2 text-primary">
+                <Icon className="h-5 w-5" aria-hidden="true" />
+              </div>
+              <div>
+                <h3 class="m-0 font-semibold">{title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {description}
+                </p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="grid gap-4 border-t pt-5 text-sm md:grid-cols-3">
+      <div>
+        <p class="m-0 font-semibold">Passend zum Bedarf</p>
+        <p class="m-0 text-muted-foreground">
+          Zusätzliche Expertise kommt gezielt hinzu, statt unnötigen Overhead zu erzeugen.
+        </p>
+      </div>
+      <div>
+        <p class="m-0 font-semibold">Ein Ansprechpartner</p>
+        <p class="m-0 text-muted-foreground">
+          Abstimmung, technische Leitung und zentrale Kommunikation laufen weiterhin über mich.
+        </p>
+      </div>
+      <div>
+        <p class="m-0 font-semibold">Gemeinsame Delivery</p>
+        <p class="m-0 text-muted-foreground">
+          Ich koordiniere Schnittstellen und sorge dafür, dass alle Beiträge zu einer Lösung zusammenpassen.
+        </p>
+      </div>
+    </div>
+  </section>
+</Card>

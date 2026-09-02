@@ -53,6 +53,8 @@ export const XR_PROJECTS = [
     focus: 'VR · Computer Graphics',
     organization: 'Learning Technologies · RWTH Aachen University',
     url: 'https://gitlab.com/learntech-rwth/repix-vr/repix-vr-app',
+    image: '/project-images/repix.png',
+    imageAlt: 'Collage interaktiver Lernstationen in der VR-Anwendung RePiX',
     summary: 'Eine begehbare Rendering-Pipeline, in der Lernende Grafikprozesse direkt untersuchen und verändern.',
     description:
       'RePiX VR macht die Rendering-Pipeline als interaktive Lernumgebung begehbar. Lernende verändern unter anderem Sichtvolumen und Geometrien direkt in VR. Interaktionen, Blickdaten und Lernverläufe liefern eine Grundlage für Forschung und Evaluation.',
@@ -65,6 +67,8 @@ export const XR_PROJECTS = [
     focus: 'VR · Lehrkräftetraining',
     organization: 'Universität Potsdam · RWTH Aachen University',
     url: 'https://www.uni-potsdam.de/de/multimedia/projekte/anwendungen/teach-r',
+    image: '/project-images/teach-r.png',
+    imageAlt: 'Teach-R im Einsatz mit VR-Brille und einem virtuellen Klassenraum',
     summary: 'Beratung zur Einbindung von Learning Analytics in einen virtuellen Klassenraum für das Lehrkräftetraining.',
     description:
       'Teach-R versetzt angehende Lehrkräfte in einen realitätsnahen virtuellen Klassenraum. Ich habe das Projektteam bei der Integration von OmiLAXR und der strukturierten Erfassung von Interaktionsdaten beraten.',
@@ -77,6 +81,8 @@ export const XR_PROJECTS = [
     focus: 'VR · Informatikdidaktik',
     organization: 'Didaktik der Informatik · TU Dresden',
     url: 'https://ddigames.inf.tu-dresden.de/sites/vr/router/',
+    image: '/project-images/inside-the-router.png',
+    imageAlt: 'Virtuelle Datenpakete und Netzwerkadressen im Lernspiel Inside the Router',
     summary: 'Beratung zur Erfassung und Auswertung von Interaktionen in einem VR-Lernspiel über Netzwerk-Routing.',
     description:
       'Inside the Router macht Netzwerk-Routing durch den Umgang mit virtuellen Datenpaketen erfahrbar. Ich habe zur Integration von OmiLAXR und zur Modellierung auswertbarer xAPI-Interaktionen beraten.',
@@ -89,6 +95,9 @@ export const XR_PROJECTS = [
     focus: 'AR/MR · Chemiedidaktik',
     organization: 'Didaktik der Chemie · RWTH Aachen University',
     url: 'https://apps.apple.com/de/app/sch%C3%BClerlarbor-chemie/id1590309131',
+    image: '/project-images/chemielarbor.png',
+    imageAlt:
+      'AR- und MR-Visualisierungen zu Batterie, Elektrochemie und Molekülen im SchülerlARbor Chemie',
     summary: 'AR- und MR-Lernmodule machen chemische Vorgänge sichtbar, die im realen Labor schwer zu beobachten sind.',
     description:
       'SchülerlARbor Chemie erweitert das Schülerlabor CheERs! um AR- und Mixed-Reality-Lernmodule. Inhalte zu Lithium-Ionen-Akkus, Piezo-Kristallen und Reaktionsmechanismen werden räumlich erfahrbar und ergänzen das praktische Experimentieren.',
@@ -96,14 +105,42 @@ export const XR_PROJECTS = [
   },
   {
     slug: 'ar-routen',
-    category: 'technical',
-    title: 'AR-Routen & Indoor-Navigation',
-    focus: 'AR · Spatial Computing',
+    category: 'learning',
+    featured: true,
+    title: 'Service Route: AR-gestützte Mitarbeiterschulung',
+    focus: 'AR · Mitarbeiterschulung & Qualitätssicherung',
     organization: 'Kundenprojekt · Gastronomie',
-    summary: 'Technische Gesamtverantwortung für eine produktionsnahe AR-Navigation – von der Architektur bis zur Übergabe.',
+    summary:
+      '40 % kürzere Kontrollrundgänge und deutlich schnellere Mängelbehebung durch ortsgebundene AR-Service-Routen.',
+    challenge:
+      'Einheitliche Qualitäts- und Hygienestandards sollten in allen Restaurants täglich sichergestellt werden. Das bestehende QS-Prüfsystem war rein checklistengesteuert: Neuen Mitarbeitenden fehlten konkrete Anleitungen, während Prüfschritte nicht verbindlich mit den jeweiligen Orten im Restaurant verknüpft waren.',
     description:
-      'Ich verantwortete Architektur, Technologieauswahl, Teamkoordination und Delivery eines AR-Navigationsmoduls mit Unity, Flutter und Immersal. Die Erfahrungen aus dem Kundenprojekt lassen sich direkt auf geführte Trainings, Onboarding, Wartungsabläufe und Orientierung in realen Arbeitsumgebungen übertragen.',
-    tags: ['Unity', 'AR', 'Indoor Navigation', 'Flutter', 'Immersal'],
+      'Service Route führt Mitarbeitende Schritt für Schritt durch räumlich gebundene Prüf- und Serviceabläufe. Routen lassen sich in einem Unity-Editor planen und simulieren; die iOS-App verbindet AR-Navigation, konkrete Arbeitsanweisungen und digitale Dokumentation. Ich verantwortete Architektur, Technologieauswahl, Teamkoordination und Delivery bis zur Übergabe.',
+    outcome:
+      'Nachweislich höhere Prozesssicherheit, schnellere interne Audits und erhebliche Zeitersparnis durch den Wegfall der Papierdokumentation.',
+    metrics: [
+      {
+        value: '40 % kürzer',
+        label: 'Kontrollrundgänge',
+        detail: 'Von 10–15 auf 6–9 Minuten',
+      },
+      {
+        value: '< 8 Stunden',
+        label: 'bis zur Mängelbehebung',
+        detail: 'Zuvor mehr als 24 Stunden',
+      },
+      {
+        value: '> 300 % mehr',
+        label: 'proaktiv erfasste Kleinstmängel',
+        detail: 'In den ersten drei Monaten; zuvor nahezu keine Erfassung',
+      },
+      {
+        value: '> 95 %',
+        label: 'Quality Score',
+        detail: 'Im Mittel pro Schicht über alle erfassten Routen',
+      },
+    ],
+    tags: ['AR Training', 'Onboarding', 'Qualitätssicherung', 'Unity', 'Flutter', 'Immersal'],
   },
   {
     slug: 'virtual-booth',
@@ -412,7 +449,7 @@ export const OMILAXR_REPOS = [
 
 export const CV_PROJECTS = [
   {
-    title: 'Mobile App mit AR-Navigation (iOS)',
+    title: 'AR-Service-Routen für Mitarbeiterschulung (iOS)',
     period: '2024 - 2025',
     featured: true,
     role: 'Technische Gesamtverantwortung (CTO)',
@@ -420,7 +457,7 @@ export const CV_PROJECTS = [
     stack: ['Flutter', 'Unity', 'C#', 'AR', 'iOS', 'Immersal', 'Supabase', 'PostgreSQL', '.NET MAUI'],
     image: '/project-images/cv-projects.svg',
     description:
-      'Kundenprojekt (Projektvolumen ca. 70.000 €): AR-Navigations-Modul (Unity/C#, Immersal VPS) als eingebettete Komponente in einer Flutter-App (Unity as a Library). Architektur, Technologieauswahl, Team-Koordination und Delivery bis zur Übergabe.',
+      'Kundenprojekt (Projektvolumen ca. 70.000 €): Arbeitsplatznahe Schulung und Onboarding betrieblicher Serviceabläufe mit geführten AR-Routen. Das Unity/C#-Modul mit Immersal VPS wurde als eingebettete Komponente in eine Flutter-App integriert (Unity as a Library). Architektur, Technologieauswahl, Team-Koordination und Delivery bis zur Übergabe.',
     details:
       'Backend über Supabase (PostgreSQL): Auth, Storage, Datenmodell inkl. 2D-Map-Preview (SVG) für die Routenplanung. Digital Twin mit Matterport, 360°-Kamera und Immersal SDK; Unity-Editor für Service-Routen inkl. Routensimulation; .NET-MAUI-App zur Scan-Frame-Analyse; iOS-Releases via TestFlight.',
   },
@@ -610,7 +647,7 @@ export const EXPERIENCE = [
     end: 'heute',
     tasks: [
       'Konzeption und Umsetzung produktionsnaher XR-, AR- und Softwaresysteme mit Unity, C#/.NET, Flutter und Webtechnologien.',
-      'Technische Gesamtverantwortung für eine AR-Indoor-Navigation: Architektur, Technologieauswahl, Teamkoordination, Delivery und Übergabe.',
+      'Technische Gesamtverantwortung für eine AR-App zur arbeitsplatznahen Mitarbeiterschulung und zum Onboarding: Architektur, Technologieauswahl, Teamkoordination, Delivery und Übergabe.',
       'Begleitung von Anforderungsanalyse und Scoping über Prototyping und Integration bis Go-live, Evaluation und belastbarem Ergebnisbericht.',
       'Einbindung spezialisierter Freelancer für 3D, Design, Entwicklung oder Datenanalyse, wenn der Projektrahmen zusätzliche Expertise verlangt.',
     ],
