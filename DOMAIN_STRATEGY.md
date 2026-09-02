@@ -2,63 +2,74 @@
 
 ## Zielbild
 
-Die Domains werden nicht als mehrere gleichartige Websites betrieben, sondern erhalten klar getrennte Rollen:
+Der Aufbau erfolgt bewusst in zwei Phasen: Zunächst steht das klar verkäufliche XR-Angebot im Mittelpunkt. Die persönliche Profil- und Dachseite wird später herausgearbeitet. Die Domains erhalten dafür getrennte Rollen:
 
 - **Person und Kompetenz:** Dr.-Ing. Sergej Görzen
-- **Geschäftliche Dachmarke:** `goerzen.consulting`
-- **Spezialisiertes XR-Angebot:** `xrlearning.de`
+- **Primäre Angebotsdomain:** `xrlearning.de`
+- **Spätere Profil- und Dachseite:** `goerzen.consulting`
 - **Optionale persönliche Schutzdomain:** `sergejgoerzen.de`
 
-## 1. `goerzen.consulting` – berufliche Hauptseite
+## Phase 1: `xrlearning.de` als primäre Angebotsseite
 
-`goerzen.consulting` bleibt die zentrale Website und dient als persönliche Beratungsmarke. Sie soll mehr sein als ein digitaler Lebenslauf und sowohl fachliche Autorität als auch die Zusammenarbeit mit Kunden vermitteln.
+`xrlearning.de` wird zunächst die zentrale Website. Sie richtet sich gezielt an Unternehmen, Hochschulen und Forschungsteams mit einem XR-Lern- oder Trainingsvorhaben. Die Domain ist breiter und passender als „XR Training“, weil das Angebot zusätzlich Lernkonzeption, Learning Analytics, Evaluation und Forschung umfasst.
 
 ### Empfohlene Inhalte
 
-- Positionierung als technischer Berater und Umsetzungspartner
-- persönliches Profil und Berufserfahrung
-- Projekte, Fallstudien und Referenzen
-- wissenschaftlicher Hintergrund und Publikationen
+- klares Nutzenversprechen für XR-Lern- und Trainingsszenarien
+- didaktische und technische Konzeption
+- Umsetzung mit Unity, Three.js und WebXR
+- Learning Analytics, xAPI und Telemetrie
+- Evaluation, Auswertung und Reports
+- konkrete Einstiegspakete und Preisrahmen
+- passende XR-Projekte und belastbare Referenzen
+- kurze Vertrauenssektion zu Sergej Görzen und seinem Hintergrund
+- eindeutige Projektanfrage als primärer Call-to-Action
+
+### Mögliche Positionierung
+
+> XR-Lern- und Trainingsszenarien, die didaktisch funktionieren und messbare Daten liefern.
+
+### Empfohlene Seitenstruktur
+
+- `/` – Positionierung und Überblick
+- `/angebot` – Leistungen, Prozess und Pakete
+- `/projekte` – ausgewählte XR-Projekte und Fallstudien
+- `/ueber-mich` – kompaktes Vertrauensprofil, kein vollständiger Lebenslauf
+- `/kontakt` – Projektcheck, Erstgespräch und Projektanfrage
+
+### Umgang mit `goerzen.consulting` in Phase 1
+
+Solange die eigenständige Profilseite noch nicht ausgearbeitet ist, führt `goerzen.consulting` per permanenter Weiterleitung auf `xrlearning.de`. Die vorhandenen E-Mail-Adressen unter `@goerzen.consulting` bleiben bestehen.
+
+## Phase 2: `goerzen.consulting` als Profil- und Dachseite
+
+Später wird `goerzen.consulting` als eigenständige berufliche Profilseite aufgebaut. Sie bündelt die Person, fachliche Autorität und Tätigkeiten, die über das konkrete XR-Learning-Angebot hinausgehen.
+
+### Spätere Inhalte
+
+- ausführliches persönliches Profil und Berufserfahrung
+- Arbeitsweise und Rollen als Berater, Entwickler und technischer Umsetzungspartner
 - übergreifende Software-, Architektur- und Forschungsberatung
-- XR, Learning Analytics, xAPI und Evaluation als Spezialisierungen
+- vollständigeres Projektportfolio
+- wissenschaftlicher Hintergrund und Publikationen
 - projektbezogene Zusammenarbeit mit dem Spezialistennetzwerk
-- Kontakt, Impressum und bestehende E-Mail-Adressen
+- Verweis auf `xrlearning.de` als spezialisiertes Angebot
+- Kontakt, Impressum und berufliche E-Mail-Adressen
 
 ### Mögliche Positionierung
 
 > Dr.-Ing. Sergej Görzen – technischer Berater und Umsetzungspartner für anspruchsvolle Software- und XR-Vorhaben.
 
-### Empfohlene Seitenstruktur
+### Mögliche spätere Seitenstruktur
 
-- `/` – Positionierung und Überblick
-- `/angebot` – Beratungs- und Umsetzungsleistungen
-- `/profil` – Person, Erfahrung und Arbeitsweise
-- `/projekte` – Projekte und Fallstudien
+- `/` – Person, Positionierung und Kompetenzfelder
+- `/profil` – Erfahrung und Arbeitsweise
+- `/projekte` – vollständigeres Portfolio
 - `/publikationen` – wissenschaftliche Arbeiten
 - `/netzwerk` – projektbezogene Spezialisten
-- `/kontakt` – Erstgespräch und Projektanfrage
+- `/kontakt` – Kontakt und Zusammenarbeit
 
-## 2. `xrlearning.de` – fokussierte Angebotsdomain
-
-`xrlearning.de` richtet sich gezielt an Interessenten mit einem XR-Lern- oder Trainingsvorhaben. Die Domain ist breiter und passender als „XR Training“, weil das Angebot zusätzlich Lernkonzeption, Learning Analytics, Evaluation und Forschung umfasst.
-
-### Empfohlene Inhalte
-
-- XR-Lern- und Trainingsszenarien
-- didaktische und technische Konzeption
-- Unity, Three.js und WebXR
-- Learning Analytics, xAPI und Telemetrie
-- Evaluation, Auswertung und Reports
-- konkrete Einstiegspakete und Preisrahmen
-- passende XR-Referenzen
-- eindeutige Projektanfrage als primärer Call-to-Action
-
-### Umsetzung in zwei Stufen
-
-1. **Kurzfristig:** `xrlearning.de` per permanenter Weiterleitung auf `goerzen.consulting/xr-learning` oder `/angebot` führen.
-2. **Später:** Eine eigenständige, fokussierte Landingpage unter `xrlearning.de` betreiben und für Profil, Publikationen sowie weitere Referenzen auf `goerzen.consulting` verlinken.
-
-## 3. `sergejgoerzen.de` – optionale persönliche Domain
+## Optional: `sergejgoerzen.de` als persönliche Schutzdomain
 
 `sergejgoerzen.de` kann als Schutzdomain registriert werden. Aktuell ist keine dritte vollständige Website notwendig.
 
@@ -75,12 +86,14 @@ Zusätzlich können `sergej-goerzen.de` und die Umlautvariante als Schutzdomains
 - Inhalte nicht vollständig auf mehreren Domains duplizieren.
 - Bei Domainweiterleitungen permanente HTTP-Weiterleitungen (`301` oder `308`) verwenden.
 - Falls ähnliche Inhalte erreichbar bleiben müssen, eine eindeutige kanonische URL festlegen.
-- `goerzen.consulting` als zentrale Quelle für Profil, Projekte und Publikationen behandeln.
+- In Phase 1 `xrlearning.de` als kanonische Domain für das Angebot behandeln.
+- In Phase 2 `goerzen.consulting` als zentrale Quelle für das ausführliche Profil und `xrlearning.de` als Quelle für das XR-Angebot behandeln.
 - Bestehende E-Mail-Adressen unter `@goerzen.consulting` weiterbetreiben.
-- Neue Domains zunächst ergänzend einsetzen; kein unnötiger Komplettumzug der vorhandenen Website.
+- Beim Domainwechsel alle bisherigen URLs möglichst zielgenau weiterleiten.
 - Erfolge der XR-Landingpage getrennt messen, insbesondere Projektanfragen und gebuchte Erstgespräche.
 
 ## Empfohlene Entscheidung
 
-Die bestehende Website bleibt unter **`goerzen.consulting`**. **`xrlearning.de`** wird als fokussierte Vertriebs- und Einstiegsdomain ergänzt. **`sergejgoerzen.de`** wird optional zur Absicherung der persönlichen Marke registriert und auf die Profilseite weitergeleitet.
+Zuerst wird die bestehende Website inhaltlich auf das Angebot fokussiert und unter **`xrlearning.de`** als primäre Vertriebsseite betrieben. **`goerzen.consulting`** leitet währenddessen auf `xrlearning.de` weiter; die bestehende E-Mail-Domain bleibt aktiv.
 
+Später wird **`goerzen.consulting`** als eigenständige persönliche Profil- und Dachseite aufgebaut. Sie verweist für das spezialisierte Angebot auf `xrlearning.de`. **`sergejgoerzen.de`** kann optional zur Absicherung der persönlichen Marke registriert und später auf die Profilseite weitergeleitet werden.
