@@ -260,11 +260,11 @@ export const XR_PROJECTS = [
 export const SERVICES = [
   {
     title: 'XR Scoping Sprint',
-    price: 'ab 3.900 €',
+    price: 'ab 4.900 €',
     description:
-      'Der strukturierte Einstieg, wenn Idee, Lernziel, Technik und Budget noch sortiert werden müssen.',
+      'Eine belastbare Entscheidungsgrundlage, bevor Konzept oder Umsetzung beauftragt werden.',
     bullets: [
-      'Anforderungen, Stakeholder, Plattform, Risiken und Erfolgskriterien klären',
+      'Ziele, Stakeholder, Plattform, Risiken und Erfolgskriterien in einem fokussierten Workshop klären',
       'Machbarkeit, Aufwandsspanne und sinnvolle Umsetzungsreihenfolge bestimmen',
       'Kompakte Entscheidungsgrundlage für Budget, Förderung oder interne Freigabe',
     ],
@@ -273,7 +273,7 @@ export const SERVICES = [
     title: 'Didaktik & XR-Konzept',
     price: 'ab 9.900 €',
     description:
-      'Aus einem Lern- oder Trainingsziel wird ein belastbares XR-Szenario mit Messkonzept.',
+      'Auf Grundlage des Scopings oder vorhandener Anforderungen entsteht ein umsetzbares XR-Szenario mit Messkonzept.',
     bullets: [
       'Lernziele, Aufgabenlogik, Feedback und Transfer in die Praxis ausarbeiten',
       'Interaktionskonzept, technischer Zuschnitt und Analytics-Events definieren',
@@ -282,9 +282,9 @@ export const SERVICES = [
   },
   {
     title: 'Neuer XR-Pilot / MVP',
-    price: '39.000-69.000 €',
+    price: 'typ. 39.000–69.000 €',
     description:
-      'Ein fokussiertes XR-Lern- oder Trainingsszenario mit technischer und analytischer Grundlage.',
+      'Umsetzung eines fokussierten XR-Lern- oder Trainingsszenarios auf Basis eines freigegebenen Konzepts.',
     bullets: [
       'Umsetzung mit Unity oder Three.js/WebXR für ein klar begrenztes Szenario',
       'xAPI-/Telemetry-Grundlage, Monitoring und Pilotierung',
@@ -304,9 +304,9 @@ export const SERVICES = [
   },
   {
     title: 'Analytics-Integration',
-    price: '14.000-29.000 €',
+    price: 'typ. 14.000–29.000 €',
     description:
-      'Technische Integration von Datenpunkten, xAPI-/Telemetry-Pipeline und Monitoring in vorhandene Apps.',
+      'Technische Integration von Datenpunkten, xAPI-/Telemetry-Pipeline und Monitoring nach Prüfung der vorhandenen App.',
     bullets: [
       'xAPI- oder Telemetry-Events in Unity-, Three.js- oder WebXR-Anwendungen integrieren',
       'Anbindung an LRS, Backend, Dashboard oder bestehende Systeme',
@@ -315,13 +315,14 @@ export const SERVICES = [
   },
   {
     title: 'Evaluation & Report',
-    price: 'ab 9.000 €',
+    price: 'ab 12.900 €',
     description:
       'Methodische Begleitung, Auswertung und Ergebnisbericht für XR-Lern- und Trainingsszenarien.',
     bullets: [
       'Evaluationsdesign, Pilotstudie oder Nutzertest vorbereiten',
       'Interaktions-, Lern- oder Trainingsdaten auswerten und visualisieren',
       'Report mit Handlungsempfehlungen für Stakeholder und Weiterentwicklung',
+      'Rekrutierung, Incentives und umfangreiche Feldstudien werden separat kalkuliert',
     ],
   },
 ]

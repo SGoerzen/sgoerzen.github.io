@@ -7,6 +7,7 @@ import {
   DraftingCompass,
   Lightbulb,
   MessageCircle,
+  RefreshCw,
   ScanSearch,
   Sparkles,
 } from "lucide-react";
@@ -17,14 +18,14 @@ const paths = [
     eyebrow: "Startpunkt A",
     title: "Neue XR-Idee",
     description:
-      "Von der ersten Idee bis zu einem einsatzfähigen Pilotprojekt.",
+      "Scoping und Konzept schaffen die belastbare Grundlage für einen Pilot.",
     Icon: Lightbulb,
     gridClass: "sm:grid-cols-3",
     steps: [
       {
         title: "XR Scoping Sprint",
-        price: "ab 3.900 €",
-        result: "Machbarkeit & Rahmen",
+        price: "ab 4.900 €",
+        result: "Entscheidungsgrundlage & Rahmen",
         Icon: ScanSearch,
       },
       {
@@ -35,7 +36,7 @@ const paths = [
       },
       {
         title: "Neuer XR-Pilot / MVP",
-        price: "39.000–69.000 €",
+        price: "typ. 39.000–69.000 €",
         result: "Einsatzfähiger Pilot",
         Icon: Boxes,
       },
@@ -44,7 +45,7 @@ const paths = [
   {
     eyebrow: "Startpunkt B",
     title: "Bestehende XR-App",
-    description: "Eine vorhandene Anwendung messbar und evaluierbar machen.",
+    description: "Der Audit klärt den Umfang, bevor die Integration beginnt.",
     Icon: Cable,
     gridClass: "sm:grid-cols-2",
     steps: [
@@ -56,7 +57,7 @@ const paths = [
       },
       {
         title: "Analytics-Integration",
-        price: "14.000–29.000 €",
+        price: "typ. 14.000–29.000 €",
         result: "Validierter Datenfluss",
         Icon: Cable,
       },
@@ -274,10 +275,32 @@ const paths = [
           </p>
         </div>
         <p class="m-0 shrink-0 text-sm font-semibold text-primary">
-          ab 9.000 €
+          ab 12.900 €
         </p>
       </div>
     </article>
+
+    <aside
+      class="mx-auto mt-6 flex max-w-3xl flex-col gap-4 rounded-xl border border-primary/25 bg-primary/5 p-5 sm:flex-row sm:items-start"
+      aria-labelledby="additional-iterations"
+    >
+      <span
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"
+      >
+        <RefreshCw aria-hidden="true" size={20} strokeWidth={1.8} />
+      </span>
+      <div>
+        <h3 id="additional-iterations" class="m-0 text-base font-semibold">
+          Flexibel um weitere Features erweiterbar
+        </h3>
+        <p class="m-0 mt-2 text-sm leading-relaxed text-muted-foreground">
+          Nach jedem Meilenstein kann das Projekt gezielt erweitert werden.
+          Zusätzliche Features und neue Anforderungen planen wir als separate
+          Iteration – mit transparentem Aufwand, Budget und Zeitrahmen vor der
+          Umsetzung.
+        </p>
+      </div>
+    </aside>
 
     <div
       class="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 rounded-lg border border-dashed bg-muted/30 px-4 py-3 text-xs text-muted-foreground"
@@ -288,11 +311,11 @@ const paths = [
         <Sparkles aria-hidden="true" size={14} class="text-primary" />
         Modular planbar
       </span>
-      <span>Nicht jeder Schritt ist zwingend</span>
+      <span>Vorhandene Vorarbeiten werden geprüft</span>
       <span
         class="hidden h-1 w-1 rounded-full bg-primary/60 sm:block"
         aria-hidden="true"></span>
-      <span>Pakete lassen sich einzeln beauftragen</span>
+      <span>Folgeschritte setzen eine belastbare Grundlage voraus</span>
     </div>
 
     <p
@@ -301,6 +324,8 @@ const paths = [
       Alle Preisangaben sind Richtwerte. Ein verbindlicher Festpreis entsteht
       nach dem Scoping; externe Kosten wie Hardware, 3D-Assets, Reisen,
       Cloud-Betrieb oder Systemintegrationen werden separat betrachtet.
+      Zeitplan und Meilensteine stimmen wir anschließend passend zu Umfang und
+      Rahmenbedingungen ab.
     </p>
   </section>
 </Card>
