@@ -122,7 +122,20 @@ const offerAreas = [
   .offer-hero {
     --hero-blue: #0965df;
     --hero-blue-dark: #0055c8;
+    --hero-action: #0965df;
+    --hero-action-hover: #0055c8;
     --hero-navy: #061f3d;
+    --hero-muted: #526684;
+    --hero-stage-background: #eef5fd;
+    --hero-stage-border: #dbe5f1;
+    --hero-eyebrow-background: #eaf3ff;
+    --hero-tile-background: rgba(255, 255, 255, 0.98);
+    --hero-tile-border: #dce5f0;
+    --hero-tile-muted: #5a6c86;
+    --hero-tile-hover-border: #9fc5f8;
+    --hero-tile-shadow: 0 16px 42px rgba(12, 42, 78, 0.08);
+    --hero-tile-hover-shadow: 0 22px 46px rgba(12, 64, 128, 0.13);
+    --hero-secondary-border: #76aaf0;
     position: relative;
     width: 100%;
     margin-bottom: 7.75rem;
@@ -133,8 +146,8 @@ const offerAreas = [
     position: relative;
     min-height: 42.5rem;
     overflow: hidden;
-    border-bottom: 1px solid #dbe5f1;
-    background: #eef5fd;
+    border-bottom: 1px solid var(--hero-stage-border);
+    background: var(--hero-stage-background);
   }
 
   .hero-background,
@@ -196,7 +209,7 @@ const offerAreas = [
     display: inline-flex;
     margin: 0 0 1.9rem;
     border-radius: 0.25rem;
-    background: #eaf3ff;
+    background: var(--hero-eyebrow-background);
     padding: 0.65rem 1rem;
     color: var(--hero-blue-dark);
     font-size: 0.8rem;
@@ -222,7 +235,7 @@ const offerAreas = [
   .hero-description {
     max-width: 42rem;
     margin: 1.55rem 0 0;
-    color: #526684;
+    color: var(--hero-muted);
     font-size: clamp(1.08rem, 1.35vw, 1.32rem);
     line-height: 1.6;
   }
@@ -248,9 +261,9 @@ const offerAreas = [
 
   .primary-action {
     min-width: 13.5rem;
-    border: 1px solid var(--hero-blue);
+    border: 1px solid var(--hero-action);
     border-radius: 0.22rem;
-    background: var(--hero-blue);
+    background: var(--hero-action);
     padding: 0 1.45rem;
     color: #fff;
     box-shadow: 0 10px 30px rgba(9, 101, 223, 0.2);
@@ -258,14 +271,14 @@ const offerAreas = [
 
   .primary-action:hover {
     transform: translateY(-2px);
-    border-color: var(--hero-blue-dark);
-    background: var(--hero-blue-dark);
+    border-color: var(--hero-action-hover);
+    background: var(--hero-action-hover);
     box-shadow: 0 14px 34px rgba(9, 101, 223, 0.27);
   }
 
   .secondary-action {
     min-height: 2.4rem;
-    border-bottom: 2px solid #76aaf0;
+    border-bottom: 2px solid var(--hero-secondary-border);
     color: var(--hero-blue-dark);
   }
 
@@ -309,10 +322,10 @@ const offerAreas = [
   .offer-tile {
     display: flex;
     flex-direction: column;
-    border: 1px solid #dce5f0;
-    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid var(--hero-tile-border);
+    background: var(--hero-tile-background);
     color: var(--hero-navy);
-    box-shadow: 0 16px 42px rgba(12, 42, 78, 0.08);
+    box-shadow: var(--hero-tile-shadow);
     transition: 180ms ease;
   }
 
@@ -330,7 +343,7 @@ const offerAreas = [
 
   .offer-tile p {
     margin: 0.55rem 0 0;
-    color: #5a6c86;
+    color: var(--hero-tile-muted);
     font-size: 0.82rem;
     line-height: 1.55;
   }
@@ -343,8 +356,8 @@ const offerAreas = [
 
   .offer-tile:hover {
     transform: translateY(-4px);
-    border-color: #9fc5f8;
-    box-shadow: 0 22px 46px rgba(12, 64, 128, 0.13);
+    border-color: var(--hero-tile-hover-border);
+    box-shadow: var(--hero-tile-hover-shadow);
   }
 
   .contact-tile {
@@ -388,6 +401,50 @@ const offerAreas = [
 
   .contact-details a:hover {
     color: #9dc8ff;
+  }
+
+  :global(.dark) .offer-hero {
+    --hero-blue: #69adff;
+    --hero-blue-dark: #91c4ff;
+    --hero-action: #1473e6;
+    --hero-action-hover: #2684f2;
+    --hero-navy: #edf5ff;
+    --hero-muted: #b3c2d5;
+    --hero-stage-background: #07111f;
+    --hero-stage-border: #24364d;
+    --hero-eyebrow-background: rgba(55, 139, 238, 0.14);
+    --hero-tile-background: rgba(14, 27, 44, 0.98);
+    --hero-tile-border: #2a3d55;
+    --hero-tile-muted: #aebed1;
+    --hero-tile-hover-border: #4d83bd;
+    --hero-tile-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+    --hero-tile-hover-shadow: 0 24px 50px rgba(0, 0, 0, 0.38);
+    --hero-secondary-border: #397ecb;
+  }
+
+  :global(.dark) .hero-background img {
+    filter: brightness(0.62) saturate(0.72) contrast(1.06);
+  }
+
+  :global(.dark) .hero-wash {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(5, 13, 24, 0.99) 0%,
+        rgba(5, 14, 26, 0.96) 28%,
+        rgba(6, 17, 31, 0.84) 50%,
+        rgba(7, 22, 40, 0.5) 70%,
+        rgba(5, 18, 34, 0.24) 100%
+      ),
+      linear-gradient(180deg, rgba(4, 11, 20, 0.35), rgba(4, 11, 20, 0.6));
+  }
+
+  :global(.dark) .hero-glow {
+    background: radial-gradient(
+      circle at center,
+      rgba(63, 137, 222, 0.16),
+      transparent 69%
+    );
   }
 
   @media (max-width: 1180px) {
@@ -447,6 +504,18 @@ const offerAreas = [
           rgba(216, 235, 255, 0.58) 100%
         ),
         linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.3));
+    }
+
+    :global(.dark) .hero-wash {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(5, 13, 24, 0.99) 0%,
+          rgba(5, 14, 26, 0.97) 45%,
+          rgba(7, 20, 37, 0.88) 72%,
+          rgba(8, 26, 48, 0.7) 100%
+        ),
+        linear-gradient(90deg, #050d18, rgba(5, 13, 24, 0.48));
     }
 
     .hero-glow {

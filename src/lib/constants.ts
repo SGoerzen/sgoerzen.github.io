@@ -31,7 +31,6 @@ export const IMPRESSUM = {
   EMAIL: 'sergej@goerzen.consulting',
   PHONE: '',
   VAT_ID: '',
-  SMALL_BUSINESS: true,
 }
 
 export const WORK: Page = {
