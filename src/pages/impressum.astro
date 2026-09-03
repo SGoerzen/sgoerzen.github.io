@@ -32,12 +32,12 @@ import BottomLayout from '../layouts/BottomLayout.astro'
                     ) : null}
                 </p>
 
-                <h3>Umsatzsteuer</h3>
                 {IMPRESSUM.VAT_ID ? (
-                        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: {IMPRESSUM.VAT_ID}</p>
-                ) : (
-                        <p>Kleinunternehmer gemäß § 19 UStG: {IMPRESSUM.SMALL_BUSINESS ? 'Ja' : 'Nein'}</p>
-                )}
+                        <>
+                            <h3>Umsatzsteuer</h3>
+                            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: {IMPRESSUM.VAT_ID}</p>
+                        </>
+                ) : null}
 
                 <h3>Verantwortlich für den Inhalt</h3>
                 <p>
