@@ -1,59 +1,113 @@
 ---
-import { buttonVariants } from '../components/ui/button'
-import { ModeToggle } from '../components/ui/ThemeToggle'
+import { ModeToggle } from "../components/ui/ThemeToggle";
 
 const navItems = [
-  { href: '/', label: 'Start' },
-  { href: '/#leistungen', label: 'Angebot' },
-  { href: '/#projekte', label: 'Projekte' },
-  { href: '/work', label: 'Profil' },
-  { href: '/publications', label: 'Publikationen' },
-]
+  { href: "/#prozess", label: "Leistungen", match: "/" },
+  { href: "/#projekte", label: "Projekte" },
+  { href: "/work", label: "Über mich", match: "/work" },
+];
+
+const isCurrent = (item: (typeof navItems)[number]) =>
+  item.match === Astro.url.pathname;
 ---
 
 <script is:inline>
-  document.addEventListener('astro:after-swap', function () {
-    if (localStorage.getItem('theme') === 'dark')
-      document.documentElement.classList.toggle('dark', true)
-  })
+  document.addEventListener("astro:after-swap", function () {
+    if (localStorage.getItem("theme") === "dark")
+      document.documentElement.classList.toggle("dark", true);
+  });
 
   const getThemePreference = () => {
-    return localStorage.getItem('theme')
-  }
+    return localStorage.getItem("theme");
+  };
 
-  const isDark = getThemePreference() === 'dark'
-  document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 </script>
 
 <header
-  class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+  class="site-header sticky top-0 z-50 w-full border-b border-[#dfe7f1] bg-white/95 text-[#071f3d] shadow-[0_1px_0_rgba(6,31,61,0.02)] backdrop-blur dark:border-white/10 dark:bg-[#071527]/95 dark:text-white"
 >
   <div
-    class="container flex h-16 items-center justify-between gap-2 px-4 sm:px-8"
+    class="mx-auto flex h-[5.4rem] w-[min(92%,90rem)] items-center justify-between gap-4"
   >
-    <a href="/" class="min-w-0 shrink font-bold">
-      <span class="block truncate">Dr.-Ing. Sergej Görzen</span>
+    <a
+      href="/"
+      class="brand flex min-w-0 items-center gap-3"
+      aria-label="XR Learning – Startseite"
+    >
+      <svg
+        class="h-12 w-12 shrink-0 text-[#0965df]"
+        viewBox="0 0 52 52"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M26 3.5 46 15v22L26 48.5 6 37V15L26 3.5Z"
+          stroke="currentColor"
+          stroke-width="1.8"></path>
+        <path
+          d="m6 15 20 11.5L46 15M26 3.5v45M6 37l20-10.5L46 37"
+          stroke="currentColor"
+          stroke-width="1.8"></path>
+        <circle cx="26" cy="3.5" r="2.5" fill="currentColor"></circle>
+        <circle cx="6" cy="15" r="2.5" fill="currentColor"></circle>
+        <circle cx="46" cy="15" r="2.5" fill="currentColor"></circle>
+        <circle cx="26" cy="26.5" r="2.5" fill="currentColor"></circle>
+        <circle cx="6" cy="37" r="2.5" fill="currentColor"></circle>
+        <circle cx="46" cy="37" r="2.5" fill="currentColor"></circle>
+        <circle cx="26" cy="48.5" r="2.5" fill="currentColor"></circle>
+      </svg>
+      <span class="min-w-0 leading-none">
+        <span
+          class="block text-[0.92rem] font-bold tracking-[0.08em] text-[#075eca] dark:text-[#70aefc]"
+          >XR LEARNING</span
+        >
+        <span
+          class="mt-1.5 block truncate text-[0.67rem] font-semibold tracking-[0.25em] text-[#47617f] dark:text-slate-300"
+          >SERGEJ GÖRZEN</span
+        >
+      </span>
     </a>
 
-    <div class="flex shrink-0 items-center gap-2">
+    <div class="flex shrink-0 items-center gap-3 lg:mr-8 xl:mr-12">
       <nav
-        class="hidden items-center space-x-1 lg:flex"
+        class="hidden items-center gap-9 lg:flex"
         aria-label="Hauptnavigation"
       >
         {
-          navItems.map(({ href, label }) => (
-            <a href={href} class={buttonVariants({ variant: 'ghost' })}>
-              {label}
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                "nav-link relative py-3 text-sm font-medium text-[#50617a] transition hover:text-[#0965df] dark:text-slate-300 dark:hover:text-white",
+                isCurrent(item) &&
+                  "is-current font-semibold text-[#071f3d] dark:text-white",
+              ]}
+            >
+              <span>{item.label}</span>
             </a>
           ))
         }
       </nav>
 
-      <ModeToggle transition:persist client:load />
+      <div class="hidden xl:block">
+        <ModeToggle transition:persist client:load />
+      </div>
+
+      <button
+        type="button"
+        class="hidden min-h-12 items-center justify-center rounded-[0.22rem] bg-[#0965df] px-6 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(9,101,223,0.2)] transition hover:-translate-y-0.5 hover:bg-[#0055c8] lg:inline-flex"
+        data-open-dialog="contact-form"
+        aria-haspopup="dialog"
+        aria-controls="contact-form"
+      >
+        Projekt anfragen
+      </button>
 
       <details class="group relative lg:hidden">
         <summary
-          class="inline-flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md border border-input bg-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background [&::-webkit-details-marker]:hidden"
+          class="inline-flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-[0.22rem] border border-[#cad7e6] bg-white transition-colors hover:bg-[#eef5ff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0965df] dark:border-white/20 dark:bg-transparent dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden"
         >
           <span class="sr-only">Navigation öffnen</span>
           <svg
@@ -82,20 +136,65 @@ const navItems = [
 
         <nav
           aria-label="Mobile Navigation"
-          class="absolute right-0 top-12 z-50 flex w-64 flex-col rounded-lg border bg-popover p-2 text-popover-foreground shadow-lg"
+          class="absolute right-0 top-14 z-50 flex w-64 flex-col gap-1 rounded-md border border-[#dce5f0] bg-white p-3 text-[#071f3d] shadow-xl dark:border-white/15 dark:bg-[#071527] dark:text-white"
         >
           {
-            navItems.map(({ href, label }) => (
+            navItems.map((item) => (
               <a
-                href={href}
-                class={`${buttonVariants({ variant: 'ghost' })} justify-start`}
+                href={item.href}
+                class:list={[
+                  "rounded-sm px-4 py-3 text-sm font-medium transition hover:bg-[#eef5ff] hover:text-[#0965df] dark:hover:bg-white/10 dark:hover:text-white",
+                  isCurrent(item) &&
+                    "bg-[#eef5ff] text-[#0965df] dark:bg-white/10 dark:text-white",
+                ]}
               >
-                {label}
+                {item.label}
               </a>
             ))
           }
+          <button
+            type="button"
+            class="mt-2 rounded-[0.22rem] bg-[#0965df] px-4 py-3 text-left text-sm font-semibold text-white"
+            data-open-dialog="contact-form"
+            aria-haspopup="dialog"
+            aria-controls="contact-form"
+          >
+            Projekt anfragen
+          </button>
         </nav>
       </details>
     </div>
   </div>
 </header>
+
+<style>
+  .nav-link::after {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    content: "";
+    background: #0965df;
+    transition: 180ms ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.is-current::after {
+    right: 0;
+    left: 0;
+  }
+
+  @media (max-width: 440px) {
+    .brand svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .brand span span:last-child {
+      max-width: 8rem;
+      font-size: 0.57rem;
+      letter-spacing: 0.16em;
+    }
+  }
+</style>
