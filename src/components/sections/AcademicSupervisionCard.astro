@@ -1,0 +1,114 @@
+---
+import { ArrowUpRight, GraduationCap } from "lucide-react";
+import ProjectResourcesDialog from "../ProjectResourcesDialog.astro";
+
+const competencies = [
+  "Themenfindung & Scoping",
+  "XR-Konzeption & Prototyping",
+  "Unity, WebXR & MR",
+  "Eye Tracking & Learning Analytics",
+  "Evaluation & wissenschaftliches Arbeiten",
+];
+
+const supervisedTheses = [
+  {
+    title:
+      "Concept and implementation of the OmiLAXR ecosystem for the Godot Engine",
+    type: "Bachelorarbeit",
+    year: "2026",
+    url: "https://learntech.rwth-aachen.de/go/id/jiza/file/1035119",
+  },
+  {
+    title: "Realization of the OmiLAXR framework in WebXR environments",
+    type: "Bachelorarbeit",
+    year: "2026",
+    url: "https://learntech.rwth-aachen.de/go/id/jiza/file/1032163",
+  },
+  {
+    title: "A learning analytics monitoring tool for supporting VR developers",
+    type: "Bachelorarbeit",
+    year: "2024",
+    url: "https://learntech.rwth-aachen.de/go/id/jiza/file/1002762",
+  },
+  {
+    title: "An interface for connecting Educational WebXR Apps and Moodle",
+    type: "Masterarbeit",
+    year: "2023",
+    url: "https://learntech.rwth-aachen.de/go/id/jiza/file/963851",
+  },
+  {
+    title:
+      "Rewatching and analyzing local scenes through interactive windows in extended reality",
+    type: "Masterarbeit",
+    year: "2022",
+    url: "https://learntech.rwth-aachen.de/go/id/jiza/file/856016",
+  },
+];
+---
+
+<article
+  class="group flex h-full flex-col rounded-2xl border border-rose-200/70 bg-rose-50/60 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md dark:border-rose-900/70 dark:bg-rose-950/20"
+>
+  <div class="flex items-start justify-between gap-4">
+    <div
+      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-100 text-rose-700 dark:bg-rose-900/60 dark:text-rose-300"
+    >
+      <GraduationCap size={20} aria-hidden="true" />
+    </div>
+  </div>
+
+  <p
+    class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+  >
+    Hochschullehre · XR
+  </p>
+  <h3 class="mt-1 text-lg font-semibold tracking-tight">
+    Akademische Betreuung
+  </h3>
+
+  <p class="mt-4 text-base font-semibold leading-relaxed">
+    {supervisedTheses.length} weitere Arbeiten fachlich begleitet
+  </p>
+  <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+    VR-Lernanwendungen · WebXR & MR · Eye Tracking & Learning Analytics
+  </p>
+
+  <div class="mt-4">
+    <p
+      class="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+    >
+      Betreuungskompetenzen
+    </p>
+    <div class="mt-2 flex flex-wrap gap-2">
+      {
+        competencies.map((competency) => (
+          <span class="rounded-full border border-foreground/10 bg-background/70 px-2.5 py-1 text-[0.7rem] font-medium text-muted-foreground">
+            {competency}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+
+  <ProjectResourcesDialog
+    dialogId="academic-supervision-theses"
+    title="Weitere betreute XR-Abschlussarbeiten"
+    buttonLabel={`${supervisedTheses.length} weitere Arbeiten ansehen`}
+    resources={supervisedTheses.map((thesis) => ({
+      label: `${thesis.title} · ${thesis.type}, ${thesis.year}`,
+      url: thesis.url,
+    }))}
+  />
+
+  <div class="mt-auto pt-5">
+    <a
+      href="https://learntech.rwth-aachen.de/cms/learntech/das-lehr-und-forschungsgebiet/mitarbeiter/wissenschaftliche-mitarbeiterinnen-und-m/~nwbzq/sergej-goerzen/?allou=1"
+      target="_blank"
+      rel="noreferrer"
+      class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+    >
+      Betreute Arbeiten bei der RWTH Aachen
+      <ArrowUpRight size={15} aria-hidden="true" />
+    </a>
+  </div>
+</article>

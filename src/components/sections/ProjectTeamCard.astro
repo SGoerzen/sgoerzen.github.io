@@ -1,0 +1,51 @@
+---
+import { BarChart3, Box, Code2, Palette } from 'lucide-react'
+import Card from '../Card.astro'
+
+const specialties = [
+  {
+    title: '3D & Spatial Design',
+    icon: Box,
+  },
+  {
+    title: 'UX & Interaction Design',
+    icon: Palette,
+  },
+  {
+    title: 'Softwareentwicklung',
+    icon: Code2,
+  },
+  {
+    title: 'Datenanalyse & Evaluation',
+    icon: BarChart3,
+  },
+]
+---
+
+<Card
+  colSpan="md:col-span-2 lg:col-span-4"
+  rowSpan="md:row-span-1 lg:row-span-1"
+  title="Erweiterbares Projektteam"
+  body="Zusätzliche Expertise, wenn dein Vorhaben sie braucht – mit mir als zentralem Ansprechpartner."
+>
+  <section id="projektteam" class="mt-5 space-y-5">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        specialties.map(({ title, icon: Icon }) => (
+          <article class="border-t pt-4">
+            <div class="flex items-center gap-3">
+              <div class="rounded-lg bg-primary/10 p-2 text-primary">
+                <Icon className="h-5 w-5" aria-hidden="true" />
+              </div>
+              <h3 class="m-0 text-sm font-semibold">{title}</h3>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="m-0 border-t pt-5 text-sm text-muted-foreground">
+      Ich ergänze das Team passend zum Bedarf und koordiniere Schnittstellen, Qualität und Delivery. Technische Leitung und zentrale Kommunikation bleiben bei mir.
+    </p>
+  </section>
+</Card>

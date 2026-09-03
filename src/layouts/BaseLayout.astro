@@ -1,22 +1,59 @@
 ---
-import { ClientRouter } from 'astro:transitions'
-import HeadSEO from '../components/HeadSEO.astro'
-import ContactDialog from '../components/ContactDialog.astro'
-import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
+import { ClientRouter } from "astro:transitions";
+import HeadSEO from "../components/HeadSEO.astro";
+import ContactDialog from "../components/ContactDialog.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
 interface Props {
-  title?: string | undefined
-  description?: string | undefined
-  ogImage?: URL | undefined
+  title?: string | undefined;
+  description?: string | undefined;
+  ogImage?: URL | undefined;
 }
 
-const { title, description, ogImage } = Astro.props
+const { title, description, ogImage } = Astro.props;
 ---
 
 <html lang="de">
   <head>
     <HeadSEO title={title} description={description} ogImage={ogImage} />
+    <script is:inline>
+      (() => {
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+        window.__getStoredTheme = () => {
+          try {
+            return localStorage.getItem("theme");
+          } catch {
+            return null;
+          }
+        };
+
+        window.__applyTheme = () => {
+          const theme = window.__getStoredTheme();
+          const isDark =
+            theme === "dark" || (theme !== "light" && media.matches);
+
+          document.documentElement.classList.toggle("dark", isDark);
+          document.documentElement.style.colorScheme = isDark
+            ? "dark"
+            : "light";
+        };
+
+        window.__applyTheme();
+
+        if (!window.__themeEventsBound) {
+          window.__themeEventsBound = true;
+          document.addEventListener("astro:after-swap", () =>
+            window.__applyTheme(),
+          );
+          media.addEventListener("change", () => {
+            const theme = window.__getStoredTheme();
+            if (!theme || theme === "system") window.__applyTheme();
+          });
+        }
+      })();
+    </script>
     <ClientRouter />
   </head>
   <body class="min-h-screen bg-background font-sans antialiased">

@@ -3,6 +3,24 @@ import { WORK, EXPERIENCE, STUDIES } from '../lib/constants'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import TopLayout from '../layouts/TopLayout.astro'
 import BottomLayout from '../layouts/BottomLayout.astro'
+import { Badge } from '../components/ui/badge'
+
+const focusAreas = [
+  'Unity',
+  'C# / .NET',
+  'XR / AR / VR',
+  'Three.js / WebXR',
+  'xAPI',
+  'Learning Analytics',
+  'Research Software',
+  'TypeScript',
+  'React / Vue',
+  'REST APIs',
+  'PostgreSQL',
+  'Docker',
+]
+
+const interests = ['Open Source', 'XR / EdTech', 'Gaming', 'Manga', 'Gitarre', 'Tischtennis']
 ---
 
 <BaseLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
@@ -14,32 +32,57 @@ import BottomLayout from '../layouts/BottomLayout.astro'
     </TopLayout>
 
     <BottomLayout>
-      <section class="rounded-2xl border bg-gradient-to-br from-primary/10 via-background to-background p-6 md:p-8" aria-labelledby="experience-offer">
-        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Erfahrung als Grundlage für dein XR-Projekt</p>
-        <h3 id="experience-offer" class="mt-2 max-w-3xl text-2xl font-semibold tracking-tight">
-          Von der Anforderung bis zur umgesetzten und evaluierbaren XR-Anwendung
+      <section class="rounded-2xl border bg-gradient-to-br from-primary/10 via-background to-background p-6 md:p-8" aria-labelledby="profile-intro">
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Über mich</p>
+        <h3 id="profile-intro" class="mt-2 max-w-3xl text-2xl font-semibold tracking-tight">
+          Informatiker, Research Software Engineer und technischer Umsetzungspartner
         </h3>
         <p class="mt-3 max-w-4xl text-sm leading-relaxed text-muted-foreground md:text-base">
-          Mein heutiges Angebot verbindet langjährige Software- und Delivery-Erfahrung mit Forschung zu XR und Learning Analytics. Ich unterstütze Unternehmen, Hochschulen und Forschungsteams bei einzelnen Arbeitspaketen oder als technischer Partner über den gesamten Projektverlauf.
+          Ich entwickle Software für Vorhaben, bei denen Standardlösungen nicht ausreichen. Mein Schwerpunkt liegt auf technisch anspruchsvollen Produkten und Speziallösungen – dort, wo mehrere Technologien, Systeme oder Anforderungen sauber zusammenspielen müssen, damit ein belastbares Produkt entsteht.
+        </p>
+        <p class="mt-3 max-w-4xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          Dabei verbinde ich wissenschaftliche Arbeit zu XR und Learning Analytics mit mehr als zehn Jahren Software- und Delivery-Erfahrung. Ich habe ein Startup durch die Corona-Zeit begleitet, eine bis heute eingesetzte SaaS-Plattform aufgebaut und technische Verantwortung als Lead Developer, Tech Lead, Freiberufler und in einer projektbezogenen CTO-Rolle übernommen.
         </p>
 
         <div class="mt-6 grid gap-4 md:grid-cols-3">
           <div class="border-t pt-3">
-            <p class="font-semibold">XR-Konzeption & Entwicklung</p>
-            <p class="mt-1 text-sm leading-relaxed text-muted-foreground">Scoping, Szenariodesign und Umsetzung mit Unity, Three.js und WebXR.</p>
+            <p class="font-semibold">Forschung & Transfer</p>
+            <p class="mt-1 text-sm leading-relaxed text-muted-foreground">Dr.-Ing. in Informatik, XR-/Learning-Analytics-Forschung, Lehre und Betreuung wissenschaftlicher Arbeiten.</p>
           </div>
           <div class="border-t pt-3">
-            <p class="font-semibold">Daten & Evaluation</p>
-            <p class="mt-1 text-sm leading-relaxed text-muted-foreground">xAPI, Learning Analytics, Pilotierung, Auswertung und belastbarer Report.</p>
+            <p class="font-semibold">Engineering & Delivery</p>
+            <p class="mt-1 text-sm leading-relaxed text-muted-foreground">Hands-on-Entwicklung, Architektur, Teamkoordination und Übergabe produktiv einsetzbarer Systeme.</p>
           </div>
           <div class="border-t pt-3">
-            <p class="font-semibold">Projekt- & Antragspartnerschaft</p>
-            <p class="mt-1 text-sm leading-relaxed text-muted-foreground">Machbarkeit, technische Arbeitspakete, Prototyping und Delivery in Einzel- oder Verbundprojekten.</p>
+            <p class="font-semibold">Arbeitsweise</p>
+            <p class="mt-1 text-sm leading-relaxed text-muted-foreground">Ruhig, analytisch, transparent und pragmatisch – mit klaren Entscheidungen und realistischen Prioritäten.</p>
           </div>
         </div>
       </section>
 
-      <h3 class="mt-10 text-xl font-semibold">Stationen & Verantwortung</h3>
+      <section class="mt-10 grid gap-6 md:grid-cols-2" aria-labelledby="focus-and-workstyle">
+        <article class="rounded-2xl border p-5 md:p-6">
+          <h3 id="focus-and-workstyle" class="text-xl font-semibold">Arbeitsweise</h3>
+          <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+            <li>Klare technische Entscheidungen mit realistischen Prioritäten und nachvollziehbarer Kommunikation</li>
+            <li>Systematische Konzeption und Hands-on-Umsetzung über mehrere Technologien hinweg</li>
+            <li>Tragfähige Lösungen, die sich integrieren, weiterentwickeln und real betreiben lassen</li>
+            <li>Wissenstransfer durch Dokumentation, Workshops, Reviews und strukturiertes Onboarding</li>
+          </ul>
+        </article>
+
+        <article class="rounded-2xl border p-5 md:p-6">
+          <h3 class="text-xl font-semibold">Fokus & technischer Hintergrund</h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
+            Besonders stark bin ich an den Schnittstellen zwischen interaktiver Anwendung, Datenfluss, Backend und Evaluation.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {focusAreas.map((area) => <Badge variant="outline">{area}</Badge>)}
+          </div>
+        </article>
+      </section>
+
+      <h3 class="mt-10 text-xl font-semibold">Berufserfahrung & Verantwortung</h3>
       <ul class="mt-4">
         {
           EXPERIENCE.map((entry) => (
@@ -90,6 +133,30 @@ import BottomLayout from '../layouts/BottomLayout.astro'
             ))
           }
         </ul>
+      </section>
+
+      <section class="mt-10 rounded-2xl border p-5 md:p-6" aria-labelledby="personal-details">
+        <h3 id="personal-details" class="text-xl font-semibold">Persönliches</h3>
+        <div class="mt-4 grid gap-6 text-sm md:grid-cols-3">
+          <div>
+            <h4 class="font-semibold">Standort & Zusammenarbeit</h4>
+            <p class="mt-2 leading-relaxed text-muted-foreground">
+              Reichshof · remote deutschlandweit · vor Ort insbesondere im Raum Köln
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold">Sprachen</h4>
+            <p class="mt-2 leading-relaxed text-muted-foreground">
+              Deutsch und Russisch auf muttersprachlichem Niveau · Englisch fließend im beruflichen und wissenschaftlichen Kontext
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold">Interessen</h4>
+            <div class="mt-2 flex flex-wrap gap-2">
+              {interests.map((interest) => <Badge variant="outline">{interest}</Badge>)}
+            </div>
+          </div>
+        </div>
       </section>
     </BottomLayout>
   </main>

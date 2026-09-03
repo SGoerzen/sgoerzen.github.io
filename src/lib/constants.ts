@@ -31,17 +31,12 @@ export const IMPRESSUM = {
   EMAIL: 'sergej@goerzen.consulting',
   PHONE: '',
   VAT_ID: '',
-  SMALL_BUSINESS: true,
 }
 
 export const WORK: Page = {
-  TITLE: 'Berufserfahrung',
-  DESCRIPTION: 'Erfahrung in XR-Entwicklung, Learning Analytics, Evaluation und technischer Projektverantwortung.',
-}
-
-export const PROJECTS: Page = {
-  TITLE: 'XR-Projekte & Referenzen',
-  DESCRIPTION: 'Ausgewählte XR-Lern- und Trainingsszenarien von der Konzeption bis zur Evaluation.',
+  TITLE: 'Profil',
+  DESCRIPTION:
+    'Profil von Dr.-Ing. Sergej Görzen: Arbeitsweise, technischer Fokus, Berufserfahrung, akademischer Hintergrund und persönliche Interessen.',
 }
 
 export const XR_PROJECTS = [
@@ -51,10 +46,65 @@ export const XR_PROJECTS = [
     title: 'RePiX VR',
     focus: 'VR · Computer Graphics',
     organization: 'Learning Technologies · RWTH Aachen University',
-    url: 'https://gitlab.com/learntech-rwth/repix-vr/repix-vr-app',
-    summary: 'Eine begehbare Rendering-Pipeline, in der Lernende Grafikprozesse direkt untersuchen und verändern.',
+    image: '/project-images/repix.png',
+    imageAlt: 'Collage interaktiver Lernstationen in der VR-Anwendung RePiX',
+    summary:
+      'Aus meiner Masterarbeit entstand eine begehbare Rendering-Pipeline, in der Lernende Grafikprozesse direkt untersuchen und verändern. Die Weiterentwicklung begleitete ich anschließend in elf Bachelor- und Masterarbeiten fachlich.',
+    recognition:
+      'Best Educational Paper (Eurographics 2022) · erweiterter Journalartikel in Computers & Graphics (2023) · Best Poster für eine RePiX-basierte Folgearbeit (DELFI 2022)',
     description:
-      'RePiX VR macht die Rendering-Pipeline als interaktive Lernumgebung begehbar. Lernende verändern unter anderem Sichtvolumen und Geometrien direkt in VR. Interaktionen, Blickdaten und Lernverläufe liefern eine Grundlage für Forschung und Evaluation.',
+      'RePiX VR macht die Rendering-Pipeline als interaktive Lernumgebung begehbar. Lernende verändern unter anderem Sichtvolumen und Geometrien direkt in VR. Aufbauend auf meiner Masterarbeit betreute ich elf Folgearbeiten zu didaktischem Design, Desktop-Transfer, Learning Analytics, Eye Tracking, Assistenzsystemen, Assessment und einzelnen Rendering-Stufen.',
+    resourcesLabel: 'Weitere Arbeiten ansehen (12)',
+    resources: [
+      {
+        label: 'Projektursprung: Technology-enhanced learning of the computer graphics rendering pipeline in virtual reality (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/816378',
+      },
+      {
+        label: 'Didaktische Analyse des Lerninhalts von RePiX VR (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/841011',
+      },
+      {
+        label: 'Multimodal Learning Analytics Dashboard for VR Data in Moodle (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/849933',
+      },
+      {
+        label: 'Technology-enhanced learning in VR: Light and shadow in computer graphics (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/977487',
+      },
+      {
+        label: 'Theory-based redesign of a VR learning environment for desktop (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/963850',
+      },
+      {
+        label: 'Interactive summative assessment in an educational VR application (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/973682',
+      },
+      {
+        label: 'Enhancing learner assistance in RePiX VR (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/975347',
+      },
+      {
+        label: 'Effects of character design on presence experience in VR applications (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/975560',
+      },
+      {
+        label: 'Interactive learning of 3D transformations in virtual reality (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/975561',
+      },
+      {
+        label: 'Integrating gaze-based interaction into RePiX using mobile VR (Masterarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/977615',
+      },
+      {
+        label: 'Explorative analysis of multimodal data using VR Learning Analytics (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/977616',
+      },
+      {
+        label: 'Interactive visualization of rasterization in virtual reality (Bachelorarbeit)',
+        url: 'https://publications.rwth-aachen.de/record/977480',
+      },
+    ],
     tags: ['Unity', 'VR', 'Eye Tracking', 'xAPI'],
   },
   {
@@ -64,10 +114,12 @@ export const XR_PROJECTS = [
     focus: 'VR · Lehrkräftetraining',
     organization: 'Universität Potsdam · RWTH Aachen University',
     url: 'https://www.uni-potsdam.de/de/multimedia/projekte/anwendungen/teach-r',
+    image: '/project-images/teach-r.png',
+    imageAlt: 'Teach-R im Einsatz mit VR-Brille und einem virtuellen Klassenraum',
     summary: 'Beratung zur Einbindung von Learning Analytics in einen virtuellen Klassenraum für das Lehrkräftetraining.',
     description:
       'Teach-R versetzt angehende Lehrkräfte in einen realitätsnahen virtuellen Klassenraum. Ich habe das Projektteam bei der Integration von OmiLAXR und der strukturierten Erfassung von Interaktionsdaten beraten.',
-    tags: ['VR', 'Simulation', 'Training', 'Learning Analytics'],
+    tags: ['Unity', 'VR', 'Simulation', 'Training', 'Learning Analytics'],
   },
   {
     slug: 'inside-the-router',
@@ -76,10 +128,12 @@ export const XR_PROJECTS = [
     focus: 'VR · Informatikdidaktik',
     organization: 'Didaktik der Informatik · TU Dresden',
     url: 'https://ddigames.inf.tu-dresden.de/sites/vr/router/',
+    image: '/project-images/inside-the-router.png',
+    imageAlt: 'Virtuelle Datenpakete und Netzwerkadressen im Lernspiel Inside the Router',
     summary: 'Beratung zur Erfassung und Auswertung von Interaktionen in einem VR-Lernspiel über Netzwerk-Routing.',
     description:
       'Inside the Router macht Netzwerk-Routing durch den Umgang mit virtuellen Datenpaketen erfahrbar. Ich habe zur Integration von OmiLAXR und zur Modellierung auswertbarer xAPI-Interaktionen beraten.',
-    tags: ['VR', 'Game-based Learning', 'Networking', 'xAPI'],
+    tags: ['Unity', 'VR', 'Game-based Learning', 'Networking', 'xAPI'],
   },
   {
     slug: 'schuelerlarbor',
@@ -87,44 +141,130 @@ export const XR_PROJECTS = [
     title: 'SchülerlARbor Chemie',
     focus: 'AR/MR · Chemiedidaktik',
     organization: 'Didaktik der Chemie · RWTH Aachen University',
-    url: 'https://apps.apple.com/de/app/sch%C3%BClerlarbor-chemie/id1590309131',
-    summary: 'AR- und MR-Lernmodule machen chemische Vorgänge sichtbar, die im realen Labor schwer zu beobachten sind.',
+    image: '/project-images/chemielarbor.png',
+    imageAlt:
+      'AR- und MR-Visualisierungen zu Batterie, Elektrochemie und Molekülen im SchülerlARbor Chemie',
+    summary:
+      'Die MR-Weiterentwicklung entstand im Rahmen einer von mir mitbetreuten Abschlussarbeit. Zusätzlich beriet ich den Lehrstuhl für Didaktik der Chemie zu Learning Analytics und unterstützte die Implementierung der AR-/MR-Lernmodule.',
     description:
-      'SchülerlARbor Chemie erweitert das Schülerlabor CheERs! um AR- und Mixed-Reality-Lernmodule. Inhalte zu Lithium-Ionen-Akkus, Piezo-Kristallen und Reaktionsmechanismen werden räumlich erfahrbar und ergänzen das praktische Experimentieren.',
-    tags: ['AR/MR', 'Chemie', 'Mobile Learning', 'Learning Analytics'],
+      'SchülerlARbor Chemie erweitert das Schülerlabor CheERs! um AR- und Mixed-Reality-Lernmodule. Inhalte zu Lithium-Ionen-Akkus, Piezo-Kristallen und Reaktionsmechanismen werden räumlich erfahrbar und ergänzen das praktische Experimentieren. Ich betreute die Abschlussarbeit zur MR-Weiterentwicklung mit und beriet den Lehrstuhl für Didaktik der Chemie bei der Konzeption von Learning Analytics sowie der technischen Implementierung.',
+    resources: [
+      {
+        label: 'Bachelorarbeit',
+        url: 'https://doi.org/10.18154/RWTH-2023-12092',
+      },
+      {
+        label: 'DELFI-Paper 2024',
+        url: 'https://doi.org/10.18420/delfi2024_47',
+      },
+      {
+        label: 'Quellcode',
+        url: 'https://doi.org/10.17605/OSF.IO/6PZ85',
+      },
+    ],
+    tags: ['Unity', 'AR/MR', 'HoloLens', 'Chemiedidaktik', 'Learning Analytics'],
   },
   {
     slug: 'ar-routen',
-    category: 'technical',
-    title: 'AR-Routen & Indoor-Navigation',
-    focus: 'AR · Spatial Computing',
+    category: 'learning',
+    featured: true,
+    title: 'Service Route: AR-gestützte Mitarbeiterschulung',
+    focus: 'AR · Mitarbeiterschulung & Qualitätssicherung',
     organization: 'Kundenprojekt · Gastronomie',
-    summary: 'Technische Gesamtverantwortung für eine produktionsnahe AR-Navigation – von der Architektur bis zur Übergabe.',
+    image: '/project-images/ServiceRouteAR.png',
+    imageAlt:
+      'Anonymisierte Ansichten der Service-Route-App mit Routenauswahl, AR-Navigation, Prüfschritten und Abschlussmeldung',
+    summary:
+      'Ich entwickelte die App einschließlich der AR-basierten Indoor-Navigation. Sie etablierte einen digitalen Qualitätssicherungsprozess für Mitarbeitende: Standortgebundene Routen führen durch Kontrollen, dokumentieren Mängel und beschleunigen deren Behebung. Ergebnis: 40 % kürzere Kontrollrundgänge.',
+    note:
+      'Abbildung anonymisiert – standortbezogene Informationen wurden aus Vertraulichkeitsgründen unkenntlich gemacht.',
+    challenge:
+      'Einheitliche Qualitäts- und Hygienestandards sollten in allen Restaurants täglich sichergestellt werden. Das bestehende QS-Prüfsystem war rein checklistengesteuert: Neuen Mitarbeitenden fehlten konkrete Anleitungen, während Prüfschritte nicht verbindlich mit den jeweiligen Orten im Restaurant verknüpft waren.',
     description:
-      'Ich verantwortete Architektur, Technologieauswahl, Teamkoordination und Delivery eines AR-Navigationsmoduls mit Unity, Flutter und Immersal. Die Erfahrungen aus dem Kundenprojekt lassen sich direkt auf geführte Trainings, Onboarding, Wartungsabläufe und Orientierung in realen Arbeitsumgebungen übertragen.',
-    tags: ['Unity', 'AR', 'Indoor Navigation', 'Flutter', 'Immersal'],
+      'Ich entwickelte Service Route als App für einen digitalen Qualitätssicherungsprozess und implementierte die AR-basierte Indoor-Navigation. Routen lassen sich in einem Unity-Editor planen und simulieren; die mit Flutter umgesetzte iOS-App führt Mitarbeitende standortbezogen durch Prüf- und Serviceabläufe und verbindet Navigation, konkrete Arbeitsanweisungen und digitale Dokumentation.',
+    outcome:
+      'Nachweislich höhere Prozesssicherheit, schnellere interne Audits und erhebliche Zeitersparnis durch den Wegfall der Papierdokumentation.',
+    metrics: [
+      {
+        value: '40 % kürzer',
+        label: 'Kontrollrundgänge',
+        detail: 'Von 10–15 auf 6–9 Minuten',
+      },
+      {
+        value: '< 8 Stunden',
+        label: 'bis zur Mängelbehebung',
+        detail: 'Zuvor mehr als 24 Stunden',
+      },
+      {
+        value: '> 300 % mehr',
+        label: 'proaktiv erfasste Kleinstmängel',
+        detail: 'In den ersten drei Monaten; zuvor nahezu keine Erfassung',
+      },
+      {
+        value: '> 95 %',
+        label: 'Quality Score',
+        detail: 'Im Mittel pro Schicht über alle erfassten Routen',
+      },
+    ],
+    tags: [
+      'AR Training',
+      'Onboarding',
+      'Qualitätssicherung',
+      'Unity as a Library',
+      'Flutter',
+      'Supabase',
+      'Immersal',
+      'External CTO',
+    ],
+  },
+  {
+    slug: 'omilaxr',
+    category: 'technical',
+    featured: true,
+    title: 'OmiLAXR',
+    focus: 'Dissertationsprojekt · XR Learning Analytics',
+    organization: 'Learning Technologies · RWTH Aachen University',
+    image: '/project-images/OmiLAXR_Pipeline.drawio.png',
+    imageAlt:
+      'Modulare OmiLAXR-Pipeline von Listenern und Tracking-Komponenten bis zu Datenanbietern und externen Endpunkten',
+    summary:
+      'Im Rahmen meiner Dissertation entwickelte und evaluierte ich OmiLAXR: ein modulares Framework, das die Integration standardisierter Learning-Analytics-Daten in Unity-XR-Anwendungen vereinfacht und mit xAPI konsistente, auswertbare Daten erzeugt.',
+    description:
+      'OmiLAXR strukturiert die Datenerfassung in XR-Anwendungen als erweiterbare Pipeline aus Listenern, Filtern, Tracking-Komponenten, Composern, Hooks und Endpunkten. Das Framework verbindet Unity-basierte VR-, AR- und MR-Anwendungen mit xAPI und externen Learning-Record-Stores. Wiederverwendbare Module, C#-Codegenerierung und IDE-Unterstützung reduzieren den Integrationsaufwand und verbessern Konsistenz und Qualität der erhobenen Daten.',
+    resources: [
+      {
+        label: 'OmiLAXR Framework',
+        url: 'https://omilaxr.dev/',
+      },
+      {
+        label: 'Dissertation',
+        url: 'https://doi.org/10.18154/RWTH-2026-06580',
+      },
+    ],
+    tags: ['Unity', 'C#', 'xAPI', 'Learning Analytics', 'XR', 'Open Source', 'Modulare Architektur'],
   },
   {
     slug: 'virtual-booth',
     category: 'technical',
-    title: 'Virtual Booth & Live Mosaic',
-    focus: 'Event-Tech · WebAR',
+    title: 'Virtual Booth: AR Photo Booth & Live Mosaic',
+    focus: 'SaaS · WebAR · Interaktive Fotoerlebnisse',
     organization: 'Kundenprojekt · Event-Branche',
-    summary: 'Browserbasierte AR-Erlebnisse und Live-Mosaic-Visualisierungen für den Einsatz auf Veranstaltungen.',
+    summary:
+      'Ich verantwortete die Architektur und implementierte die Kernfunktionen einer produktiv eingesetzten Event-SaaS: Node.js-Backend, Vue.js-Frontend, eine AR Photo Booth mit WebGL und DeepAR sowie ein interaktives Three.js-Fotomosaik.',
     description:
-      'Als Tech Lead entwickelte ich für die Event-Branche eine produktiv eingesetzte Plattform mit Virtual Booth und Live Mosaic. Three.js und WebGL ermöglichen interaktive 3D- und Mosaik-Visualisierungen direkt im Browser; die AR-Fotobox ergänzt Face-Tracking und konfigurierbare Effekte. Der Ansatz eignet sich für interaktive Events, Markeninszenierungen und niedrigschwellige AR-Erlebnisse ohne zusätzliche App.',
-    tags: ['Three.js', 'WebGL', 'WebAR', 'Live Mosaic', 'Face Tracking'],
+      'Als Tech Lead verantwortete ich die Systemarchitektur und implementierte das Node.js-Backend, das Vue.js-Frontend sowie die zentralen visuellen Erlebnisse. Die browserbasierte AR Photo Booth nutzt WebGL und DeepAR für konfigurierbare Hintergrund-, Vordergrund- und Gesichtsfilter. Zusätzlich entwickelte ich mit Three.js ein interaktives Live Mosaic, das die aufgenommenen Fotos zu einer gemeinsamen Echtzeit-Visualisierung zusammenführt. Daraus entstand eine produktiv eingesetzte SaaS-Plattform für Events und Kampagnen.',
+    tags: ['SaaS', 'Node.js', 'Vue.js', 'WebGL', 'DeepAR', 'Three.js', 'AR Photo Booth', 'Live Mosaic'],
   },
 ]
 
 export const SERVICES = [
   {
     title: 'XR Scoping Sprint',
-    price: 'ab 3.900 €',
+    price: 'ab 4.900 €',
     description:
-      'Der strukturierte Einstieg, wenn Idee, Lernziel, Technik und Budget noch sortiert werden müssen.',
+      'Eine belastbare Entscheidungsgrundlage, bevor Konzept oder Umsetzung beauftragt werden.',
     bullets: [
-      'Anforderungen, Stakeholder, Plattform, Risiken und Erfolgskriterien klären',
+      'Ziele, Stakeholder, Plattform, Risiken und Erfolgskriterien in einem fokussierten Workshop klären',
       'Machbarkeit, Aufwandsspanne und sinnvolle Umsetzungsreihenfolge bestimmen',
       'Kompakte Entscheidungsgrundlage für Budget, Förderung oder interne Freigabe',
     ],
@@ -133,7 +273,7 @@ export const SERVICES = [
     title: 'Didaktik & XR-Konzept',
     price: 'ab 9.900 €',
     description:
-      'Aus einem Lern- oder Trainingsziel wird ein belastbares XR-Szenario mit Messkonzept.',
+      'Auf Grundlage des Scopings oder vorhandener Anforderungen entsteht ein umsetzbares XR-Szenario mit Messkonzept.',
     bullets: [
       'Lernziele, Aufgabenlogik, Feedback und Transfer in die Praxis ausarbeiten',
       'Interaktionskonzept, technischer Zuschnitt und Analytics-Events definieren',
@@ -142,9 +282,9 @@ export const SERVICES = [
   },
   {
     title: 'Neuer XR-Pilot / MVP',
-    price: '39.000-69.000 €',
+    price: 'typ. 39.000–69.000 €',
     description:
-      'Ein fokussiertes XR-Lern- oder Trainingsszenario mit technischer und analytischer Grundlage.',
+      'Umsetzung eines fokussierten XR-Lern- oder Trainingsszenarios auf Basis eines freigegebenen Konzepts.',
     bullets: [
       'Umsetzung mit Unity oder Three.js/WebXR für ein klar begrenztes Szenario',
       'xAPI-/Telemetry-Grundlage, Monitoring und Pilotierung',
@@ -164,9 +304,9 @@ export const SERVICES = [
   },
   {
     title: 'Analytics-Integration',
-    price: '14.000-29.000 €',
+    price: 'typ. 14.000–29.000 €',
     description:
-      'Technische Integration von Datenpunkten, xAPI-/Telemetry-Pipeline und Monitoring in vorhandene Apps.',
+      'Technische Integration von Datenpunkten, xAPI-/Telemetry-Pipeline und Monitoring nach Prüfung der vorhandenen App.',
     bullets: [
       'xAPI- oder Telemetry-Events in Unity-, Three.js- oder WebXR-Anwendungen integrieren',
       'Anbindung an LRS, Backend, Dashboard oder bestehende Systeme',
@@ -175,13 +315,14 @@ export const SERVICES = [
   },
   {
     title: 'Evaluation & Report',
-    price: 'ab 9.000 €',
+    price: 'ab 12.900 €',
     description:
       'Methodische Begleitung, Auswertung und Ergebnisbericht für XR-Lern- und Trainingsszenarien.',
     bullets: [
       'Evaluationsdesign, Pilotstudie oder Nutzertest vorbereiten',
       'Interaktions-, Lern- oder Trainingsdaten auswerten und visualisieren',
       'Report mit Handlungsempfehlungen für Stakeholder und Weiterentwicklung',
+      'Rekrutierung, Incentives und umfangreiche Feldstudien werden separat kalkuliert',
     ],
   },
 ]
@@ -411,7 +552,7 @@ export const OMILAXR_REPOS = [
 
 export const CV_PROJECTS = [
   {
-    title: 'Mobile App mit AR-Navigation (iOS)',
+    title: 'AR-Service-Routen für Mitarbeiterschulung (iOS)',
     period: '2024 - 2025',
     featured: true,
     role: 'Technische Gesamtverantwortung (CTO)',
@@ -419,7 +560,7 @@ export const CV_PROJECTS = [
     stack: ['Flutter', 'Unity', 'C#', 'AR', 'iOS', 'Immersal', 'Supabase', 'PostgreSQL', '.NET MAUI'],
     image: '/project-images/cv-projects.svg',
     description:
-      'Kundenprojekt (Projektvolumen ca. 70.000 €): AR-Navigations-Modul (Unity/C#, Immersal VPS) als eingebettete Komponente in einer Flutter-App (Unity as a Library). Architektur, Technologieauswahl, Team-Koordination und Delivery bis zur Übergabe.',
+      'Kundenprojekt (Projektvolumen ca. 70.000 €): Arbeitsplatznahe Schulung und Onboarding betrieblicher Serviceabläufe mit geführten AR-Routen. Das Unity/C#-Modul mit Immersal VPS wurde als eingebettete Komponente in eine Flutter-App integriert (Unity as a Library). Architektur, Technologieauswahl, Team-Koordination und Delivery bis zur Übergabe.',
     details:
       'Backend über Supabase (PostgreSQL): Auth, Storage, Datenmodell inkl. 2D-Map-Preview (SVG) für die Routenplanung. Digital Twin mit Matterport, 360°-Kamera und Immersal SDK; Unity-Editor für Service-Routen inkl. Routensimulation; .NET-MAUI-App zur Scan-Frame-Analyse; iOS-Releases via TestFlight.',
   },
@@ -609,7 +750,7 @@ export const EXPERIENCE = [
     end: 'heute',
     tasks: [
       'Konzeption und Umsetzung produktionsnaher XR-, AR- und Softwaresysteme mit Unity, C#/.NET, Flutter und Webtechnologien.',
-      'Technische Gesamtverantwortung für eine AR-Indoor-Navigation: Architektur, Technologieauswahl, Teamkoordination, Delivery und Übergabe.',
+      'Technische Gesamtverantwortung für eine AR-App zur arbeitsplatznahen Mitarbeiterschulung und zum Onboarding: Architektur, Technologieauswahl, Teamkoordination, Delivery und Übergabe.',
       'Begleitung von Anforderungsanalyse und Scoping über Prototyping und Integration bis Go-live, Evaluation und belastbarem Ergebnisbericht.',
       'Einbindung spezialisierter Freelancer für 3D, Design, Entwicklung oder Datenanalyse, wenn der Projektrahmen zusätzliche Expertise verlangt.',
     ],
