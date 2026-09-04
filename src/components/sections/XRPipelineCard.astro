@@ -3,7 +3,6 @@ import {
   BarChart3,
   Boxes,
   Cable,
-  ChevronRight,
   DraftingCompass,
   Lightbulb,
   MessageCircle,
@@ -195,15 +194,8 @@ const paths = [
                   {index < steps.length - 1 && (
                     <div
                       aria-hidden="true"
-                      class="pointer-events-none absolute -bottom-7 left-4 flex h-7 w-px items-end justify-center bg-primary/60 sm:-right-4 sm:bottom-auto sm:left-auto sm:top-8 sm:h-px sm:w-4 sm:items-center sm:justify-end"
+                      class="pointer-events-none absolute -bottom-7 left-4 h-7 w-px bg-primary/60 sm:-right-4 sm:bottom-auto sm:left-auto sm:top-8 sm:h-px sm:w-4"
                     >
-                      <span class="flex h-4 w-4 translate-y-2 items-center justify-center rounded-full bg-primary text-primary-foreground sm:translate-x-2 sm:translate-y-0">
-                        <ChevronRight
-                          class="rotate-90 sm:rotate-0"
-                          size={11}
-                          strokeWidth={2.5}
-                        />
-                      </span>
                     </div>
                   )}
                 </li>
@@ -309,13 +301,10 @@ const paths = [
         class="flex items-center gap-2 font-semibold uppercase tracking-[0.13em] text-foreground"
       >
         <Sparkles aria-hidden="true" size={14} class="text-primary" />
-        Modular planbar
+        Iterativ &amp; flexibel
       </span>
-      <span>Vorarbeiten werden angerechnet</span>
-      <span
-        class="hidden h-1 w-1 rounded-full bg-primary/60 sm:block"
-        aria-hidden="true"></span>
-      <span>Folgeschritte setzen eine belastbare Grundlage voraus</span>
+      <span>Umsetzung und Abrechnung in klar abgegrenzten Iterationen</span>
+      <span>Nach jeder Iteration: fortführen, anpassen oder aussteigen</span>
     </div>
 
     <p
