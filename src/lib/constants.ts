@@ -54,7 +54,7 @@ export const XR_PROJECTS = [
       'Best Educational Paper (Eurographics 2022) · erweiterter Journalartikel in Computers & Graphics (2023) · Best Poster für eine RePiX-basierte Folgearbeit (DELFI 2022)',
     description:
       'RePiX VR macht die Rendering-Pipeline als interaktive Lernumgebung begehbar. Lernende verändern unter anderem Sichtvolumen und Geometrien direkt in VR. Aufbauend auf meiner Masterarbeit betreute ich elf Folgearbeiten zu didaktischem Design, Desktop-Transfer, Learning Analytics, Eye Tracking, Assistenzsystemen, Assessment und einzelnen Rendering-Stufen.',
-    resourcesLabel: 'Weitere Arbeiten ansehen (12)',
+    resourcesLabel: '12 betreute Arbeiten zu RePiX',
     resources: [
       {
         label: 'Projektursprung: Technology-enhanced learning of the computer graphics rendering pipeline in virtual reality (Masterarbeit)',
@@ -259,6 +259,7 @@ export const XR_PROJECTS = [
 
 export const SERVICES = [
   {
+    slug: 'scoping-sprint',
     title: 'XR Scoping Sprint',
     price: 'ab 4.900 €',
     description:
@@ -268,30 +269,63 @@ export const SERVICES = [
       'Machbarkeit, Aufwandsspanne und sinnvolle Umsetzungsreihenfolge bestimmen',
       'Kompakte Entscheidungsgrundlage für Budget, Förderung oder interne Freigabe',
     ],
-  },
-  {
-    title: 'Didaktik & XR-Konzept',
-    price: 'ab 9.900 €',
-    description:
-      'Auf Grundlage des Scopings oder vorhandener Anforderungen entsteht ein umsetzbares XR-Szenario mit Messkonzept.',
-    bullets: [
-      'Lernziele, Aufgabenlogik, Feedback und Transfer in die Praxis ausarbeiten',
-      'Interaktionskonzept, technischer Zuschnitt und Analytics-Events definieren',
-      'Auch als technischer Umsetzungspartner für Projektanträge und Verbundvorhaben',
+    duration: 'ca. 1–2 Wochen',
+    deliverables: [
+      'Vorbereitung und ein fokussierter Workshop',
+      'Zielbild mit Plattform-, Risiko- und Machbarkeitseinschätzung',
+      'Entscheidungspapier mit Aufwandsspanne und nächsten Schritten',
     ],
+    customerInput:
+      'Vorhandene Unterlagen sowie fachliche und technische Ansprechpartner für den Workshop.',
+    costDrivers: ['Zahl der Stakeholder und Varianten', 'Zielplattformen und bekannte Integrationen'],
+    notIncluded: ['Didaktisches Detailkonzept', 'Prototyp, Produktionscode oder Festpreisangebot'],
   },
   {
+    slug: 'didaktik-xr-konzept',
+    title: 'Didaktik & XR-Konzept',
+    price: 'ab 5.900 € · Blueprint ab 9.900 €',
+    description:
+      'Vom klar begrenzten Einzelszenario bis zum umsetzungsreifen XR-Blueprint mit Messkonzept.',
+    bullets: [
+      'Kompakt: ein Szenario mit Lernzielen, Aufgaben- und Feedbacklogik',
+      'Blueprint: Workshops, Ablauf, Interaktions- und Technikkonzept',
+      'Eventkatalog, priorisierter Umsetzungsplan und eine Überarbeitung',
+    ],
+    duration: 'Kompakt ca. 1–2 Wochen · Blueprint ca. 2–4 Wochen',
+    deliverables: [
+      'Lernziele, Szenario sowie Aufgaben- und Feedbacklogik',
+      'Im Blueprint zusätzlich Ablauf/Storyboard, Interaktionen und technischer Zuschnitt',
+      'Messpunkte, Eventkatalog und priorisierter Umsetzungsplan',
+    ],
+    customerInput:
+      'Fachinhalte, Zielgruppe und Rahmenbedingungen sowie feste Ansprechpartner für Abstimmung und Freigabe.',
+    costDrivers: ['Zahl der Szenarien und Zielgruppen', 'Detailtiefe, Plattformen und Reife der Fachinhalte'],
+    notIncluded: ['Produktionscode und 3D-Assets', 'Pilotbetrieb oder formale Wirkungsevaluation'],
+  },
+  {
+    slug: 'xr-pilot',
     title: 'Neuer XR-Pilot / MVP',
-    price: 'typ. 39.000–69.000 €',
+    price: 'typ. 20.000-69.000 €',
     description:
       'Umsetzung eines fokussierten XR-Lern- oder Trainingsszenarios auf Basis eines freigegebenen Konzepts.',
     bullets: [
       'Umsetzung mit Unity oder Three.js/WebXR für ein klar begrenztes Szenario',
-      'xAPI-/Telemetry-Grundlage, Monitoring und Pilotierung',
-      'Report mit Ergebnissen, Risiken und nächster Ausbaustufe',
+      'Basis-Events und technisches Monitoring für den Pilotbetrieb',
+      'Pilotbericht mit Risiken und nächster Ausbaustufe; Wirkungsevaluation separat',
     ],
+    duration: 'ab ca. 4–6 Wochen',
+    deliverables: [
+      'Lauffähiger Pilot für ein abgegrenztes Szenario und eine Zielplattform',
+      'Kerninteraktionen, Basis-Events und technisches Monitoring',
+      'Testfähiger Build, Übergabe und Pilotbericht',
+    ],
+    customerInput:
+      'Freigegebenes Konzept, Fachinhalte, Zielhardware und regelmäßiges Feedback zu Zwischenständen.',
+    costDrivers: ['Interaktions- und Simulationskomplexität', 'Plattform, Geräte, UI und benötigte Assets'],
+    notIncluded: ['Aufwendige 3D-Asset-Produktion', 'LMS-Anbindung, Rollout oder wissenschaftliche Evaluation'],
   },
   {
+    slug: 'analytics-audit',
     title: 'Analytics Audit für XR-Apps',
     price: 'ab 6.900 €',
     description:
@@ -300,20 +334,43 @@ export const SERVICES = [
       'App, Code, Datenflüsse, Lernziele und Evaluationsfähigkeit prüfen',
       'Messpunkte, Event-Modell und Integrationsrisiken sichtbar machen',
       'Umsetzbarer Plan für xAPI, LRS, Dashboard oder Report',
+      'Entfällt, wenn bereits eine belastbare technische Spezifikation vorliegt',
     ],
+    duration: 'ca. 1–2 Wochen',
+    deliverables: [
+      'Review von App, Codebasis, Datenflüssen und vorhandenen Messpunkten',
+      'Lücken-, Risiko- und Datenqualitätseinschätzung',
+      'Mess- und Integrationsplan mit Aufwandsspanne',
+    ],
+    customerInput:
+      'Lauffähiger Build, Zugriff auf den relevanten Quellcode sowie Lernziele und technische Ansprechpartner.',
+    costDrivers: ['Größe und Zustand der Codebasis', 'Plattformen, bestehendes Tracking und Zielsysteme'],
+    notIncluded: ['Implementierung der Messpunkte', 'Datenbereinigung, LRS-Betrieb oder Dashboard-Entwicklung'],
   },
   {
+    slug: 'analytics-integration',
     title: 'Analytics-Integration',
-    price: 'typ. 14.000–29.000 €',
+    price: 'Starter ab 7.900 € · Produktion typ. 14.000–29.000 €',
     description:
-      'Technische Integration von Datenpunkten, xAPI-/Telemetry-Pipeline und Monitoring nach Prüfung der vorhandenen App.',
+      'Vom begrenzten xAPI-Einstieg bis zum produktionsreifen, validierten Datenfluss.',
     bullets: [
-      'xAPI- oder Telemetry-Events in Unity-, Three.js- oder WebXR-Anwendungen integrieren',
-      'Anbindung an LRS, Backend, Dashboard oder bestehende Systeme',
-      'Datenqualitätscheck und Übergabe an Team, Forschung oder Training',
+      'Starter: eine App, vorhandener LRS, bis zu 10 Eventtypen und Basisvalidierung',
+      'Produktion: Identität & Sessions, Offline/Retry, Monitoring und automatisierte Checks',
+      'Individuelle Backend-, Dashboard- oder LMS-Erweiterungen werden separat kalkuliert',
     ],
+    duration: 'Starter ca. 1–2 Wochen · Produktion ca. 3–6 Wochen',
+    deliverables: [
+      'Starter: bis zu 10 Eventtypen in einer App und Anbindung an einen vorhandenen LRS',
+      'Produktion: Identitäten, Sessions, Offline/Retry, Monitoring und automatisierte Checks',
+      'Validierter Datenfluss, technische Dokumentation und Übergabe',
+    ],
+    customerInput:
+      'Quellcode und Buildzugang, LRS-Zugangsdaten sowie Eventmodell oder Ergebnisse aus dem Audit.',
+    costDrivers: ['Eventanzahl, Plattform und Zustand der App', 'Identitätslogik, Offlinebetrieb und Zielsysteme'],
+    notIncluded: ['LRS-Lizenzen und Cloud-Betrieb', 'Individuelle Dashboards, Backends oder LMS-Erweiterungen'],
   },
   {
+    slug: 'evaluation-report',
     title: 'Evaluation & Report',
     price: 'ab 12.900 €',
     description:
@@ -324,6 +381,16 @@ export const SERVICES = [
       'Report mit Handlungsempfehlungen für Stakeholder und Weiterentwicklung',
       'Rekrutierung, Incentives und umfangreiche Feldstudien werden separat kalkuliert',
     ],
+    duration: 'typ. 3–6 Wochen, abhängig von den Erhebungsterminen',
+    deliverables: [
+      'Evaluationsdesign, Fragestellungen und Erhebungsinstrumente',
+      'Vorbereitung und methodische Begleitung von Pilot oder Nutzertest',
+      'Auswertung, Visualisierung und Ergebnisbericht mit Empfehlungen',
+    ],
+    customerInput:
+      'Zugang zur Zielgruppe, organisatorische Unterstützung bei den Terminen und vorhandene Daten.',
+    costDrivers: ['Methoden, Stichprobe und Zahl der Forschungsfragen', 'Datenqualität und Umfang der Auswertung'],
+    notIncluded: ['Rekrutierung und Incentives', 'Umfangreiche Feldstudien oder zusätzliche Erhebungswellen'],
   },
 ]
 
