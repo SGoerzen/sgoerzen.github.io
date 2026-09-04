@@ -1,5 +1,6 @@
 ---
 import { ArrowUpRight, GraduationCap } from "lucide-react";
+import { SUPERVISED_WORKS } from "../../lib/publications";
 import ProjectResourcesDialog from "../ProjectResourcesDialog.astro";
 
 const competencies = [
@@ -44,6 +45,30 @@ const supervisedTheses = [
     url: "https://learntech.rwth-aachen.de/go/id/jiza/file/856016",
   },
 ];
+
+const xrThesisTitles = new Set(supervisedTheses.map((thesis) => thesis.title));
+const repixSupervisedWorkRecordIds = new Set([
+  "841011",
+  "849933",
+  "977487",
+  "963850",
+  "973682",
+  "975347",
+  "975560",
+  "975561",
+  "977615",
+  "977616",
+  "977480",
+]);
+const schuelerlarborSupervisedWorkRecordId = "975559";
+const xrSupervisedThesesCount =
+  supervisedTheses.length + repixSupervisedWorkRecordIds.size + 1;
+const otherSupervisedTheses = SUPERVISED_WORKS.filter(
+  (thesis) =>
+    !xrThesisTitles.has(thesis.title) &&
+    !repixSupervisedWorkRecordIds.has(thesis.link?.split("/").pop() ?? "") &&
+    thesis.link?.split("/").pop() !== schuelerlarborSupervisedWorkRecordId,
+).sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
 ---
 
 <article
@@ -67,7 +92,9 @@ const supervisedTheses = [
   </h3>
 
   <p class="mt-4 text-base font-semibold leading-relaxed">
-    {supervisedTheses.length} weitere Arbeiten fachlich begleitet
+    {SUPERVISED_WORKS.length} Abschlussarbeiten fachlich betreut · {
+      xrSupervisedThesesCount
+    } davon XR-bezogen, inklusive RePiX und SchülerlARbor
   </p>
   <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
     VR-Lernanwendungen · WebXR & MR · Eye Tracking & Learning Analytics
@@ -93,10 +120,20 @@ const supervisedTheses = [
   <ProjectResourcesDialog
     dialogId="academic-supervision-theses"
     title="Weitere betreute XR-Abschlussarbeiten"
-    buttonLabel={`${supervisedTheses.length} weitere Arbeiten ansehen`}
+    buttonLabel={`${supervisedTheses.length} XR-bezogene Arbeiten ansehen`}
     resources={supervisedTheses.map((thesis) => ({
       label: `${thesis.title} · ${thesis.type}, ${thesis.year}`,
       url: thesis.url,
+    }))}
+  />
+
+  <ProjectResourcesDialog
+    dialogId="academic-supervision-other-theses"
+    title="Weitere betreute Abschlussarbeiten"
+    buttonLabel={`${otherSupervisedTheses.length} weitere Arbeiten ansehen`}
+    resources={otherSupervisedTheses.map((thesis) => ({
+      label: `${thesis.title} · ${thesis.degree}, ${thesis.year}`,
+      url: thesis.link ?? "https://learntech.rwth-aachen.de/cms/learntech/das-lehr-und-forschungsgebiet/mitarbeiter/wissenschaftliche-mitarbeiterinnen-und-m/~nwbzq/sergej-goerzen/?allou=1",
     }))}
   />
 
