@@ -4,6 +4,8 @@ import HeadSEO from "../components/HeadSEO.astro";
 import ContactDialog from "../components/ContactDialog.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Analytics from "../components/Analytics.astro";
+import { TRACKBOXX_ENABLED } from "../lib/features";
 
 interface Props {
   title?: string | undefined;
@@ -63,5 +65,6 @@ const { title, description, ogImage } = Astro.props;
       <ContactDialog />
       <Footer />
     </div>
+    {TRACKBOXX_ENABLED ? <Analytics /> : null}
   </body>
 </html>

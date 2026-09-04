@@ -1,0 +1,139 @@
+---
+import { TRACKBOXX_ENABLED } from "../lib/features";
+
+const siteId = import.meta.env.PUBLIC_TRACKBOXX_SITE_ID?.trim();
+const enabled =
+  TRACKBOXX_ENABLED && import.meta.env.PROD && Boolean(siteId);
+const privacyUrl = `${import.meta.env.BASE_URL}datenschutz`;
+---
+
+{
+  enabled && (
+    <aside
+      id="trackboxx-consent"
+      class="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-2xl rounded-xl border bg-background p-4 shadow-xl"
+      aria-labelledby="trackboxx-consent-title"
+      hidden
+    >
+      <h2 id="trackboxx-consent-title" class="font-semibold text-foreground">
+        Optionale Webanalyse
+      </h2>
+      <p class="mt-2 text-sm leading-6 text-muted-foreground">
+        Dürfen wir Trackboxx laden, um Seitenaufrufe und die Nutzung dieser
+        Website statistisch auszuwerten? Dabei werden unter anderem die
+        IP-Adresse, aufgerufene URLs, Referrer sowie Geräteinformationen
+        verarbeitet. Details finden Sie im{" "}
+        <a class="underline underline-offset-4" href={privacyUrl}>
+          Datenschutz
+        </a>
+        .
+      </p>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <button
+          id="trackboxx-consent-accept"
+          type="button"
+          class="inline-flex items-center justify-center rounded-lg border bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring/40"
+        >
+          Zustimmen
+        </button>
+        <button
+          id="trackboxx-consent-reject"
+          type="button"
+          class="inline-flex items-center justify-center rounded-lg border bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring/40"
+        >
+          Ablehnen
+        </button>
+      </div>
+    </aside>
+  )
+}
+
+<script is:inline define:vars={{ enabled, siteId }}>
+  (() => {
+    if (!enabled || !siteId) return;
+
+    const storageKey = "tbTrackingEnabled";
+
+    const getConsent = () => {
+      try {
+        return localStorage.getItem(storageKey);
+      } catch {
+        return null;
+      }
+    };
+
+    const setConsent = (value) => {
+      try {
+        localStorage.setItem(storageKey, value);
+        return true;
+      } catch {
+        return false;
+      }
+    };
+
+    const loadAndTrack = () => {
+      if (getConsent() !== "yes") return;
+
+      window.trackboxx =
+        window.trackboxx ||
+        function () {
+          (window.trackboxx.q = window.trackboxx.q || []).push(arguments);
+        };
+
+      if (!window.__trackboxxInitialized) {
+        window.__trackboxxInitialized = true;
+
+        if (!document.getElementById("trackboxx-script")) {
+          const firstScript = document.getElementsByTagName("script")[0];
+          const tracker = document.createElement("script");
+          tracker.id = "trackboxx-script";
+          tracker.async = true;
+          tracker.src = "https://cdn.trackboxx.info/p/tracker.js";
+          tracker.onload = () =>
+            document.dispatchEvent(new Event("tbScriptLoaded"));
+          firstScript.parentNode.insertBefore(tracker, firstScript);
+        }
+      }
+
+      const page = `${window.location.pathname}${window.location.search}`;
+      if (window.__trackboxxLastPage === page) return;
+      window.__trackboxxLastPage = page;
+      window.trackboxx("set", "siteId", siteId);
+      window.trackboxx("trackPageview");
+    };
+
+    const setupConsent = () => {
+      const banner = document.getElementById("trackboxx-consent");
+      const accept = document.getElementById("trackboxx-consent-accept");
+      const reject = document.getElementById("trackboxx-consent-reject");
+      if (!(banner instanceof HTMLElement)) return;
+
+      const consent = getConsent();
+      banner.hidden = consent === "yes" || consent === "no";
+
+      if (accept instanceof HTMLButtonElement) {
+        accept.onclick = () => {
+          if (!setConsent("yes")) return;
+          banner.hidden = true;
+          loadAndTrack();
+        };
+      }
+
+      if (reject instanceof HTMLButtonElement) {
+        reject.onclick = () => {
+          if (!setConsent("no")) return;
+          banner.hidden = true;
+        };
+      }
+
+      loadAndTrack();
+    };
+
+    setupConsent();
+
+    if (!window.__trackboxxConsentBound) {
+      window.__trackboxxConsentBound = true;
+      document.addEventListener("astro:page-load", setupConsent);
+    }
+  })();
+</script>

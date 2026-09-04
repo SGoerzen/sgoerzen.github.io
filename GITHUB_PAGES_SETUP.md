@@ -11,11 +11,11 @@ This repository is configured to automatically deploy to GitHub Pages when you p
    - Save the changes
 
 2. **Base URL Configuration:**
-   
+
    ✅ **Automatic Configuration**: The workflow automatically detects your repository name and sets the correct `BASE_URL`:
    - If your repo is `username.github.io` → uses `/`
    - Otherwise → uses `/<repository-name>/`
-   
+
    **Manual Override (optional):**
    - If you need to override the automatic detection, go to **Settings** → **Secrets and variables** → **Actions**
    - Add secret: `BASE_URL` with your custom value
@@ -32,6 +32,18 @@ This repository is configured to automatically deploy to GitHub Pages when you p
      - Value: your Cloudflare Turnstile site key
    - The contact form will only render Turnstile when this variable is present during the build.
 
+5. **Enable Trackboxx visitor analytics:**
+   - In the [Trackboxx dashboard](https://app.trackboxx.com/), add the website.
+   - Copy its Trackboxx site ID (for example `TB-XXXXXXX`).
+   - In GitHub, go to **Settings** → **Secrets and variables** → **Actions** → **Variables**.
+   - Add a repository variable:
+     - Name: `PUBLIC_TRACKBOXX_SITE_ID`
+     - Value: the site ID from Trackboxx
+   - Trigger a new deployment. The standard Trackboxx tracker is included only in production builds when this variable is set and a visitor has consented.
+
+   The integration uses Trackboxx's standard tracker, not its advanced or e-commerce tracking. Visitors can grant,
+   reject, or later withdraw consent. The choice is stored locally in their browser.
+
 ## How It Works
 
 - The workflow (`.github/workflows/deploy.yml`) automatically:
@@ -42,6 +54,7 @@ This repository is configured to automatically deploy to GitHub Pages when you p
 ## Manual Deployment
 
 You can also trigger a manual deployment:
+
 - Go to **Actions** tab in your repository
 - Select **Deploy to GitHub Pages** workflow
 - Click **Run workflow** → **Run workflow**
@@ -55,6 +68,7 @@ You can also trigger a manual deployment:
 ## Local Testing
 
 To test the build locally:
+
 ```bash
 pnpm build
 pnpm preview

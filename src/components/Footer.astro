@@ -1,9 +1,39 @@
+---
+import { TRACKBOXX_ENABLED } from "../lib/features";
+
+const base = import.meta.env.BASE_URL;
+---
+
 <footer class="w-full border-t px-4 py-4 md:px-8">
   <div class="container flex min-h-12 items-center justify-center">
     <p class="text-center text-sm text-muted-foreground">
-      Dr.-Ing. Sergej Görzen <span aria-hidden="true">·</span> Senior Software Engineer für XR-Lernsysteme
-      <span aria-hidden="true">·</span>
-      <a class="font-medium underline underline-offset-4" href="/impressum">Impressum</a>
+      Dr.-Ing. Sergej Görzen{" "}<span aria-hidden="true">·</span>{" "}Senior
+      Software Engineer für XR-Lernsysteme{" "}<span aria-hidden="true">·</span
+      >{" "}
+      <a
+        class="font-medium underline underline-offset-4"
+        href={`${base}impressum`}>Impressum</a
+      >
+      {" "}<span aria-hidden="true">·</span>{" "}
+      <a
+        class="font-medium underline underline-offset-4"
+        href={`${base}datenschutz`}>Datenschutz</a
+      >
+      {
+        TRACKBOXX_ENABLED ? (
+          <>
+            {" "}<span aria-hidden="true">·</span>{" "}
+            <a
+              class="font-medium underline underline-offset-4"
+              href="https://trackboxx.com"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              Webanalyse mit Trackboxx
+            </a>
+          </>
+        ) : null
+      }
     </p>
   </div>
 </footer>
