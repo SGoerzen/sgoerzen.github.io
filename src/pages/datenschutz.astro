@@ -1,0 +1,464 @@
+---
+import { IMPRESSUM } from "../lib/constants";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TopLayout from "../layouts/TopLayout.astro";
+import BottomLayout from "../layouts/BottomLayout.astro";
+import { TRACKBOXX_ENABLED } from "../lib/features";
+---
+
+<BaseLayout
+  title="Datenschutz"
+  description="Informationen zur Verarbeitung personenbezogener Daten auf dieser Website."
+>
+  <main class="flex min-h-[80vh] flex-auto flex-col" transition:animate="fade">
+    <TopLayout>
+      <h1
+        class="scroll-m-20 border-b pb-3 text-3xl font-semibold tracking-tight"
+      >
+        Datenschutz
+      </h1>
+    </TopLayout>
+
+    <BottomLayout>
+      <article class="space-y-8 leading-7 text-muted-foreground">
+        <section aria-labelledby="controller">
+          <h2
+            id="controller"
+            class="text-xl font-semibold tracking-tight text-foreground"
+          >
+            Verantwortlicher
+          </h2>
+          <address class="mt-3 not-italic">
+            {IMPRESSUM.NAME}<br />
+            {IMPRESSUM.ADDRESS_LINE1}<br />
+            {IMPRESSUM.ADDRESS_LINE2}<br />
+            E-Mail:{" "}<a
+              class="underline underline-offset-4"
+              href={`mailto:${IMPRESSUM.EMAIL}`}>{IMPRESSUM.EMAIL}</a
+            >
+          </address>
+        </section>
+
+        <section aria-labelledby="hosting">
+          <h2
+            id="hosting"
+            class="text-xl font-semibold tracking-tight text-foreground"
+          >
+            Hosting
+          </h2>
+          <p class="mt-3">
+            Diese Website wird über GitHub Pages bereitgestellt. Beim Abruf der
+            Website verarbeitet GitHub technisch erforderliche Verbindungsdaten,
+            insbesondere die IP-Adresse, Browser- und Geräteinformationen, die
+            aufgerufene Seite sowie Datum und Uhrzeit des Zugriffs. Die
+            Verarbeitung dient der sicheren und zuverlässigen Bereitstellung der
+            Website auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Weitere
+            Informationen enthält die{" "}
+            <a
+              class="underline underline-offset-4"
+              href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement"
+              target="_blank"
+              rel="noreferrer">Datenschutzerklärung von GitHub</a
+            >.
+          </p>
+        </section>
+
+        {
+          TRACKBOXX_ENABLED ? (
+        <section aria-labelledby="analytics">
+          <h2
+            id="analytics"
+            class="text-xl font-semibold tracking-tight text-foreground"
+          >
+            Webanalyse mit Trackboxx
+          </h2>
+          <div class="mt-3 space-y-3">
+            <p>
+              Wir nutzen nach Ihrer Einwilligung den Webanalysedienst Trackboxx
+              von Trackboxx, Christian Pust, Dorfstraße 12, 22956 Grönwohld,
+              Deutschland. Zweck ist die statistische Auswertung der Nutzung
+              dieser Website, damit wir Reichweite, Inhalte und
+              Benutzerfreundlichkeit beurteilen und verbessern können. Wir
+              verwenden ausschließlich den Standard-Tracker; erweitertes
+              Auto-Goal-, Conversion- oder E-Commerce-Tracking ist nicht
+              aktiviert.
+            </p>
+
+            <div>
+              <h3 class="font-semibold text-foreground">Verarbeitete Daten</h3>
+              <p class="mt-2">
+                Bei aktivierter Webanalyse werden insbesondere folgende Angaben
+                an Trackboxx übermittelt oder dort aus ihnen abgeleitet:
+              </p>
+              <ul class="mt-2 list-disc space-y-1 pl-6">
+                <li>
+                  Hostname und URL der aufgerufenen Seite einschließlich Pfad
+                  und vorhandener URL-Parameter,
+                </li>
+                <li>
+                  die zuvor besuchte Seite (Referrer) und bei einem Klick auf
+                  einen externen Link dessen Zieladresse,
+                </li>
+                <li>
+                  Datum und Uhrzeit des Aufrufs, Verweildauer, Seitenaufrufe und
+                  Absprungrate,
+                </li>
+                <li>
+                  Bildschirmauflösung, Zeitzone, Browser- und
+                  Geräteinformationen,
+                </li>
+                <li>
+                  IP-Adresse und User-Agent, die bei der Übertragung technisch
+                  anfallen, sowie eine daraus abgeleitete ungefähre regionale
+                  Zuordnung,
+                </li>
+                <li>unsere Trackboxx-Site-ID.</li>
+              </ul>
+              <p class="mt-2">
+                Inhalte oder Eingaben aus dem Kontaktformular werden nicht an
+                Trackboxx übermittelt.
+              </p>
+            </div>
+
+            <p>
+              Trackboxx setzt für die Webanalyse keine Cookies ein. Nach Angaben
+              des Anbieters werden aus IP-Adresse, User-Agent, Site-ID und dem
+              aktuellen Tag ein Besucher-Hash sowie zusätzlich unter
+              Einbeziehung von Hostname und Pfad ein Seiten-Hash gebildet. Der
+              dafür verwendete Signaturwert wechselt täglich; die Hashwerte
+              werden höchstens 24 Stunden gespeichert. Dadurch soll eine
+              Wiedererkennung an späteren Tagen verhindert werden. Die
+              IP-Adresse wird nach Angaben des Anbieters nicht dauerhaft
+              gespeichert. Die Statistikdaten werden gespeichert, solange wir
+              das Trackboxx-Konto für die Auswertung nutzen. Beenden wir den
+              Einsatz, löschen wir das Konto einschließlich der Daten. Bei einer
+              bloßen Kündigung ohne Kontolöschung bewahrt Trackboxx vorhandene
+              Trafficdaten nach eigenen Angaben noch höchstens sechs Monate auf.
+            </p>
+
+            <p>
+              Unsere Einwilligungsverwaltung und der geladene Tracker lesen die
+              im Local Storage dieses Browsers gespeicherte Einstellung <code
+                >tbTrackingEnabled</code
+              >, um Ihre Entscheidung zu beachten. Dort wird ausschließlich
+              gespeichert, ob Sie der Webanalyse zugestimmt oder sie abgelehnt
+              haben. Die Einstellung bleibt bestehen, bis Sie sie unten ändern
+              oder die Website-Daten in Ihrem Browser löschen.
+            </p>
+
+            <p>
+              Der Tracker und die Verbindung zu Trackboxx werden erst geladen,
+              nachdem Sie zugestimmt haben. Rechtsgrundlage für den Zugriff des
+              Trackers auf Browserinformationen ist Ihre Einwilligung nach § 25
+              Abs. 1 TDDDG. Das Speichern und Auslesen Ihrer Entscheidung ist
+              nach § 25 Abs. 2 Nr. 2 TDDDG erforderlich, um die von Ihnen
+              ausdrücklich gewählte Datenschutzeinstellung bereitzustellen.
+              Rechtsgrundlage für die anschließende Verarbeitung
+              personenbezogener Daten ist Art. 6 Abs. 1 lit. a DSGVO. Die
+              Einwilligung ist freiwillig; eine Ablehnung hat keine Auswirkungen
+              auf die Nutzung dieser Website.
+            </p>
+
+            <p>
+              Empfänger der Daten ist Trackboxx als unser Auftragsverarbeiter.
+              Nach Angaben des Anbieters werden die Analysedaten auf einem
+              Server in Deutschland gespeichert. Das Tracking-Script wird über
+              <code>cdn.trackboxx.info</code>{" "} und ein von Trackboxx eingesetztes
+              weltweites Content Delivery Network von BunnyCDN ausgeliefert. Dabei
+              fallen die üblichen Verbindungsdaten, insbesondere IP-Adresse und User-Agent,
+              am jeweils angesprochenen CDN-Server an. Die Messdaten werden an <code
+                >hit.trackboxx.info</code
+              >{" "}
+              übertragen.
+            </p>
+
+            <div class="rounded-xl border bg-card p-4">
+              <h3 class="font-semibold text-foreground">
+                Einwilligung verwalten
+              </h3>
+              <p class="mt-2">
+                Sie können Ihre Einwilligung jederzeit mit Wirkung für die
+                Zukunft erteilen oder widerrufen. Der Widerruf berührt nicht die
+                Rechtmäßigkeit der Verarbeitung bis zum Widerruf. Bereits
+                zusammengefasste Statistiken können nicht nachträglich einem
+                einzelnen Besucher zugeordnet und entfernt werden. Die
+                Einstellung gilt nur für diesen Browser.
+              </p>
+              <div class="mt-4 flex flex-wrap items-center gap-3">
+                <button
+                  id="trackboxx-consent-control"
+                  type="button"
+                  class="inline-flex items-center justify-center rounded-lg border bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent focus:outline-none focus:ring-2 focus:ring-ring/40"
+                >
+                  Einwilligung erteilen
+                </button>
+                <span
+                  id="trackboxx-consent-status"
+                  class="text-sm"
+                  aria-live="polite"></span>
+              </div>
+              <noscript>
+                <p class="mt-3 text-sm">
+                  Ohne JavaScript wird Trackboxx auf dieser Website nicht
+                  ausgeführt.
+                </p>
+              </noscript>
+            </div>
+
+            <p>
+              Weitere Informationen enthält die{" "}
+              <a
+                class="underline underline-offset-4"
+                href="https://trackboxx.com/datenschutz/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Datenschutzerklärung von Trackboxx
+              </a>{" "}
+              sowie die{" "}
+              <a
+                class="underline underline-offset-4"
+                href="https://trackboxx.com/faq/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                technische Erläuterung des Anbieters
+              </a>
+              .
+            </p>
+          </div>
+        </section>
+          ) : null
+        }
+
+        <section aria-labelledby="contact">
+          <h2
+            id="contact"
+            class="text-xl font-semibold tracking-tight text-foreground"
+          >
+            Kontaktaufnahme und Kontaktformular
+          </h2>
+          <div class="mt-3 space-y-5">
+            <p>
+              Wenn Sie uns per E-Mail oder über das Kontaktformular
+              kontaktieren, verarbeiten wir Ihre Angaben zur Bearbeitung und
+              Beantwortung der Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
+              DSGVO, sofern es um die Anbahnung oder Durchführung eines Vertrags
+              geht. Bei anderen Anfragen erfolgt die Verarbeitung auf Grundlage
+              unseres berechtigten Interesses an der Beantwortung von
+              Kontaktanfragen gemäß Art. 6 Abs. 1 lit. f DSGVO. Wir löschen die
+              bei uns gespeicherten Angaben, sobald sie für die Bearbeitung
+              nicht mehr erforderlich sind und keine gesetzlichen
+              Aufbewahrungspflichten entgegenstehen.
+            </p>
+
+            <div>
+              <h3 class="font-semibold text-foreground">
+                Verarbeitung des Formulars durch Formspark
+              </h3>
+              <p class="mt-2">
+                Das Formular wird über Formspark übermittelt. Anbieter ist die
+                Trampoline Software SRL, Rue de Marsannay-la-Côte 16, 5032 Mazy,
+                Belgien, Unternehmensnummer BE 0799.398.081. Formspark
+                verarbeitet die Formulardaten in unserem Auftrag und stellt
+                hierfür einen Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO
+                als Bestandteil seiner Nutzungsbedingungen bereit.
+              </p>
+              <p class="mt-2">Folgende Daten werden dabei verarbeitet:</p>
+              <ul class="mt-2 list-disc space-y-1 pl-6">
+                <li>
+                  <strong class="font-medium text-foreground"
+                    >Formularinhalt:</strong
+                  >
+                  der eingegebene Name, die E-Mail-Adresse und die Nachricht.
+                </li>
+                <li>
+                  <strong class="font-medium text-foreground"
+                    >IP-Adresse:</strong
+                  >
+                  zur Spamfilterung, Absicherung des Dienstes und Bestimmung der Herkunft
+                  einer Einsendung.
+                </li>
+                <li>
+                  <strong class="font-medium text-foreground"
+                    >Ungefährer Standort:</strong
+                  >
+                  aus der IP-Adresse abgeleitete Angaben wie Kontinent, Land, Region
+                  und Stadt.
+                </li>
+                <li>
+                  <strong class="font-medium text-foreground"
+                    >Anfragedaten:</strong
+                  >
+                  Browserkennung (User-Agent), verweisende Seite und Herkunftsseite
+                  (Origin).
+                </li>
+              </ul>
+              <p class="mt-2">
+                Die Formularinhalte bleiben bei Formspark gespeichert, bis wir
+                sie löschen; gelöschte Einsendungen sind anschließend noch 30
+                Tage wiederherstellbar. IP-Adresse und daraus abgeleitete
+                Standortangaben werden nach Angaben von Formspark zwölf Monate
+                aufbewahrt. Als Spam herausgefilterte Einsendungen
+                einschließlich Inhalt und Anfragedaten werden zwölf Monate
+                aufbewahrt und sind für uns davon 30 Tage sichtbar. Die Daten
+                werden in Irland und Deutschland gespeichert. Formspark setzt
+                für den Betrieb weitere Unterauftragsverarbeiter ein, von denen
+                einzelne außerhalb des Europäischen Wirtschaftsraums ansässig
+                sein können.
+              </p>
+              <p class="mt-2">
+                Bitte übermitteln Sie über das Formular keine besonderen
+                Kategorien personenbezogener Daten im Sinne von Art. 9 DSGVO,
+                insbesondere keine Gesundheitsdaten, sowie keine Zahlungsdaten
+                oder strafrechtlich relevanten Angaben. Weitere Informationen
+                enthalten die{" "}
+                <a
+                  class="underline underline-offset-4"
+                  href="https://formspark.io/legal/privacy-policy/"
+                  target="_blank"
+                  rel="noreferrer">Datenschutzerklärung von Formspark</a
+                >{" "}
+                und die{" "}
+                <a
+                  class="underline underline-offset-4"
+                  href="https://formspark.io/legal/gdpr/"
+                  target="_blank"
+                  rel="noreferrer">Hinweise von Formspark zur DSGVO</a
+                >.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-foreground">
+                Spam-Schutz durch Cloudflare Turnstile
+              </h3>
+              <p class="mt-2">
+                Sofern im Kontaktformular die Cloudflare-Turnstile-Prüfung
+                angezeigt wird, nutzen wir diesen Dienst, um automatisierte
+                Eingaben und Missbrauch des Formulars zu erkennen. Anbieter ist
+                die Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107,
+                USA. Turnstile führt hierfür clientseitige Prüfungen aus und
+                untersucht technische Signale der Browserumgebung.
+              </p>
+              <p class="mt-2">Dabei verarbeitet Cloudflare insbesondere:</p>
+              <ul class="mt-2 list-disc space-y-1 pl-6">
+                <li>IP-Adresse und User-Agent des aufrufenden Geräts,</li>
+                <li>TLS-Fingerabdruck, Sitekey und Herkunftsseite,</li>
+                <li>
+                  technische Browser- und Geräteinformationen sowie die
+                  Verfügbarkeit bestimmter Web-APIs,
+                </li>
+                <li>
+                  Ergebnisse kleiner Rechen- und Speicherprüfungen und weitere
+                  Signale zur Unterscheidung von Menschen und Bots,
+                </li>
+                <li>
+                  das Ergebnis der Sicherheitsprüfung in Form eines Tokens.
+                </li>
+              </ul>
+              <p class="mt-2">
+                Nach Angaben von Cloudflare greift Turnstile nicht auf
+                Nachrichten, Formulareingaben oder sonstige Eingaben der Seite
+                zu und verwendet die Signale nicht zu Werbezwecken. Cloudflare
+                verarbeitet die Signale einerseits in unserem Auftrag zur
+                Absicherung des Formulars und andererseits in eigener
+                Verantwortlichkeit zur Verbesserung seiner Bot-Erkennung.
+                Rechtsgrundlage auf unserer Seite ist Art. 6 Abs. 1 lit. f
+                DSGVO; unser berechtigtes Interesse besteht im Schutz des
+                Formulars vor Spam und automatisiertem Missbrauch.
+              </p>
+              <p class="mt-2">
+                Eine Verarbeitung in den USA kann nicht ausgeschlossen werden.
+                Weitere Informationen finden sich im{" "}
+                <a
+                  class="underline underline-offset-4"
+                  href="https://www.cloudflare.com/turnstile-privacy-policy/"
+                  target="_blank"
+                  rel="noreferrer">Turnstile Privacy Addendum</a
+                >{" "}
+                und in der{" "}
+                <a
+                  class="underline underline-offset-4"
+                  href="https://www.cloudflare.com/privacypolicy/"
+                  target="_blank"
+                  rel="noreferrer">Datenschutzerklärung von Cloudflare</a
+                >.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="rights">
+          <h2
+            id="rights"
+            class="text-xl font-semibold tracking-tight text-foreground"
+          >
+            Ihre Rechte
+          </h2>
+          <p class="mt-3">
+            Sie haben im Rahmen der gesetzlichen Voraussetzungen insbesondere
+            das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der
+            Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem können
+            Sie sich bei einer Datenschutzaufsichtsbehörde beschweren. Für
+            Fragen oder zur Ausübung Ihrer Rechte genügt eine Nachricht an die
+            oben genannte E-Mail-Adresse.
+          </p>
+        </section>
+
+        <p class="border-t pt-6 text-sm">Stand: September 2026</p>
+      </article>
+    </BottomLayout>
+  </main>
+
+  {
+    TRACKBOXX_ENABLED ? (
+  <script is:inline>
+    (() => {
+      const storageKey = "tbTrackingEnabled";
+
+      const setupTrackboxxConsent = () => {
+        const button = document.getElementById("trackboxx-consent-control");
+        const status = document.getElementById("trackboxx-consent-status");
+        if (!(button instanceof HTMLButtonElement) || !status) return;
+
+        let consent = null;
+        try {
+          consent = localStorage.getItem(storageKey);
+        } catch {
+          status.textContent =
+            "Die Browser-Einstellung konnte nicht gelesen werden.";
+          button.disabled = true;
+          return;
+        }
+
+        button.textContent =
+          consent === "yes"
+            ? "Einwilligung widerrufen"
+            : "Einwilligung erteilen";
+
+        status.textContent =
+          consent === "yes"
+            ? "Trackboxx ist in diesem Browser aktiviert."
+            : consent === "no"
+              ? "Trackboxx ist in diesem Browser abgelehnt."
+              : "Trackboxx ist ohne Ihre Einwilligung nicht aktiv.";
+
+        button.onclick = () => {
+          try {
+            localStorage.setItem(storageKey, consent === "yes" ? "no" : "yes");
+            window.location.reload();
+          } catch {
+            status.textContent =
+              "Die Einstellung konnte nicht gespeichert werden.";
+          }
+        };
+      };
+
+      setupTrackboxxConsent();
+      document.addEventListener("astro:page-load", setupTrackboxxConsent);
+    })();
+  </script>
+    ) : null
+  }
+</BaseLayout>

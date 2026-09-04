@@ -5,8 +5,9 @@ import { Button } from '../ui/button'
 import { XR_PROJECTS } from '../../lib/constants'
 import OmiLAXRProjectCard from '../OmiLAXRProjectCard.astro'
 import AcademicSupervisionCard from './AcademicSupervisionCard.astro'
+import WorkshopReferencesCard from './WorkshopReferencesCard.astro'
 
-const carouselItemCount = XR_PROJECTS.length + 1
+const carouselItemCount = XR_PROJECTS.length + 2
 ---
 
 <Card
@@ -70,6 +71,14 @@ const carouselItemCount = XR_PROJECTS.length + 1
           data-carousel-slide
           class="flex w-[calc(100%-0.25rem)] shrink-0 snap-start sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.6667rem)]"
           role="group"
+          aria-label={`${XR_PROJECTS.length + 1} von ${carouselItemCount}: Durchgeführte Workshops`}
+        >
+          <WorkshopReferencesCard />
+        </div>
+        <div
+          data-carousel-slide
+          class="flex w-[calc(100%-0.25rem)] shrink-0 snap-start sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.6667rem)]"
+          role="group"
           aria-label={`${carouselItemCount} von ${carouselItemCount}: Akademische Betreuung`}
         >
           <AcademicSupervisionCard />
@@ -94,6 +103,13 @@ const carouselItemCount = XR_PROJECTS.length + 1
             type="button"
             data-carousel-dot
             data-index={XR_PROJECTS.length}
+            class="h-2.5 w-2.5 rounded-full bg-muted-foreground/30 hover:bg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            aria-label="Durchgeführte Workshops anzeigen"
+          />
+          <button
+            type="button"
+            data-carousel-dot
+            data-index={XR_PROJECTS.length + 1}
             class="h-2.5 w-2.5 rounded-full bg-muted-foreground/30 hover:bg-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             aria-label="Akademische Betreuung anzeigen"
           />

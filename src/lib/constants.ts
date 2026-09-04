@@ -371,26 +371,29 @@ export const SERVICES = [
   },
   {
     slug: 'evaluation-report',
-    title: 'Evaluation & Report',
-    price: 'ab 12.900 €',
+    title: 'Evaluation & Ergebnisbericht',
+    price: 'typ. 12.900–29.000 €',
     description:
-      'Methodische Begleitung, Auswertung und Ergebnisbericht für XR-Lern- und Trainingsszenarien.',
+      'Evaluation mit einer definierten Testgruppe planen, begleiten und die Ergebnisse einordnen.',
     bullets: [
-      'Evaluationsdesign, Pilotstudie oder Nutzertest vorbereiten',
-      'Interaktions-, Lern- oder Trainingsdaten auswerten und visualisieren',
-      'Report mit Handlungsempfehlungen für Stakeholder und Weiterentwicklung',
-      'Rekrutierung, Incentives und umfangreiche Feldstudien werden separat kalkuliert',
+      'Evaluationsfragen, messbare Indikatoren und Testsetting festlegen',
+      'Testgruppe und Erhebung gemeinsam mit dem Auftraggeber planen',
+      'Nutzungsdaten, Beobachtungen und Feedback auswerten',
+      'Ergebnisbericht mit Hinweisen auf Lernerfolg und Optimierungspotenziale',
     ],
     duration: 'typ. 3–6 Wochen, abhängig von den Erhebungsterminen',
     deliverables: [
-      'Evaluationsdesign, Fragestellungen und Erhebungsinstrumente',
-      'Vorbereitung und methodische Begleitung von Pilot oder Nutzertest',
-      'Auswertung, Visualisierung und Ergebnisbericht mit Empfehlungen',
+      'Evaluationsdesign, Fragestellungen, Indikatoren und Erhebungsinstrumente',
+      'Planung und methodische Begleitung der Erhebung mit einer definierten Testgruppe',
+      'Auswertung, Visualisierung und Ergebnisbericht mit vorsichtig eingeordneten Empfehlungen',
     ],
     customerInput:
-      'Zugang zur Zielgruppe, organisatorische Unterstützung bei den Terminen und vorhandene Daten.',
+      'Zugang zur passenden Zielgruppe; Rekrutierung und Terminierung der Teilnehmenden durch den Auftraggeber sowie vorhandene Daten.',
     costDrivers: ['Methoden, Stichprobe und Zahl der Forschungsfragen', 'Datenqualität und Umfang der Auswertung'],
-    notIncluded: ['Rekrutierung und Incentives', 'Umfangreiche Feldstudien oder zusätzliche Erhebungswellen'],
+    notIncluded: [
+      'Externe Rekrutierung, Incentives und Raummieten',
+      'Umfangreiche Feldstudien oder zusätzliche Erhebungswellen',
+    ],
   },
 ]
 
