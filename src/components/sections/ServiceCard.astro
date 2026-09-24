@@ -4,10 +4,10 @@ import { Card as PackageCard } from '../ui/card'
 import { SERVICES } from '../../lib/constants'
 ---
 
-<Card colSpan="md:col-span-2 lg:col-span-4" rowSpan="md:row-span-1 lg:row-span-1" title="Pakete & Preisrahmen" body="Planbare Einstiegspunkte für XR-Lern- und Trainingsvorhaben.">
+<Card colSpan="md:col-span-2 lg:col-span-4" rowSpan="md:row-span-1 lg:row-span-1" title="Leistungen & Pakete" body="Planbare Einstiegspunkte für XR-Lern- und Trainingsvorhaben.">
   <section id="leistungen" class="mt-5 space-y-5">
     <p class="m-0 max-w-4xl text-sm text-muted-foreground">
-      Die Preise sind Richtwerte für die Projektplanung. Vorhandene belastbare Vorarbeiten verkürzen den Umfang; Inhalte werden nicht doppelt berechnet. Ein verbindlicher Festpreis entsteht nach der Prüfung der Ausgangslage. Hardware, 3D-Assets, Reisen, Cloud-Betrieb und individuelle Drittsystem-Erweiterungen werden separat kalkuliert.
+      Umfang, Budget und Ergebnis stimmen wir individuell vor der Beauftragung ab. Vorhandene belastbare Vorarbeiten beziehen wir ein.
     </p>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
@@ -15,11 +15,6 @@ import { SERVICES } from '../../lib/constants'
           <PackageCard className="flex h-full flex-col p-5 shadow-none">
             <div class="space-y-2">
               <h3 class="m-0 text-lg font-semibold leading-snug">{service.title}</h3>
-              {service.price && (
-                <p class="m-0 inline-block rounded-full bg-primary/10 px-2.5 py-1 text-sm font-semibold text-primary">
-                  {service.price}
-                </p>
-              )}
             </div>
             <p class="mt-2 text-sm text-muted-foreground">{service.description}</p>
             <ul class="mt-4 list-disc space-y-1.5 border-t pt-4 pl-5 text-sm text-muted-foreground">

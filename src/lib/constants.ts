@@ -261,7 +261,6 @@ export const SERVICES = [
   {
     slug: 'scoping-sprint',
     title: 'XR Scoping Sprint',
-    price: 'ab 4.900 €',
     description:
       'Eine belastbare Entscheidungsgrundlage, bevor Konzept oder Umsetzung beauftragt werden.',
     bullets: [
@@ -283,7 +282,6 @@ export const SERVICES = [
   {
     slug: 'didaktik-xr-konzept',
     title: 'Didaktik & XR-Konzept',
-    price: 'ab 5.900 € · Blueprint ab 9.900 €',
     description:
       'Vom klar begrenzten Einzelszenario bis zum umsetzungsreifen XR-Blueprint mit Messkonzept.',
     bullets: [
@@ -305,7 +303,6 @@ export const SERVICES = [
   {
     slug: 'xr-pilot',
     title: 'Neuer XR-Pilot / MVP',
-    price: 'typ. 20.000-69.000 €',
     description:
       'Umsetzung eines fokussierten XR-Lern- oder Trainingsszenarios auf Basis eines freigegebenen Konzepts.',
     bullets: [
@@ -327,7 +324,6 @@ export const SERVICES = [
   {
     slug: 'analytics-audit',
     title: 'Analytics Audit für XR-Apps',
-    price: 'ab 6.900 €',
     description:
       'Für bestehende XR-Anwendungen, die messbar, evaluierbar oder forschungsfähig werden sollen.',
     bullets: [
@@ -350,7 +346,6 @@ export const SERVICES = [
   {
     slug: 'analytics-integration',
     title: 'Analytics-Integration',
-    price: 'Starter ab 7.900 € · Produktion typ. 14.000–29.000 €',
     description:
       'Vom begrenzten xAPI-Einstieg bis zum produktionsreifen, validierten Datenfluss.',
     bullets: [
@@ -372,7 +367,6 @@ export const SERVICES = [
   {
     slug: 'evaluation-report',
     title: 'Evaluation & Ergebnisbericht',
-    price: 'typ. 12.900–29.000 €',
     description:
       'Evaluation mit einer definierten Testgruppe planen, begleiten und die Ergebnisse einordnen.',
     bullets: [

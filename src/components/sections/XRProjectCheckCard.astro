@@ -85,7 +85,6 @@ import { LINKS } from '../../lib/constants'
       <div class="space-y-2">
         <p class="m-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Empfohlener Einstieg</p>
         <h3 data-result-title class="m-0 text-2xl font-semibold">XR-Konzeptpaket</h3>
-        <p data-result-price class="m-0 text-lg font-semibold text-primary">ab 5.900 €</p>
         <p data-result-text class="m-0 text-sm text-muted-foreground">
           Ein klar begrenztes Szenario mit Lernzielen, Aufgaben- und Feedbacklogik.
         </p>
@@ -119,7 +118,6 @@ import { LINKS } from '../../lib/constants'
 <script>
   type Recommendation = {
     title: string
-    price: string
     text: string
     next: string
   }
@@ -127,37 +125,31 @@ import { LINKS } from '../../lib/constants'
   const recommendations = {
     audit: {
       title: 'Analytics Audit für bestehende XR-Apps',
-      price: 'ab 6.900 €',
       text: 'App, Lernziele, Codebasis, Datenpunkte und Integrationsrisiken werden geprüft.',
       next: 'Danach liegen Messkonzept, Aufwandsschätzung und Integrationsplan vor.',
     },
     integration: {
       title: 'Analytics-Integration für bestehende XR-Apps',
-      price: 'Starter ab 7.900 € · Produktion typ. 14.000–29.000 €',
       text: 'Vom begrenzten xAPI-Starter bis zum produktionsreifen Datenfluss mit Monitoring und Validierung.',
       next: 'Geeignet, wenn eine App existiert und für Training, Forschung oder Nachweisführung messbar werden soll.',
     },
     evaluation: {
       title: 'Evaluation & Ergebnisbericht',
-      price: 'typ. 12.900–29.000 €',
       text: 'Evaluationsdesign, Planung einer definierten Testgruppe, methodische Begleitung und Ergebnisbericht.',
       next: 'Geeignet, wenn Nutzungsverhalten, Lernergebnisse oder Optimierungspotenziale strukturiert untersucht werden sollen.',
     },
     concept: {
       title: 'XR-Konzeptpaket',
-      price: 'ab 5.900 € · Blueprint ab 9.900 €',
       text: 'Ein Szenario kompakt ausarbeiten oder als vollständigen XR-Blueprint für die Umsetzung spezifizieren.',
       next: 'Danach kann die Umsetzung als Pilot/MVP oder vollständige Pipeline sauber beauftragt werden.',
     },
     pilot: {
       title: 'XR-Pilot/MVP',
-      price: 'typ. 20.000-69.000 €',
       text: 'Ein fokussiertes XR-Lern- oder Trainingsszenario mit Analytics-Grundlage und Pilotierung.',
       next: 'Geeignet, wenn ein belastbarer erster Einsatz statt nur einer Demo entstehen soll.',
     },
     full: {
       title: 'Vollständige XR Learning Pipeline',
-      price: 'ab 79.000 €',
       text: 'Konzept, Umsetzung, Analytics, Evaluation, Auswertung und Report aus einer Hand.',
       next: 'Geeignet für Teams, die ein Szenario nicht nur bauen, sondern fachlich und datenbasiert bewerten wollen.',
     },
@@ -182,14 +174,12 @@ import { LINKS } from '../../lib/constants'
   document.querySelectorAll<HTMLFormElement>('[data-project-check]').forEach((form) => {
     const section = form.closest('section')
     const title = section?.querySelector<HTMLElement>('[data-result-title]')
-    const price = section?.querySelector<HTMLElement>('[data-result-price]')
     const text = section?.querySelector<HTMLElement>('[data-result-text]')
     const next = section?.querySelector<HTMLElement>('[data-result-next]')
 
     const update = () => {
       const recommendation = pickRecommendation(new FormData(form))
       if (title) title.textContent = recommendation.title
-      if (price) price.textContent = recommendation.price
       if (text) text.textContent = recommendation.text
       if (next) next.textContent = recommendation.next
     }

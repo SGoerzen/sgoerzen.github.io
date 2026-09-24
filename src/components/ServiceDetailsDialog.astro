@@ -4,7 +4,6 @@ import { ArrowRight, Clock3, X } from 'lucide-react'
 interface Props {
   dialogId: string
   title: string
-  price: string
   description: string
   duration: string
   deliverables: string[]
@@ -17,7 +16,6 @@ interface Props {
 const {
   dialogId,
   title,
-  price,
   description,
   duration,
   deliverables,
@@ -59,7 +57,6 @@ const {
       <div>
         <p class="m-0 text-xs font-semibold uppercase tracking-[0.14em] text-primary">Paketdetails</p>
         <h2 id={`${dialogId}-title`} class="mb-0 mt-1 text-xl font-semibold tracking-tight">{title}</h2>
-        <p class="mb-0 mt-2 text-sm font-semibold text-primary">{price}</p>
       </div>
       <button
         type="button"
