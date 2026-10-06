@@ -47,14 +47,16 @@ const offerAreas = [
     <div class="hero-wash" aria-hidden="true"></div>
     <div class="hero-glow" aria-hidden="true"></div>
 
-    <img
-      class="hero-portrait"
-      src="/me_full.png"
-      alt="Dr.-Ing. Sergej Görzen"
-      width="1254"
-      height="1254"
-      decoding="async"
-    />
+    <div class="hero-portrait-frame">
+      <img
+        class="hero-portrait"
+        src="/me_full.png"
+        alt="Dr.-Ing. Sergej Görzen"
+        width="1024"
+        height="1536"
+        decoding="async"
+      />
+    </div>
 
     <div class="hero-inner">
       <div class="hero-copy">
@@ -321,13 +323,38 @@ const offerAreas = [
     border-color: var(--hero-blue-dark);
   }
 
-  .hero-portrait {
+  /* Same width as header/tiles so the portrait aligns with the header CTA. */
+  .hero-portrait-frame {
+    --portrait-height: min(46vw, 38rem);
+    /* Mirrors the header actions' lg:mr-8 / xl:mr-12 offset. */
+    --portrait-edge: 0rem;
     position: absolute;
     z-index: 3;
+    inset: 0;
+    width: min(92%, 90rem);
+    margin: 0 auto;
+    pointer-events: none;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-portrait-frame {
+      --portrait-edge: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-portrait-frame {
+      --portrait-edge: 3rem;
+    }
+  }
+
+  .hero-portrait {
+    position: absolute;
     top: 2.5rem;
-    right: 5%;
+    /* PNG has ~1% transparent padding on the right; compensate for it. */
+    right: calc(var(--portrait-edge) - var(--portrait-height) * 0.0104);
     width: auto;
-    height: min(46vw, 38rem);
+    height: var(--portrait-height);
     object-fit: contain;
     object-position: top center;
     filter: contrast(1.02) saturate(0.96);
@@ -529,10 +556,8 @@ const offerAreas = [
       width: 58%;
     }
 
-    .hero-portrait {
-      top: 2.5rem;
-      right: -1%;
-      height: min(56vw, 35rem);
+    .hero-portrait-frame {
+      --portrait-height: min(56vw, 35rem);
     }
 
     .overview-grid {
@@ -625,6 +650,10 @@ const offerAreas = [
 
     .secondary-action {
       font-size: 0.85rem;
+    }
+
+    .hero-portrait-frame {
+      width: 100%;
     }
 
     .hero-portrait {
