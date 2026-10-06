@@ -11,7 +11,7 @@ export const LINKS = {
   gitlab: 'https://gitlab.com/sgoerzen',
   linkedin: 'https://www.linkedin.com/in/sergej-goerzen/',
   mail: 'mailto:sergej@goerzen.consulting',
-  calendly: 'https://zeeg.me/sergejgoerzen/30min',
+  booking: 'https://zeeg.me/sergejgoerzen/30min',
 }
 
 export const SITE: Site = {
