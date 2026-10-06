@@ -47,14 +47,16 @@ const offerAreas = [
     <div class="hero-wash" aria-hidden="true"></div>
     <div class="hero-glow" aria-hidden="true"></div>
 
-    <img
-      class="hero-portrait"
-      src="/me_full.png"
-      alt="Dr.-Ing. Sergej Görzen"
-      width="1254"
-      height="1254"
-      decoding="async"
-    />
+    <div class="hero-portrait-frame">
+      <img
+        class="hero-portrait"
+        src="/me_full.png"
+        alt="Dr.-Ing. Sergej Görzen"
+        width="1024"
+        height="1536"
+        decoding="async"
+      />
+    </div>
 
     <div class="hero-inner">
       <div class="hero-copy">
@@ -154,6 +156,8 @@ const offerAreas = [
 
 <style>
   .offer-hero {
+    /* How far the tiles reach up into the hero stage. */
+    --hero-tile-overlap: 5.45rem;
     --hero-blue: #0965df;
     --hero-blue-dark: #0055c8;
     --hero-action: #0965df;
@@ -233,6 +237,8 @@ const offerAreas = [
     width: min(92%, 90rem);
     margin: 0 auto;
     padding-top: 5.25rem;
+    /* Keep the CTAs clear of the overlapping tiles when the copy grows. */
+    padding-bottom: calc(var(--hero-tile-overlap) + 3rem);
   }
 
   .hero-copy {
@@ -321,13 +327,45 @@ const offerAreas = [
     border-color: var(--hero-blue-dark);
   }
 
-  .hero-portrait {
+  /* Same width as header/tiles so the portrait aligns with the header CTA. */
+  .hero-portrait-frame {
+    --portrait-height: min(46vw, 38rem);
+    /* Mirrors the header actions' lg:mr-8 / xl:mr-12 offset. */
+    --portrait-edge: 0rem;
     position: absolute;
     z-index: 3;
-    top: 2.5rem;
-    right: 5%;
+    inset: 0;
+    width: min(92%, 90rem);
+    margin: 0 auto;
+    pointer-events: none;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-portrait-frame {
+      --portrait-edge: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-portrait-frame {
+      --portrait-edge: 3rem;
+    }
+  }
+
+  .hero-portrait {
+    position: absolute;
+    /* Dock onto the contact tile, which overlaps the stage from below. */
+    bottom: calc(var(--hero-tile-overlap) - 2px);
+    /* 20px past the header CTA edge; the PNG's ~1% right padding is compensated. */
+    right: calc(
+      var(--portrait-edge) - 20px - var(--portrait-height) * 0.0104
+    );
     width: auto;
-    height: min(46vw, 38rem);
+    /* Never taller than the stage space above the tiles (keeps the head in view). */
+    height: min(
+      var(--portrait-height),
+      calc(100% - var(--hero-tile-overlap) - 1.5rem)
+    );
     object-fit: contain;
     object-position: top center;
     filter: contrast(1.02) saturate(0.96);
@@ -338,7 +376,7 @@ const offerAreas = [
     z-index: 8;
     display: grid;
     width: min(92%, 90rem);
-    margin: -5.45rem auto 0;
+    margin: calc(var(--hero-tile-overlap) * -1) auto 0;
     grid-template-columns: repeat(3, minmax(0, 1fr)) 1.12fr;
     align-items: stretch;
     gap: 1.45rem;
@@ -529,25 +567,24 @@ const offerAreas = [
       width: 58%;
     }
 
-    .hero-portrait {
-      top: 2.5rem;
-      right: -1%;
-      height: min(56vw, 35rem);
+    .hero-portrait-frame {
+      --portrait-height: min(56vw, 35rem);
     }
 
     .overview-grid {
       width: min(92%, 90rem);
-      margin: -3.5rem auto 0;
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .offer-hero {
+      --hero-tile-overlap: 3.5rem;
       margin-bottom: 4.5rem;
     }
   }
 
   @media (max-width: 760px) {
     .offer-hero {
+      --hero-tile-overlap: 0rem;
       margin-bottom: 3.5rem;
     }
 
@@ -627,6 +664,10 @@ const offerAreas = [
       font-size: 0.85rem;
     }
 
+    .hero-portrait-frame {
+      width: 100%;
+    }
+
     .hero-portrait {
       top: auto;
       right: -3rem;
@@ -637,7 +678,7 @@ const offerAreas = [
 
     .overview-grid {
       width: min(92%, 40rem);
-      margin-top: 1rem;
+      margin: 1rem auto 0;
       grid-template-columns: 1fr;
       gap: 0.85rem;
     }

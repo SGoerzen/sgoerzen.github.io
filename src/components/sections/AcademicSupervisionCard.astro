@@ -74,20 +74,19 @@ const otherSupervisedTheses = SUPERVISED_WORKS.filter(
 <article
   class="group flex h-full flex-col rounded-2xl border border-rose-200/70 bg-rose-50/60 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md dark:border-rose-900/70 dark:bg-rose-950/20"
 >
-  <div class="flex items-start justify-between gap-4">
-    <div
-      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-100 text-rose-700 dark:bg-rose-900/60 dark:text-rose-300"
+  <div class="flex items-center gap-2.5">
+    <span
+      class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-rose-100 text-rose-700 dark:bg-rose-900/60 dark:text-rose-300"
     >
-      <GraduationCap size={20} aria-hidden="true" />
-    </div>
+      <GraduationCap size={16} aria-hidden="true" />
+    </span>
+    <p
+      class="m-0 text-xs font-semibold uppercase leading-snug tracking-[0.14em] text-muted-foreground"
+    >
+      Hochschullehre · XR
+    </p>
   </div>
-
-  <p
-    class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground"
-  >
-    Hochschullehre · XR
-  </p>
-  <h3 class="mt-1 text-lg font-semibold tracking-tight">
+  <h3 class="mt-3 text-lg font-semibold tracking-tight">
     Akademische Betreuung
   </h3>
 
@@ -109,7 +108,7 @@ const otherSupervisedTheses = SUPERVISED_WORKS.filter(
     <div class="mt-2 flex flex-wrap gap-2">
       {
         competencies.map((competency) => (
-          <span class="rounded-full border border-foreground/10 bg-background/70 px-2.5 py-1 text-[0.7rem] font-medium text-muted-foreground">
+          <span class="rounded-full bg-foreground/[0.06] px-2.5 py-1 text-[0.7rem] font-medium text-muted-foreground">
             {competency}
           </span>
         ))

@@ -26,21 +26,22 @@ const workshopReferences = [
 <article
   class="group flex h-full flex-col rounded-2xl border border-orange-200/70 bg-orange-50/60 p-5 transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md dark:border-orange-900/70 dark:bg-orange-950/20"
 >
-  <div
-    class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-100 text-orange-700 dark:bg-orange-900/60 dark:text-orange-300"
-  >
-    <Presentation size={20} aria-hidden="true" />
+  <div class="flex items-center gap-2.5">
+    <span
+      class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-700 dark:bg-orange-900/60 dark:text-orange-300"
+    >
+      <Presentation size={16} aria-hidden="true" />
+    </span>
+    <p class="m-0 text-xs font-semibold uppercase leading-snug tracking-[0.14em] text-muted-foreground">
+      Wissenstransfer · 2022–2025
+    </p>
   </div>
-
-  <p class="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-    Wissenstransfer · 2022–2025
-  </p>
-  <h3 class="mt-1 text-lg font-semibold tracking-tight">Durchgeführte Workshops</h3>
+  <h3 class="mt-3 text-lg font-semibold tracking-tight">Durchgeführte Workshops</h3>
   <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
     Praxisnaher Transfer zu OmiLAXR, Learning Analytics und nachhaltigen Bildungstechnologien.
   </p>
 
-  <ul class="mt-4 space-y-2">
+  <ul class="mt-4 divide-y divide-foreground/10 border-t border-foreground/10">
     {
       workshopReferences.map(({ year, title, detail, url }) => (
         <li>
@@ -48,13 +49,13 @@ const workshopReferences = [
             href={url}
             target="_blank"
             rel="noreferrer"
-            class="group/reference flex items-start gap-3 rounded-xl border border-foreground/10 bg-background/70 p-3 transition hover:border-primary/40 hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            class="group/reference flex items-start gap-3 py-3 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <span class="min-w-0 flex-1">
               <span class="block text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-primary">
                 {year}
               </span>
-              <span class="mt-0.5 block text-sm font-semibold">{title}</span>
+              <span class="mt-0.5 block text-sm font-semibold transition group-hover/reference:text-primary">{title}</span>
               <span class="mt-1 block text-xs leading-relaxed text-muted-foreground">{detail}</span>
             </span>
             <ArrowUpRight

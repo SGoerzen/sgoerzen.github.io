@@ -115,6 +115,7 @@ export const XR_PROJECTS = [
     organization: 'Universität Potsdam · RWTH Aachen University',
     url: 'https://www.uni-potsdam.de/de/multimedia/projekte/anwendungen/teach-r',
     image: '/project-images/teach-r.png',
+    imagePosition: 'left center',
     imageAlt: 'Teach-R im Einsatz mit VR-Brille und einem virtuellen Klassenraum',
     summary: 'Beratung zur Einbindung von Learning Analytics in einen virtuellen Klassenraum für das Lehrkräftetraining.',
     description:
@@ -225,6 +226,7 @@ export const XR_PROJECTS = [
     focus: 'Dissertationsprojekt · XR Learning Analytics',
     organization: 'Learning Technologies · RWTH Aachen University',
     image: '/project-images/OmiLAXR_Pipeline.drawio.png',
+    imageFit: 'contain' as const,
     imageAlt:
       'Modulare OmiLAXR-Pipeline von Listenern und Tracking-Komponenten bis zu Datenanbietern und externen Endpunkten',
     summary:
